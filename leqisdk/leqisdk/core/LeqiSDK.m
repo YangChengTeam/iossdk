@@ -12,11 +12,15 @@
 #import "IAPManager.h"
 #import "Reg2LoginViewController.h"
 #import "NetUtils.h"
+#import "YYCache.h"
+
+#define TAG @"leqisdk"
 
 #define FIRST_LOGIN @"first_login"
 
 @interface LeqiSDK()<IAPManagerDelegate>
 @property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) YYDiskCache *diskCache;
 @end
 
 @implementation LeqiSDK {
@@ -33,6 +37,8 @@ static LeqiSDK* instance = nil;
         instance = [[self alloc] init];
     });
     [IAPManager sharedManager].delegate = instance;
+    NSString *basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) firstObject];
+    instance.diskCache = [[YYDiskCache alloc] initWithPath:[basePath stringByAppendingPathComponent:@"sdk"]];
     return instance;
 }
 
@@ -82,7 +88,8 @@ static LeqiSDK* instance = nil;
     BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
     if(!isNotFirstLogin){
         [self show:@"请稍后..."];
-        
+        [defaults setBool:YES forKey:FIRST_LOGIN];
+        [defaults synchronize];
         NSString *url = [NSString stringWithFormat:@"%@%@", @"http://api.6071.com/index3/reg/", self.configInfo.appid];
         NSMutableDictionary *params = [self setParams];
         [params setValue:[NSNumber numberWithBool:YES] forKey:@"is_quick"];
@@ -95,9 +102,7 @@ static LeqiSDK* instance = nil;
                 return;
             }
             if([res[@"code"] integerValue] == 1 && res[@"data"]){
-                NSLog(@"%@", res);
-                [defaults setBool:YES forKey:FIRST_LOGIN];
-                [defaults synchronize];
+               
                 Reg2LoginViewController *loginViewController = [Reg2LoginViewController new];
                 STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
                 popupController.containerView.layer.cornerRadius = 4;

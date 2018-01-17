@@ -104,12 +104,8 @@
     [self.view addSubview:btnSubmit];
     
     //事件
-    [btnCode addTarget:self action:@selector(getCode:) forControlEvents:UIControlEventTouchUpInside];
+    [btnCode addTarget:self action:@selector(countDown:) forControlEvents:UIControlEventTouchUpInside];
 
-}
-
-- (void)getCode:(id)sender {
-    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -119,15 +115,51 @@
     loginView.frame = CGRectMake(offset,  offset , (width - offset*2), 84);
     lbAccount.frame = CGRectMake(16,  14 , 60, 18);
     lineAccountView.frame = CGRectMake(62,  12 , 0.5, 22);
-    tfAccount.frame = CGRectMake(72,  12 , width - 60, 22);
+    tfAccount.frame = CGRectMake(72,  12 , width - 200, 22);
     btnCode.frame = CGRectMake(width - 100,  8, 70, 26);
     lineBgView.frame = CGRectMake(10,  42 , (width - offset*2) - 20, 0.5);
     
     lbPass.frame = CGRectMake(16,  14 + 42 , 60, 18);
     linePassView.frame = CGRectMake(62,  12 + 42, 0.5, 22);
-    tfPass.frame = CGRectMake(72,  12 + 42, width - 110, 22);
+    tfPass.frame = CGRectMake(72,  12 + 42, width - 240, 22);
     
     btnSubmit.frame = CGRectMake(offset, 105 , (width - offset*2), 40);
+}
+
+- (void)countDown:(id)sender {
+    [self initWithGCD:59 beginState:^(int seconds){
+        [btnCode setTitle:[NSString stringWithFormat:@"%d秒后重试",seconds] forState:UIControlStateNormal];
+        [btnCode setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
+        btnCode.layer.borderColor = [kColorWithHex(0x999999) CGColor];
+        btnCode.userInteractionEnabled = NO;
+    } endState:^{
+        [btnCode setTitle:@"重新发送" forState:UIControlStateNormal];
+        btnCode.layer.borderColor = [kColorWithHex(0x19b1f5) CGColor];
+        [btnCode setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateNormal];
+        btnCode.userInteractionEnabled = YES;
+    }];
+}
+
+- (void)initWithGCD:(int)timeValue beginState:(void (^)(int seconds))begin endState:(void (^)())end {
+    __block NSInteger time = timeValue;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(timer, ^{
+        if (time <= 0) {
+            dispatch_source_cancel(timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                end();
+            });
+        } else {
+            int seconds = time % 60;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                begin(seconds);
+            });
+            time--;
+        }
+    });
+    dispatch_resume(timer);
 }
 
 - (void)didReceiveMemoryWarning {

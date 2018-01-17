@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "LeqiSDKInitConfigure.h"
 #import "LeqiSDKOrderInfo.h"
-#define TAG @"leqisdk"
+
 
 #define kLeqiSDKNotiInitDidFinished @"LeqiSDKNotiInitDidFinished"
 

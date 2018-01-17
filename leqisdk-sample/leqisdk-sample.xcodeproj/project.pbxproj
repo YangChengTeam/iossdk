@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B33967720072DC300801E74 /* StoreKit.framework */; };
+		4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */; };
+		4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */; };
 		4B9D0B0F2004617B001847A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B0E2004617B001847A8 /* AppDelegate.m */; };
 		4B9D0B122004617B001847A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B112004617B001847A8 /* ViewController.m */; };
 		4B9D0B152004617B001847A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D0B132004617B001847A8 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		4B3396732006F04400801E74 /* leqisdk-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "leqisdk-sample.entitlements"; sourceTree = "<group>"; };
 		4B33967720072DC300801E74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4B9D0B0A2004617B001847A8 /* leqisdk-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leqisdk-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0B0D2004617B001847A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B9D0B0E2004617B001847A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */,
+				4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */,
 				4B9D0B2420046B2F001847A8 /* leqisdk.framework in Frameworks */,
 				4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */,
 			);
@@ -79,6 +85,8 @@
 		4B339674200715E700801E74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */,
+				4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */,
 				4B33967720072DC300801E74 /* StoreKit.framework */,
 			);
 			name = Frameworks;

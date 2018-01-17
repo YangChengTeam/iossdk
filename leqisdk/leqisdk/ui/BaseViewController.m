@@ -23,6 +23,7 @@
     [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x333333) };
 }
 
+
 - (void)show:(NSString *)message {
     self.hud = [MBProgressHUD showHUDAddedTo:self.popupController.containerView animated:YES];
     self.hud.label.font = [UIFont systemFontOfSize: 14];
@@ -97,35 +98,6 @@
         result = window.rootViewController;
     
     return result;
-}
-
-#pragma mark - STPopupControllerTransitioning
-
-- (NSTimeInterval)popupControllerTransitionDuration:(STPopupControllerTransitioningContext *)context
-{
-    return context.action == STPopupControllerTransitioningActionPresent ? 0.5 : 0.35;
-}
-
-- (void)popupControllerAnimateTransition:(STPopupControllerTransitioningContext *)context completion:(void (^)())completion
-{
-    UIView *containerView = context.containerView;
-    if (context.action == STPopupControllerTransitioningActionPresent) {
-        containerView.transform = CGAffineTransformMakeTranslation(containerView.superview.bounds.size.width - containerView.frame.origin.x, 0);
-        
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            context.containerView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            completion();
-        }];
-    }
-    else {
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            containerView.transform = CGAffineTransformMakeTranslation(- 2 * (containerView.superview.bounds.size.width - containerView.frame.origin.x), 0);
-        } completion:^(BOOL finished) {
-            containerView.transform = CGAffineTransformIdentity;
-            completion();
-        }];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

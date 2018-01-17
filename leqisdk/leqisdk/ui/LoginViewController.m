@@ -11,6 +11,12 @@
 #import "ForgotPasswordViewController.h"
 #import "RegViewController.h"
 #import "Reg2LoginViewController.h"
+#import "UserTableViewCell.h"
+
+
+#define USER_CELL_HEIGHT 40
+@interface LoginViewController()<UITableViewDelegate, UITableViewDataSource>
+@end
 
 @implementation LoginViewController {
     UIImageView *ivNavTitle;
@@ -21,6 +27,9 @@
     UIView *lineAccountView;
     UITextField *tfAccount;
     
+    
+    UIView *btnAccountView;
+    
     UIView *lineBgView;
     
     UIImageView *ivPass;
@@ -30,6 +39,7 @@
     UIButton *btnMoreAccount;
     
     UIButton *btnForgot;
+    
     UITableView *tvMoreAccount;
     
     UIView *serviceView;
@@ -39,6 +49,8 @@
     UIButton *btnReg;
     
     UIButton *btnTryPlay;
+    
+    NSArray *datasource;
 }
 
 
@@ -72,6 +84,7 @@
     btnMoreAccount =  [UIButton new];
     [btnMoreAccount setImage:[UIImage imageNamed:@"more_account_normal_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [btnMoreAccount setImage:[UIImage imageNamed:@"more_account_select_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateHighlighted];
+    btnAccountView = [UIView new];
     
     lineBgView = [UIView new];
     lineBgView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
@@ -95,7 +108,8 @@
     [loginView addSubview:ivAccount];
     [loginView addSubview:lineAccountView];
     [loginView addSubview:tfAccount];
-    [loginView addSubview:btnMoreAccount];
+    [loginView addSubview:btnAccountView];
+    [btnAccountView addSubview:btnMoreAccount];
     [loginView addSubview:btnForgot];
     
     [loginView addSubview:lineBgView];
@@ -161,6 +175,8 @@
     tvMoreAccount.layer.borderWidth = 0.5;
     tvMoreAccount.hidden = YES;
     tvMoreAccount.alpha = 0.9;
+    tvMoreAccount.dataSource = self;
+    tvMoreAccount.delegate = self;
     btnLogin.layer.masksToBounds = YES;
     
     //已有帐号登录
@@ -178,6 +194,10 @@
     
     //事件
     [btnMoreAccount addTarget:self action:@selector(toogleAccout:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(toogleAccout:)];
+    [btnAccountView addGestureRecognizer:singleFingerTap];
     
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -212,6 +232,7 @@
 }
 
 - (void)toogleAccout:(id)sender {
+    
     tvMoreAccount.hidden = !tvMoreAccount.hidden;
     [tvMoreAccount setNeedsLayout];
 }
@@ -247,10 +268,10 @@
     ivAccount.frame = CGRectMake(16,  14 , 18, 18);
     lineAccountView.frame = CGRectMake(40,  12 , 0.5, 22);
     tfAccount.frame = CGRectMake(50,  12 , width - 100, 22);
-    btnMoreAccount.frame = CGRectMake(loginView.frame.size.width - 32,  12 , 20, 20);
-    
+    btnAccountView.frame = CGRectMake(loginView.frame.size.width - 52,  0 , 42, 42);
+    btnMoreAccount.frame = CGRectMake(20,  13 , 20, 20);
     lineBgView.frame = CGRectMake(10,  42 , (width - offset*2) - 20, 0.5);
-    tvMoreAccount.frame = CGRectMake(loginView.frame.origin.x +50, loginView.frame.origin.y + 42 , width - 100, 120);
+    
     ivPass.frame = CGRectMake(16,  14 + 42 , 18, 18);
     linePassView.frame = CGRectMake(40,  12 + 42, 0.5, 22);
     tfPass.frame = CGRectMake(50,  12 + 42, width - 140, 22);
@@ -262,13 +283,65 @@
     btnLogin.frame = CGRectMake(offset, 105, (width - offset*2), 40);
     btnReg.frame = CGRectMake(0, 155 , 100, 16); //186
     btnTryPlay.frame = CGRectMake(width - 90, 155 , 90, 16); // 185
+    
+    [self initUserTableView:loginView.frame.origin.x +50 y: loginView.frame.origin.y + 42 w:width - 100 ];
+    if(datasource && [datasource count] > 1){
+        ivAccount.hidden = NO;
+    } else {
+        ivAccount.hidden = YES;
+    }
 }
 
+- (void)initUserTableView:(int)x y:(int)y w:(int)w {
+    datasource = @[@{@"name":@"zhangkai"},@{@"name":@"dinghui"}];
+    long len = [datasource count];
+    if(len > 3){
+        len = 3;
+    }
+    tvMoreAccount.frame = CGRectMake(x, y , w, USER_CELL_HEIGHT*len);
+    [tvMoreAccount reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(!datasource) return 0;
+    return [datasource count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *ID = @"user_cell";
+    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        //单元格样式设置为UITableViewCellStyleDefault
+        cell = [[UserTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    NSDictionary *dict = datasource[indexPath.row];
+    cell.lbUsername.text = [dict objectForKey:@"name"];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return USER_CELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", indexPath);
+    NSDictionary *userDict = datasource[indexPath.row];
+    tfAccount.text = [userDict objectForKey:@"name"];
+    tfPass.text = [userDict objectForKey:@"name"];
+    tvMoreAccount.hidden = YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
