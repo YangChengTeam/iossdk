@@ -26,6 +26,10 @@
 
 - (int)payWithOrderInfo:(LeqiSDKOrderInfo *)orderInfo;
 
+- (void)showFloatView;
+
+- (void)hideFloatView;
+
 - (int)logout;
 
 - (NSString *)getVersion;

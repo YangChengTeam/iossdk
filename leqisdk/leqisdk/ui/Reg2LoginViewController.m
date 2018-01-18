@@ -25,15 +25,12 @@
     UIView *serviceView;
     UIButton *btnPhone;
     UIButton *btnQQ;
-    
-    UIButton *btnOtherLogin;
-    UIButton *btnReg;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setViewHieght:190];
+    [self setViewHieght:180];
 
     //导航
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,  0 , 90, 20)];
@@ -46,7 +43,7 @@
     lUserName = [UILabel new];
     lUserName.text = @"帐号: zhangkai";
     lUserName.font = [UIFont systemFontOfSize: 16];
-    lUserName.textColor = kColorWithHex(0x999999);
+    lUserName.textColor = kColorWithHex(0x333333);
     lUserName.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lUserName];
     
@@ -89,46 +86,9 @@
     [serviceView addSubview:btnQQ];
     [self.view addSubview:serviceView];
     
-    //已有帐号登录
-    btnOtherLogin = [UIButton new];
-    [btnOtherLogin setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnOtherLogin setTitle:@"其它登录方式" forState:UIControlStateNormal];
-    [btnOtherLogin setImage:[UIImage imageNamed:@"change_icon1" inBundle:leqiBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-    btnOtherLogin.imageView.contentMode =  UIViewContentModeScaleAspectFit;
-    [btnOtherLogin setTitleColor:kColorWithHex(0x666666) forState:UIControlStateNormal];
-    btnOtherLogin.titleEdgeInsets = UIEdgeInsetsMake(5, -30, 0, 0);
-    [btnOtherLogin setImageEdgeInsets:UIEdgeInsetsMake(5, 95, 0, 0)];
-    //[btnOtherLogin setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateHighlighted];
-    btnOtherLogin.titleLabel.font = [UIFont systemFontOfSize: 14];
-    [self.view addSubview:btnOtherLogin];
-    
-    //注册
-    btnReg = [UIButton new];
-    btnReg.hidden = YES;
-    [btnReg setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnReg setTitle:@"快速注册" forState:UIControlStateNormal];
-    [btnReg setImage:[UIImage imageNamed:@"quick_register_icon" inBundle:leqiBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-    [btnReg setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateNormal];
-    btnReg.titleLabel.font = [UIFont systemFontOfSize: 12];
-    btnReg.imageView.contentMode =  UIViewContentModeScaleAspectFit;
-    btnReg.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
-    [self.view addSubview:btnReg];
-    
     //事件
-    [btnOtherLogin addTarget:self action:@selector(openOtherLogin:) forControlEvents:UIControlEventTouchUpInside];
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
-    [btnReg addTarget:self action:@selector(openReg:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)openReg:(id)sender {
-    [self.popupController popViewControllerAnimated:NO];
-    [self.popupController dismiss];
-    
-    
-    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:[RegViewController new]];
-    popupController.containerView.layer.cornerRadius = 4;
-    [popupController presentInViewController:[BaseViewController getCurrentViewController]];
 }
 
 - (void)openQQ:(id)sender {
@@ -138,15 +98,6 @@
 - (void)openPhone:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://400-796-6071"]];
 }
-
-- (void)openOtherLogin:(id)sender {
-    [self.popupController popViewControllerAnimated:NO];
-    [self.popupController dismiss];
-    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:[LoginViewController new]];
-    popupController.containerView.layer.cornerRadius = 4;
-    [popupController presentInViewController:[BaseViewController getCurrentViewController]];
-}
-
 
 - (void)viewDidLayoutSubviews {
     ivNavTitle.frame = CGRectMake(0,  0 , 90, 20);
@@ -158,10 +109,6 @@
     serviceView.frame = CGRectMake(offset, 150 , (width - offset*2), 26);
     btnPhone.frame = CGRectMake((width - 285) / 2, 5 , 175, 16);
     btnQQ.frame = CGRectMake((width - 285) / 2 + 150, 5 , 94, 16);
-    
-    btnOtherLogin.frame = CGRectMake(width - 120, 155 , 120, 16);
-    btnReg.frame = CGRectMake(5, 156 , 100, 16);
-
 }
 
 - (void)didReceiveMemoryWarning {

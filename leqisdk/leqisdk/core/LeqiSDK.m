@@ -13,8 +13,9 @@
 #import "Reg2LoginViewController.h"
 #import "NetUtils.h"
 #import "YYCache.h"
-
+#import "XHFloatWindow.h"
 #define TAG @"leqisdk"
+#import "SettingViewController.h"
 
 #define FIRST_LOGIN @"first_login"
 
@@ -26,6 +27,7 @@
 @implementation LeqiSDK {
     BOOL isInitOk;
     BOOL isReInit;
+    BOOL isAdded;
 }
 
 static LeqiSDK* instance = nil;
@@ -102,7 +104,6 @@ static LeqiSDK* instance = nil;
                 return;
             }
             if([res[@"code"] integerValue] == 1 && res[@"data"]){
-               
                 Reg2LoginViewController *loginViewController = [Reg2LoginViewController new];
                 STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
                 popupController.containerView.layer.cornerRadius = 4;
@@ -127,6 +128,25 @@ static LeqiSDK* instance = nil;
     [self show:@"请稍后..."];
     [[IAPManager sharedManager] requestProductWithId: @"sdktest1"];
     return 0;
+}
+
+- (void)showFloatView {
+    if(!isAdded){
+       [XHFloatWindow xh_addWindowOnTarget:[BaseViewController getCurrentViewController] onClick:^{
+           // do something after floating button clicked...
+           SettingViewController *settingController = [SettingViewController new];
+           STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:settingController];
+           popupController.containerView.layer.cornerRadius = 4;
+           [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+       }];
+    } else {
+        [XHFloatWindow xh_setHideWindow:NO];
+    }
+    isAdded = true;
+}
+
+- (void)hideFloatView {
+    [XHFloatWindow xh_setHideWindow:YES];
 }
 
 #pragma mark -- SDK版本号

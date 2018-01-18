@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "QQViewController.h"
 #import "ForgotPasswordViewController.h"
 #import "RegViewController.h"
 #import "Reg2LoginViewController.h"
@@ -169,7 +168,7 @@
     [self.view addSubview:btnReg];
     
     tvMoreAccount = [UITableView new];
-    [self.view addSubview:tvMoreAccount];
+    
     tvMoreAccount.backgroundColor = kColorWithHex(0xf1f1f1);
     tvMoreAccount.layer.borderColor = [kColorWithHex(0xbfbfbf) CGColor];
     tvMoreAccount.layer.borderWidth = 0.5;
@@ -191,7 +190,7 @@
     //[btnTryPlay setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateHighlighted];
     btnTryPlay.titleLabel.font = [UIFont systemFontOfSize: 14];
     [self.view addSubview:btnTryPlay];
-    
+    [self.view addSubview:tvMoreAccount];
     //事件
     [btnMoreAccount addTarget:self action:@selector(toogleAccout:) forControlEvents:UIControlEventTouchUpInside];
     UITapGestureRecognizer *singleFingerTap =
@@ -218,11 +217,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [self dismiss:nil];
-            [self.popupController popViewControllerAnimated:NO];
-            [self.popupController dismiss];
-            STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:[Reg2LoginViewController new]];
-            popupController.containerView.layer.cornerRadius = 4;
-            [popupController presentInViewController:[BaseViewController getCurrentViewController]];
+            [self.popupController pushViewController:[Reg2LoginViewController new] animated:YES];
         });
     });
 }
@@ -232,7 +227,6 @@
 }
 
 - (void)toogleAccout:(id)sender {
-    
     tvMoreAccount.hidden = !tvMoreAccount.hidden;
     [tvMoreAccount setNeedsLayout];
 }
@@ -250,13 +244,7 @@
     [self.popupController pushViewController:[ForgotPasswordViewController new] animated:YES];
 }
 
-- (void)openQQ:(id)sender {
-    [self.popupController pushViewController:[QQViewController new] animated:YES];
-}
 
-- (void)openPhone:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://400-796-6071"]];
-}
 
 - (void)viewDidLayoutSubviews
 {
@@ -293,7 +281,7 @@
 }
 
 - (void)initUserTableView:(int)x y:(int)y w:(int)w {
-    datasource = @[@{@"name":@"zhangkai"},@{@"name":@"dinghui"}];
+    datasource = @[@{@"name":@"zhangkai"},@{@"name":@"dinghui"},@{@"name":@"dinghui"},@{@"name":@"dinghui"}];
     long len = [datasource count];
     if(len > 3){
         len = 3;
@@ -320,7 +308,7 @@
         cell = [[UserTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     NSDictionary *dict = datasource[indexPath.row];
-    cell.lbUsername.text = [dict objectForKey:@"name"];
+    cell.lbNickname.text = [dict objectForKey:@"name"];
     return cell;
 }
 

@@ -34,5 +34,8 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 + (UIViewController *)getCurrentViewController;
 - (void)show:(NSString *)message;
 - (void)dismiss:(void (^)(void))callback;
+- (void)initWithGCD:(int)timeValue beginState:(void (^)(int seconds))begin endState:(void (^)())end;
+- (void)openQQ:(id)sender;
+- (void)openPhone:(id)sender;
 
 @end

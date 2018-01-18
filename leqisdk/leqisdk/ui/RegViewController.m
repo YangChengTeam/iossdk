@@ -7,7 +7,6 @@
 //
 
 #import "RegViewController.h"
-#import "QQViewController.h"
 #import "LoginViewController.h"
 
 @interface RegViewController ()
@@ -159,14 +158,6 @@
     popupController.containerView.layer.cornerRadius = 4;
 
     [popupController presentInViewController:[BaseViewController getCurrentViewController]];
-}
-
-- (void)openQQ:(id)sender {
-    [self.popupController pushViewController:[QQViewController new] animated:YES];
-}
-
-- (void)openPhone:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://400-796-6071"]];
 }
 
 - (void)viewDidLayoutSubviews

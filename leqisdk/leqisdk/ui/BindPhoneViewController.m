@@ -1,18 +1,18 @@
 //
-//  ForgotPasswordViewController.m
+//  BindPhoneViewController.m
 //  leqisdk
 //
-//  Created by zhangkai on 2018/1/10.
+//  Created by zhangkai on 2018/1/18.
 //  Copyright © 2018年 zhangkai. All rights reserved.
 //
 
-#import "ForgotPasswordViewController.h"
+#import "BindPhoneViewController.h"
 
-@interface ForgotPasswordViewController ()
+@interface BindPhoneViewController ()
 
 @end
 
-@implementation ForgotPasswordViewController {
+@implementation BindPhoneViewController {
     UIView *loginView;
     
     UILabel *lbAccount;
@@ -29,13 +29,12 @@
     
     
     UIButton *btnSubmit;
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"验证手机-重置密码";
+    self.title = @"绑定手机号";
     [self setViewHieght:170];
     //登录框
     loginView = [UIView new];
@@ -49,7 +48,7 @@
     lbAccount.adjustsFontSizeToFitWidth = YES;
     lbAccount.textColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     lbAccount.font = [UIFont systemFontOfSize: 14];
-
+    
     lineAccountView = [UIView new];
     lineAccountView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     tfAccount = [UITextField new];

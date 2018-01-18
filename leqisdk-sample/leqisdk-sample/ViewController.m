@@ -27,6 +27,15 @@
     self.btnPay.layer.cornerRadius = 5;
     self.btnPay.layer.borderWidth = 1;
     [self.btnPay addTarget:self action:@selector(pay) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [[LeqiSDK shareInstance] showFloatView];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [[LeqiSDK shareInstance] hideFloatView];
 }
 
 - (void)login {
@@ -36,10 +45,6 @@
 - (void)pay {
     [[LeqiSDK shareInstance] payWithOrderInfo:NULL];
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

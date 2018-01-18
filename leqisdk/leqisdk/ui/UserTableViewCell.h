@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UserTableViewCell : UITableViewCell
-@property UILabel *lbUsername;
+@property UILabel *lbNickname;
 @end

@@ -62,6 +62,33 @@
 		4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */; };
 		4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */; };
+		4B5F4CD7200F4E5E00BEB12C /* UserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */; };
+		4B5F4CD8200F4E5E00BEB12C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */; };
+		4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */; };
+		4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */; };
+		4B5F4CE1200F4E9700BEB12C /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */; };
+		4B5F4CE2200F4E9700BEB12C /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */; };
+		4B5F4CE3200F4E9700BEB12C /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDE200F4E9700BEB12C /* YYModel.h */; };
+		4B5F4D1320107CC500BEB12C /* XHDraggableButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D0B20107CC500BEB12C /* XHDraggableButton.h */; };
+		4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D0C20107CC500BEB12C /* XHDraggableButton.m */; };
+		4B5F4D1520107CC500BEB12C /* XHFloatWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D0D20107CC500BEB12C /* XHFloatWindow.h */; };
+		4B5F4D1620107CC500BEB12C /* XHFloatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D0E20107CC500BEB12C /* XHFloatWindow.m */; };
+		4B5F4D1720107CC500BEB12C /* XHFloatWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D0F20107CC500BEB12C /* XHFloatWindowController.h */; };
+		4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1020107CC500BEB12C /* XHFloatWindowController.m */; };
+		4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D1120107CC500BEB12C /* XHFloatWindowSingleton.h */; };
+		4B5F4D1A20107CC500BEB12C /* XHFloatWindowSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */; };
+		4B5F4D1C20107D2C00BEB12C /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1B20107D2B00BEB12C /* float_drag.png */; };
+		4B5F4D1F201080D400BEB12C /* SettingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D1D201080D400BEB12C /* SettingViewController.h */; };
+		4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1E201080D400BEB12C /* SettingViewController.m */; };
+		4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2120108BED00BEB12C /* right_icon.png */; };
+		4B5F4D2520108E6300BEB12C /* MenuTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */; };
+		4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */; };
+		4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */; };
+		4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */; };
+		4B5F4D2D201096EF00BEB12C /* BindPhoneViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */; };
+		4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */; };
+		4B5F4D312010997100BEB12C /* AuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D2F2010997100BEB12C /* AuthViewController.h */; };
+		4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D302010997100BEB12C /* AuthViewController.m */; };
 		4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AED20045E24001847A8 /* LeqiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0AEE20045E24001847A8 /* LeqiSDK.m */; };
 		4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AF120045E24001847A8 /* BaseViewController.h */; };
@@ -149,6 +176,33 @@
 		4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDKOrderInfo.h; sourceTree = "<group>"; };
 		4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKInitConfigure.m; sourceTree = "<group>"; };
 		4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKOrderInfo.m; sourceTree = "<group>"; };
+		4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		4B5F4CDE200F4E9700BEB12C /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		4B5F4D0B20107CC500BEB12C /* XHDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDraggableButton.h; sourceTree = "<group>"; };
+		4B5F4D0C20107CC500BEB12C /* XHDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDraggableButton.m; sourceTree = "<group>"; };
+		4B5F4D0D20107CC500BEB12C /* XHFloatWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFloatWindow.h; sourceTree = "<group>"; };
+		4B5F4D0E20107CC500BEB12C /* XHFloatWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFloatWindow.m; sourceTree = "<group>"; };
+		4B5F4D0F20107CC500BEB12C /* XHFloatWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFloatWindowController.h; sourceTree = "<group>"; };
+		4B5F4D1020107CC500BEB12C /* XHFloatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFloatWindowController.m; sourceTree = "<group>"; };
+		4B5F4D1120107CC500BEB12C /* XHFloatWindowSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFloatWindowSingleton.h; sourceTree = "<group>"; };
+		4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFloatWindowSingleton.m; sourceTree = "<group>"; };
+		4B5F4D1B20107D2B00BEB12C /* float_drag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_drag.png; sourceTree = "<group>"; };
+		4B5F4D1D201080D400BEB12C /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		4B5F4D1E201080D400BEB12C /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		4B5F4D2120108BED00BEB12C /* right_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_icon.png; sourceTree = "<group>"; };
+		4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPasswordViewController.h; sourceTree = "<group>"; };
+		4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPasswordViewController.m; sourceTree = "<group>"; };
+		4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindPhoneViewController.h; sourceTree = "<group>"; };
+		4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindPhoneViewController.m; sourceTree = "<group>"; };
+		4B5F4D2F2010997100BEB12C /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		4B5F4D302010997100BEB12C /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0AE020045D38001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0AED20045E24001847A8 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDK.h; sourceTree = "<group>"; };
@@ -253,6 +307,7 @@
 		4B5F4CB1200F290E00BEB12C /* service */ = {
 			isa = PBXGroup;
 			children = (
+				4B5F4CD9200F4E9700BEB12C /* YYModel */,
 				4B5F4CB2200F290E00BEB12C /* YYCache */,
 			);
 			path = service;
@@ -273,9 +328,38 @@
 			path = YYCache;
 			sourceTree = "<group>";
 		};
+		4B5F4CD9200F4E9700BEB12C /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */,
+				4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */,
+				4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */,
+				4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */,
+				4B5F4CDE200F4E9700BEB12C /* YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F4D0B20107CC500BEB12C /* XHDraggableButton.h */,
+				4B5F4D0C20107CC500BEB12C /* XHDraggableButton.m */,
+				4B5F4D0D20107CC500BEB12C /* XHFloatWindow.h */,
+				4B5F4D0E20107CC500BEB12C /* XHFloatWindow.m */,
+				4B5F4D0F20107CC500BEB12C /* XHFloatWindowController.h */,
+				4B5F4D1020107CC500BEB12C /* XHFloatWindowController.m */,
+				4B5F4D1120107CC500BEB12C /* XHFloatWindowSingleton.h */,
+				4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */,
+			);
+			path = FloatingWindowPlugin;
+			sourceTree = "<group>";
+		};
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
+				4B5F4D2120108BED00BEB12C /* right_icon.png */,
+				4B5F4D1B20107D2B00BEB12C /* float_drag.png */,
 				4B33968020074CD800801E74 /* contact_qq.png */,
 				4B33968120074CD800801E74 /* contact_qq1.png */,
 				4B33966A2006004D00801E74 /* change_icon1.png */,
@@ -326,6 +410,8 @@
 				4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */,
 				4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */,
 				4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */,
+				4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */,
+				4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */,
 			);
 			path = domin;
 			sourceTree = "<group>";
@@ -356,6 +442,7 @@
 		4B9D0AF020045E24001847A8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */,
 				4B33967920073A9A00801E74 /* IAP */,
 				4B33966E200612A700801E74 /* Hub */,
 				4B33962F20059C1700801E74 /* STPopup */,
@@ -373,8 +460,18 @@
 				4B3396632005CFD900801E74 /* Reg2LoginViewController.m */,
 				4BAE8C4220089B080022248C /* UIAlertView+Block.h */,
 				4BAE8C4320089B080022248C /* UIAlertView+Block.m */,
+				4B5F4D1D201080D400BEB12C /* SettingViewController.h */,
+				4B5F4D1E201080D400BEB12C /* SettingViewController.m */,
+				4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */,
+				4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */,
+				4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */,
+				4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */,
+				4B5F4D2F2010997100BEB12C /* AuthViewController.h */,
+				4B5F4D302010997100BEB12C /* AuthViewController.m */,
 				4B5F4CC7200F2FE200BEB12C /* UserTableViewCell.h */,
 				4B5F4CC8200F2FE200BEB12C /* UserTableViewCell.m */,
+				4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */,
+				4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -437,9 +534,13 @@
 				4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */,
 				4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */,
 				4BAE8C2420083C5E0022248C /* AFSecurityPolicy.h in Headers */,
+				4B5F4D1520107CC500BEB12C /* XHFloatWindow.h in Headers */,
+				4B5F4D1720107CC500BEB12C /* XHFloatWindowController.h in Headers */,
 				4BAE8C1F20083C5E0022248C /* AFHTTPSessionManager.h in Headers */,
 				4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */,
+				4B5F4CE1200F4E9700BEB12C /* YYClassInfo.h in Headers */,
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
+				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
 				4B33964620059C1800801E74 /* STPopupLeftBarItem.h in Headers */,
 				4B3396582005C5EC00801E74 /* QQViewController.h in Headers */,
 				4B33963F20059C1800801E74 /* STPopup.h in Headers */,
@@ -447,7 +548,9 @@
 				4B339671200612A800801E74 /* MBProgressHUD.h in Headers */,
 				4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */,
 				4B33964220059C1800801E74 /* STPopupControllerTransitioningFade.h in Headers */,
+				4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */,
 				4B33964420059C1800801E74 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
+				4B5F4D2D201096EF00BEB12C /* BindPhoneViewController.h in Headers */,
 				4B33964A20059C1800801E74 /* UIResponder+STPopup.h in Headers */,
 				4BAE8C372008456C0022248C /* NSData+GZIP.h in Headers */,
 				4B3396602005C8B400801E74 /* ForgotPasswordViewController.h in Headers */,
@@ -457,17 +560,24 @@
 				4B33964C20059C1800801E74 /* UIViewController+STPopup.h in Headers */,
 				4B5F4CC9200F2FE200BEB12C /* UserTableViewCell.h in Headers */,
 				4B5F4CC1200F290E00BEB12C /* YYMemoryCache.h in Headers */,
+				4B5F4D2520108E6300BEB12C /* MenuTableViewCell.h in Headers */,
+				4B5F4D1F201080D400BEB12C /* SettingViewController.h in Headers */,
 				4B5F4CBF200F290E00BEB12C /* YYKVStorage.h in Headers */,
+				4B5F4D1320107CC500BEB12C /* XHDraggableButton.h in Headers */,
 				4B33965C2005C87A00801E74 /* RegViewController.h in Headers */,
 				4BAE8C3C200845AB0022248C /* RSA.h in Headers */,
+				4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */,
 				4BAE8C2E200844800022248C /* EncrytUtils.h in Headers */,
+				4B5F4D312010997100BEB12C /* AuthViewController.h in Headers */,
 				4BAE8C2620083C5E0022248C /* AFURLRequestSerialization.h in Headers */,
 				4BAE8C2A20083C5E0022248C /* AFURLSessionManager.h in Headers */,
 				4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */,
+				4B5F4CE3200F4E9700BEB12C /* YYModel.h in Headers */,
 				4B33964020059C1800801E74 /* STPopupController.h in Headers */,
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
 				4B33964820059C1800801E74 /* STPopupNavigationBar.h in Headers */,
 				4BAE8C2220083C5E0022248C /* AFNetworkReachabilityManager.h in Headers */,
+				4B5F4CD7200F4E5E00BEB12C /* UserInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +644,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4B9D0AD220045D38001847A8;
 			productRefGroup = 4B9D0ADD20045D38001847A8 /* Products */;
@@ -558,6 +669,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */,
+				4B5F4D1C20107D2C00BEB12C /* float_drag.png in Resources */,
 				4B33968220074CD800801E74 /* contact_qq.png in Resources */,
 				4B33968320074CD800801E74 /* contact_qq1.png in Resources */,
 				4B33966B2006004D00801E74 /* change_icon1.png in Resources */,
@@ -586,20 +699,28 @@
 				4BAE8C41200868630022248C /* NetUtils.m in Sources */,
 				4B33967D20073A9A00801E74 /* IAPManager.m in Sources */,
 				4BAE8C2F200844800022248C /* EncrytUtils.m in Sources */,
+				4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */,
 				4BAE8C2020083C5E0022248C /* AFHTTPSessionManager.m in Sources */,
 				4BAE8C2320083C5E0022248C /* AFNetworkReachabilityManager.m in Sources */,
+				4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */,
 				4B33964320059C1800801E74 /* STPopupControllerTransitioningFade.m in Sources */,
 				4B5F4CC2200F290E00BEB12C /* YYMemoryCache.m in Sources */,
 				4B33965D2005C87A00801E74 /* RegViewController.m in Sources */,
 				4B3396612005C8B400801E74 /* ForgotPasswordViewController.m in Sources */,
 				4BAE8C2720083C5E0022248C /* AFURLRequestSerialization.m in Sources */,
 				4BAE8C2520083C5E0022248C /* AFSecurityPolicy.m in Sources */,
+				4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */,
 				4BAE8C2B20083C5E0022248C /* AFURLSessionManager.m in Sources */,
+				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
+				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
+				4B5F4CD8200F4E5E00BEB12C /* UserInfo.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
 				4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */,
+				4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */,
 				4B5F4CCA200F2FE200BEB12C /* UserTableViewCell.m in Sources */,
 				4B33964520059C1800801E74 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				4B5F4CC0200F290E00BEB12C /* YYKVStorage.m in Sources */,
+				4B5F4D1A20107CC500BEB12C /* XHFloatWindowSingleton.m in Sources */,
 				4B339672200612A800801E74 /* MBProgressHUD.m in Sources */,
 				4B5F4CBE200F290E00BEB12C /* YYDiskCache.m in Sources */,
 				4B33964920059C1800801E74 /* STPopupNavigationBar.m in Sources */,
@@ -607,12 +728,16 @@
 				4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */,
 				4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */,
 				4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */,
+				4B5F4CE2200F4E9700BEB12C /* YYClassInfo.m in Sources */,
 				4B33964D20059C1800801E74 /* UIViewController+STPopup.m in Sources */,
+				4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */,
+				4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */,
 				4B3396592005C5EC00801E74 /* QQViewController.m in Sources */,
 				4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */,
 				4B9D0AFF20045E24001847A8 /* LoginViewController.m in Sources */,
 				4B33964120059C1800801E74 /* STPopupController.m in Sources */,
 				4BAE8C3D200845AB0022248C /* RSA.m in Sources */,
+				4B5F4D1620107CC500BEB12C /* XHFloatWindow.m in Sources */,
 				4B33964720059C1800801E74 /* STPopupLeftBarItem.m in Sources */,
 				4BAE8C2920083C5E0022248C /* AFURLResponseSerialization.m in Sources */,
 				4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */,

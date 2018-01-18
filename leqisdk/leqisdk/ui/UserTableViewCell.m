@@ -19,11 +19,11 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        self.lbUsername  = [UILabel new];
-        self.lbUsername.textColor = kColorWithHex(0x333333);
-        self.lbUsername.font = [UIFont systemFontOfSize: 14];
-        self.lbUsername.frame = CGRectMake(5, 2, self.frame.size.width - 10, self.frame.size.height - 4);
-        [self addSubview:self.lbUsername];
+        self.lbNickname  = [UILabel new];
+        self.lbNickname.textColor = kColorWithHex(0x333333);
+        self.lbNickname.font = [UIFont systemFontOfSize: 16];
+        self.lbNickname.frame = CGRectMake(14, 0, self.frame.size.width - 10, self.frame.size.height-4);
+        [self addSubview:self.lbNickname];
     }
     return self;
 }
