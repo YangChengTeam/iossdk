@@ -77,7 +77,6 @@
 		4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1020107CC500BEB12C /* XHFloatWindowController.m */; };
 		4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D1120107CC500BEB12C /* XHFloatWindowSingleton.h */; };
 		4B5F4D1A20107CC500BEB12C /* XHFloatWindowSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */; };
-		4B5F4D1C20107D2C00BEB12C /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1B20107D2B00BEB12C /* float_drag.png */; };
 		4B5F4D1F201080D400BEB12C /* SettingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D1D201080D400BEB12C /* SettingViewController.h */; };
 		4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1E201080D400BEB12C /* SettingViewController.m */; };
 		4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2120108BED00BEB12C /* right_icon.png */; };
@@ -89,6 +88,9 @@
 		4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */; };
 		4B5F4D312010997100BEB12C /* AuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D2F2010997100BEB12C /* AuthViewController.h */; };
 		4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D302010997100BEB12C /* AuthViewController.m */; };
+		4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D332011795900BEB12C /* AutoLoginViewController.h */; };
+		4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D342011795900BEB12C /* AutoLoginViewController.m */; };
+		4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D37201193EE00BEB12C /* float_drag.png */; };
 		4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AED20045E24001847A8 /* LeqiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0AEE20045E24001847A8 /* LeqiSDK.m */; };
 		4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AF120045E24001847A8 /* BaseViewController.h */; };
@@ -191,7 +193,6 @@
 		4B5F4D1020107CC500BEB12C /* XHFloatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFloatWindowController.m; sourceTree = "<group>"; };
 		4B5F4D1120107CC500BEB12C /* XHFloatWindowSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFloatWindowSingleton.h; sourceTree = "<group>"; };
 		4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFloatWindowSingleton.m; sourceTree = "<group>"; };
-		4B5F4D1B20107D2B00BEB12C /* float_drag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_drag.png; sourceTree = "<group>"; };
 		4B5F4D1D201080D400BEB12C /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		4B5F4D1E201080D400BEB12C /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		4B5F4D2120108BED00BEB12C /* right_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_icon.png; sourceTree = "<group>"; };
@@ -203,6 +204,9 @@
 		4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindPhoneViewController.m; sourceTree = "<group>"; };
 		4B5F4D2F2010997100BEB12C /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		4B5F4D302010997100BEB12C /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		4B5F4D332011795900BEB12C /* AutoLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoLoginViewController.h; sourceTree = "<group>"; };
+		4B5F4D342011795900BEB12C /* AutoLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoLoginViewController.m; sourceTree = "<group>"; };
+		4B5F4D37201193EE00BEB12C /* float_drag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_drag.png; sourceTree = "<group>"; };
 		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0AE020045D38001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0AED20045E24001847A8 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDK.h; sourceTree = "<group>"; };
@@ -358,8 +362,8 @@
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
+				4B5F4D37201193EE00BEB12C /* float_drag.png */,
 				4B5F4D2120108BED00BEB12C /* right_icon.png */,
-				4B5F4D1B20107D2B00BEB12C /* float_drag.png */,
 				4B33968020074CD800801E74 /* contact_qq.png */,
 				4B33968120074CD800801E74 /* contact_qq1.png */,
 				4B33966A2006004D00801E74 /* change_icon1.png */,
@@ -468,6 +472,8 @@
 				4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */,
 				4B5F4D2F2010997100BEB12C /* AuthViewController.h */,
 				4B5F4D302010997100BEB12C /* AuthViewController.m */,
+				4B5F4D332011795900BEB12C /* AutoLoginViewController.h */,
+				4B5F4D342011795900BEB12C /* AutoLoginViewController.m */,
 				4B5F4CC7200F2FE200BEB12C /* UserTableViewCell.h */,
 				4B5F4CC8200F2FE200BEB12C /* UserTableViewCell.m */,
 				4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */,
@@ -547,6 +553,7 @@
 				4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */,
 				4B339671200612A800801E74 /* MBProgressHUD.h in Headers */,
 				4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */,
+				4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */,
 				4B33964220059C1800801E74 /* STPopupControllerTransitioningFade.h in Headers */,
 				4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */,
 				4B33964420059C1800801E74 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
@@ -669,8 +676,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */,
 				4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */,
-				4B5F4D1C20107D2C00BEB12C /* float_drag.png in Resources */,
 				4B33968220074CD800801E74 /* contact_qq.png in Resources */,
 				4B33968320074CD800801E74 /* contact_qq1.png in Resources */,
 				4B33966B2006004D00801E74 /* change_icon1.png in Resources */,
@@ -728,6 +735,7 @@
 				4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */,
 				4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */,
 				4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */,
+				4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */,
 				4B5F4CE2200F4E9700BEB12C /* YYClassInfo.m in Sources */,
 				4B33964D20059C1800801E74 /* UIViewController+STPopup.m in Sources */,
 				4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */,

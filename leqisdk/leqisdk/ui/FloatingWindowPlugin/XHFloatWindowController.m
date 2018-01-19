@@ -68,6 +68,7 @@
     _button.rootView = self.view.superview;
 }
 
+
 /**
  *  floating button clicked
  */

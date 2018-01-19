@@ -16,7 +16,7 @@
 #import "XHFloatWindow.h"
 #define TAG @"leqisdk"
 #import "SettingViewController.h"
-
+#import "AutoLoginViewController.h"
 #define FIRST_LOGIN @"first_login"
 
 @interface LeqiSDK()<IAPManagerDelegate>
@@ -27,7 +27,8 @@
 @implementation LeqiSDK {
     BOOL isInitOk;
     BOOL isReInit;
-    BOOL isAdded;
+    BOOL isFloatViewAdded;
+    BOOL isAutoLogin;
 }
 
 static LeqiSDK* instance = nil;
@@ -78,6 +79,57 @@ static LeqiSDK* instance = nil;
     }
 }
 
+#pragma mark -- 自动登录
+- (void)openAutoLogin {
+    AutoLoginViewController *loginViewController = [AutoLoginViewController new];
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+    popupController.containerView.layer.cornerRadius = 4;
+    [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+}
+
+#pragma mark -- 快速登录
+- (void)openQuickLogin {
+    [self show:@"请稍后..."];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@", @"http://api.6071.com/index3/reg/", self.configInfo.appid];
+    NSMutableDictionary *params = [self setParams];
+    [params setValue:[NSNumber numberWithBool:YES] forKey:@"is_quick"];
+    [params setValue:@"" forKey:@"n"];
+    [params setValue:@"" forKey:@"p"];
+    
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            Reg2LoginViewController *loginViewController = [Reg2LoginViewController new];
+            STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+            popupController.containerView.layer.cornerRadius = 4;
+            [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+            
+            NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+            [defaults setBool:YES forKey:FIRST_LOGIN];
+            [defaults synchronize];
+        } else {
+            [self alertByfail:res[@"msg"]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error message:@"重新登录"];
+    }];
+}
+
+
+
+#pragma mark -- 正常登录
+- (void)openNormalLogin {
+    isAutoLogin = YES;
+    LoginViewController *loginViewController = [LoginViewController new];
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+    popupController.containerView.layer.cornerRadius = 4;
+    [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+}
+
 #pragma mark -- 登录
 - (int)login {
     NSLog(@"%@:%@", TAG, @"login");
@@ -86,39 +138,18 @@ static LeqiSDK* instance = nil;
         [self initWithConfig: self.configInfo];
         return -1;
     }
+    
+    if(isAutoLogin){
+        [self openAutoLogin];
+        return 0;
+    }
+    
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
     if(!isNotFirstLogin){
-        [self show:@"请稍后..."];
-        [defaults setBool:YES forKey:FIRST_LOGIN];
-        [defaults synchronize];
-        NSString *url = [NSString stringWithFormat:@"%@%@", @"http://api.6071.com/index3/reg/", self.configInfo.appid];
-        NSMutableDictionary *params = [self setParams];
-        [params setValue:[NSNumber numberWithBool:YES] forKey:@"is_quick"];
-        [params setValue:@"" forKey:@"n"];
-        [params setValue:@"" forKey:@"p"];
-        
-        [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-            [self dismiss:nil];
-            if(!res){
-                return;
-            }
-            if([res[@"code"] integerValue] == 1 && res[@"data"]){
-                Reg2LoginViewController *loginViewController = [Reg2LoginViewController new];
-                STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
-                popupController.containerView.layer.cornerRadius = 4;
-                [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
-            } else {
-                [self alertByfail:res[@"msg"]];
-            }
-        } error:^(NSError * error) {
-            [self showByError:error message:@"重新登录"];
-        }];
+        [self openQuickLogin];
     } else {
-        LoginViewController *loginViewController = [LoginViewController new];
-        STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
-        popupController.containerView.layer.cornerRadius = 4;
-        [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+        [self openNormalLogin];
     }
     return 0;
 }
@@ -131,7 +162,7 @@ static LeqiSDK* instance = nil;
 }
 
 - (void)showFloatView {
-    if(!isAdded){
+    if(!isFloatViewAdded){
        [XHFloatWindow xh_addWindowOnTarget:[BaseViewController getCurrentViewController] onClick:^{
            // do something after floating button clicked...
            SettingViewController *settingController = [SettingViewController new];
@@ -142,7 +173,7 @@ static LeqiSDK* instance = nil;
     } else {
         [XHFloatWindow xh_setHideWindow:NO];
     }
-    isAdded = true;
+    isFloatViewAdded = true;
 }
 
 - (void)hideFloatView {

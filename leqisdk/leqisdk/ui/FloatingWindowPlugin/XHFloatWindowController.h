@@ -13,7 +13,7 @@
 
 - (void)setRootView;
 - (void)setHideWindow:(BOOL)hide;
-- (void)setWindowSize:(float)size; // 50 by default
+- (void)setWindowSize:(float)size; // 40 by default
 - (void)resetBackgroundImage: (NSString *)imageName forState:(UIControlState)UIControlState;
 
 @end
