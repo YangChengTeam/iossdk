@@ -29,12 +29,18 @@
         
         self.ivArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"right_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil]];
         self.ivArrow.frame = CGRectMake(self.frame.size.width - 28, 12, 18, 18);
+        [self addSubview:self.ivArrow];
         
         self.sAutoLogin = [UISwitch new];
         [self addSubview:self.sAutoLogin];
         
-        [self addSubview:self.ivArrow];
+        self.lbSel  = [UILabel new];
+        self.lbSel.textColor = kColorWithHex(0xEA351F);
+        self.lbSel.font = [UIFont systemFontOfSize: 12];
+        [self addSubview:self.lbSel];
     }
+       
+       
     return self;
 }
 

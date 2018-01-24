@@ -44,7 +44,7 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 初始化
 - (int)initWithConfig:(LeqiSDKInitConfigure *)configure {
     if(isReInit){
-        [self show:@"重新初始化"];
+        [self show:@"重试中..."];
     }
     
     self.configInfo = configure;
@@ -68,7 +68,7 @@ static LeqiSDK* instance = nil;
                 }
             }
         } error:^(NSError *error) {
-            [self showByError:error message:@"重新初始化"];
+            [self showByError:error];
         }];
         return 0;
     } else {
@@ -123,7 +123,7 @@ static LeqiSDK* instance = nil;
             [self alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error message:@"重新登录"];
+        [self showByError:error];
     }];
 }
 
@@ -275,16 +275,16 @@ static LeqiSDK* instance = nil;
     });
 }
 
-- (void)showByError:(NSError *)error message:(NSString *)message{
-    if(error){
-        [self show:message];
-    }
+- (void)showByError:(NSError *)error {
     [self dismiss:nil];
+    if(error){
+        [self show:@"重试中..."];
+    }
 }
 
 #pragma mark -- alert
 - (void)alert:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:message message:@"" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
     [alert show];
 }
 

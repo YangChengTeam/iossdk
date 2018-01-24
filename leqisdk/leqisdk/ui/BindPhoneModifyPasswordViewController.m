@@ -1,29 +1,31 @@
 //
-//  AuthViewController.m
+//  BindPhoneModifyPasswordViewController.m
 //  leqisdk
 //
-//  Created by zhangkai on 2018/1/18.
+//  Created by zhangkai on 2018/1/24.
 //  Copyright © 2018年 zhangkai. All rights reserved.
 //
 
-#import "AuthViewController.h"
+#import "BindPhoneModifyPasswordViewController.h"
 
-@interface AuthViewController ()
+@interface BindPhoneModifyPasswordViewController ()
 
 @end
 
-@implementation AuthViewController {
+@implementation BindPhoneModifyPasswordViewController {
+    UILabel *lbPhone;
+    
     UIView *loginView;
     
     UILabel *lbAccount;
     UIView *lineAccountView;
-    UITextField *tfRealName;
+    UITextField *tfNewPass;
     
     UIView *lineBgView;
     
     UILabel *lbPass;
     UIView *linePassView;
-    UITextField *tfCardNum;
+    UITextField *tfAgainPass;
     
     UIButton *btnSubmit;
 }
@@ -31,8 +33,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"身份认证";
-    [self setViewHieght:170];
+    // Do any additional setup after loading the view.
+    self.title = @"修改密码";
+    [self setViewHieght:190];
+    
+    lbPhone = [UILabel new];
+    lbPhone.textColor = kColorWithHex(0x333333);
+    lbPhone.font = [UIFont systemFontOfSize: 14];
+    lbPhone.text = [NSString stringWithFormat:@"手机号:%@", self.phone];
+    [self.view addSubview:lbPhone];
     
     //登录框
     loginView = [UIView new];
@@ -42,42 +51,45 @@
     [self.view addSubview:loginView];
     
     lbAccount = [UILabel new];
-    lbAccount.text = @"    姓名";
+    lbAccount.text = @"    新密码";
     lbAccount.adjustsFontSizeToFitWidth = YES;
     lbAccount.textColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     lbAccount.font = [UIFont systemFontOfSize: 14];
     
     lineAccountView = [UIView new];
     lineAccountView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfRealName = [UITextField new];
-    tfRealName.placeholder = @"请输入您的姓名";
-    tfRealName.font = [UIFont systemFontOfSize: 14];
-    tfRealName.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfNewPass = [UITextField new];
+    tfNewPass.placeholder = @"请输入新密码";
+    tfNewPass.font = [UIFont systemFontOfSize: 14];
+    tfNewPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfNewPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfNewPass.secureTextEntry = true;
     
     lineBgView = [UIView new];
     lineBgView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     
     lbPass = [UILabel new];
-    lbPass.text = @"身份证";
+    lbPass.text = @"确认密码";
     lbPass.adjustsFontSizeToFitWidth = YES;
     lbPass.textColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     lbPass.font = [UIFont systemFontOfSize: 14];
     
     linePassView = [UIView new];
     linePassView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfCardNum = [UITextField new];
-    tfCardNum.placeholder = @"请输入您的身份证号";
-    tfCardNum.font = [UIFont systemFontOfSize: 14];
-    tfCardNum.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfCardNum.keyboardType = UIKeyboardTypeNamePhonePad;
+    tfAgainPass = [UITextField new];
+    tfAgainPass.placeholder = @"请输入再次新密码";
+    tfAgainPass.font = [UIFont systemFontOfSize: 14];
+    tfAgainPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfAgainPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfAgainPass.secureTextEntry = true;
     
     [loginView addSubview:lbAccount];
     [loginView addSubview:lineAccountView];
-    [loginView addSubview:tfRealName];
+    [loginView addSubview:tfNewPass];
     [loginView addSubview:lineBgView];
     [loginView addSubview:lbPass];
     [loginView addSubview:linePassView];
-    [loginView addSubview:tfCardNum];
+    [loginView addSubview:tfAgainPass];
     
     //登录按钮
     btnSubmit = [[UIButton alloc] init];
@@ -90,39 +102,46 @@
     [self.view addSubview:btnSubmit];
     
     [btnSubmit addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
 }
 
 - (void)submit:(id)sender {
-    NSString *realName = tfRealName.text;
-    NSString *cardNum = tfCardNum.text;
+    NSString *newPass = tfNewPass.text;
+    NSString *againPass = tfAgainPass.text;
     
-    if([realName length] < 2){
-        [self alert:@"请输入真实姓名"];
+    if([newPass length] == 0){
+        [self alert:@"请输入新密码"];
         return;
     }
-   
-    if([cardNum length] < 10){
-        [self alert:@"身份证输入不正确"];
+    NSString *pattern = @"(^[A-Za-z0-9]{6,16}$)";;
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if(![regex evaluateWithObject:newPass]){
+        [self alert:@"新密码只能由6至16位英文或数字组成"];
+        return;
+    }
+    
+    if(![newPass isEqualToString:againPass]){
+        [self alert:@"两次密码输入不一致"];
         return;
     }
     [self show:@"请稍后..."];
-    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/real_auth/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/upd_pwd/p", [LeqiSDK shareInstance].configInfo.appid];
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
-    [params setObject:[[self getUser] objectForKey:@"user_id"] forKey:@"user_id"];
-    [params setObject:realName  forKey:@"real_name"];
-    [params setObject:cardNum  forKey:@"card_num"];
-    
+    [params setObject:newPass forKey:@"new_pwd"];
+    [params setObject:self.phone forKey:@"n"];
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
         [self dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
-            [self alert:@"身份认证成功"];
-            [[CacheHelper shareInstance] setRealAuth];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshMenu object:nil];
+            NSMutableDictionary *user = [NSMutableDictionary new];
+            [user setObject:self.phone forKey:@"mobile"];
+            [user setObject:newPass forKey:@"pwd"];
+            [user setObject:@"0" forKey:@"user_id"];
+            
+            int mainkey = 2;
+            [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshUser object:nil];
             [self.popupController popToRootViewControllerAnimated:YES];
         } else {
             [self alertByfail:res[@"msg"]];
@@ -134,20 +153,25 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
     int offset = 10;
     int width = self.view.frame.size.width;
-    loginView.frame = CGRectMake(offset,  offset , (width - offset*2), 84);
-    lbAccount.frame = CGRectMake(16,  14 , 60, 18);
-    lineAccountView.frame = CGRectMake(62,  12 , 0.5, 22);
-    tfRealName.frame = CGRectMake(72,  12 , width - 140, 22);
+    
+    lbPhone.frame = CGRectMake(offset,  offset , (width - offset*2), 14);
+    
+    loginView.frame = CGRectMake(offset,  offset + 20, (width - offset*2), 84);
+    lbAccount.frame = CGRectMake(16,  14, 80, 18);
+    lineAccountView.frame = CGRectMake(82,  12 , 0.5, 22);
+    tfNewPass.frame = CGRectMake(92,  12 , width - 140, 22);
     lineBgView.frame = CGRectMake(10,  42 , (width - offset*2) - 20, 0.5);
     
-    lbPass.frame = CGRectMake(16,  14 + 42 , 60, 18);
-    linePassView.frame = CGRectMake(62,  12 + 42, 0.5, 22);
-    tfCardNum.frame = CGRectMake(72,  12 + 42, width - 140, 22);
+    lbPass.frame = CGRectMake(16,  14 + 42 , 80, 18);
+    linePassView.frame = CGRectMake(82,  12 + 42, 0.5, 22);
+    tfAgainPass.frame = CGRectMake(92,  12 + 42, width - 140, 22);
     
-    btnSubmit.frame = CGRectMake(offset, 105 , (width - offset*2), 40);
+    btnSubmit.frame = CGRectMake(offset, 105 + 20 , (width - offset*2), 40);
 }
+
 
 
 - (void)didReceiveMemoryWarning {

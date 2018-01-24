@@ -195,7 +195,7 @@
         if(self.isCancel){
             return;
         }
-        self.isCancel = true; //AutoLogin Controller
+        self.noCancel = true;
         if(!res){
             return;
         }
@@ -220,7 +220,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
         }
     } error:^(NSError * error) {
-        [self showByError:error message:@"重新登录"];
+        [self showByError:error];
         [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
     }];
 }
@@ -248,20 +248,21 @@
             [self alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error message:@"注册失败"];
+        [self showByError:error];
     }];
 }
 
-- (void)showByError:(NSError *)error message:(NSString *)message{
-    if(error){
-        [self show:message];
-    }
+
+- (void)showByError:(NSError *)error {
     [self dismiss:nil];
+    if(error){
+        [self show:@"重试中..."];
+    }
 }
 
 #pragma mark -- alert
 - (void)alert:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:message message:@"" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
     [alert show];
 }
 

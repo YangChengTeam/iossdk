@@ -17,13 +17,13 @@
     
     UILabel *lbAccount;
     UIView *lineAccountView;
-    UITextField *tfAccount;
+    UITextField *tfNewPass;
     
     UIView *lineBgView;
     
     UILabel *lbPass;
     UIView *linePassView;
-    UITextField *tfPass;
+    UITextField *tfAgainPass;
 
     UIButton *btnSubmit;
 }
@@ -49,11 +49,11 @@
     
     lineAccountView = [UIView new];
     lineAccountView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfAccount = [UITextField new];
-    tfAccount.placeholder = @"请输入新密码";
-    tfAccount.font = [UIFont systemFontOfSize: 14];
-    tfAccount.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfAccount.keyboardType = UIKeyboardTypeNumberPad;
+    tfNewPass = [UITextField new];
+    tfNewPass.placeholder = @"请输入新密码";
+    tfNewPass.font = [UIFont systemFontOfSize: 14];
+    tfNewPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfNewPass.keyboardType = UIKeyboardTypeNumberPad;
     
     lineBgView = [UIView new];
     lineBgView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
@@ -66,19 +66,19 @@
     
     linePassView = [UIView new];
     linePassView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfPass = [UITextField new];
-    tfPass.placeholder = @"请输入再次新密码";
-    tfPass.font = [UIFont systemFontOfSize: 14];
-    tfPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfAgainPass = [UITextField new];
+    tfAgainPass.placeholder = @"请输入再次新密码";
+    tfAgainPass.font = [UIFont systemFontOfSize: 14];
+    tfAgainPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfAgainPass.keyboardType = UIKeyboardTypeNumberPad;
     
     [loginView addSubview:lbAccount];
     [loginView addSubview:lineAccountView];
-    [loginView addSubview:tfAccount];
+    [loginView addSubview:tfNewPass];
     [loginView addSubview:lineBgView];
     [loginView addSubview:lbPass];
     [loginView addSubview:linePassView];
-    [loginView addSubview:tfPass];
+    [loginView addSubview:tfAgainPass];
     
     //登录按钮
     btnSubmit = [[UIButton alloc] init];
@@ -89,6 +89,53 @@
     btnSubmit.layer.cornerRadius = 3;
     btnSubmit.layer.masksToBounds = YES;
     [self.view addSubview:btnSubmit];
+    
+    [btnSubmit addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)submit:(id)sender {
+    NSString *newPass = tfNewPass.text;
+    NSString *againPass = tfAgainPass.text;
+    
+    if([newPass length] == 0){
+        [self alert:@"请输入新密码"];
+        return;
+    }
+    NSString *pattern = @"(^[A-Za-z0-9]{6,16}$)";;
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if(![regex evaluateWithObject:newPass]){
+        [self alert:@"新密码只能由6至16位英文或数字组成"];
+        return;
+    }
+    
+    if(![newPass isEqualToString:againPass]){
+        [self alert:@"两次密码输入不一致"];
+        return;
+    }
+    [self show:@"请稍后..."];
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/upd_pwd/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+    [params setObject:newPass forKey:@"new_pwd"];
+    [params setObject:[self getUserName]  forKey:@"n"];
+    [params setObject:[self getPassword]  forKey:@"old_pwd"];
+    
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            NSMutableDictionary *user = [self getUser];
+            [user setObject:newPass forKey:@"pwd"];
+            int mainkey = [[user objectForKey:MAIN_KEY] intValue];
+            [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
+            [self.popupController popToRootViewControllerAnimated:YES];
+        } else {
+            [self alertByfail:res[@"msg"]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error];
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -98,12 +145,12 @@
     loginView.frame = CGRectMake(offset,  offset , (width - offset*2), 84);
     lbAccount.frame = CGRectMake(16,  14 , 80, 18);
     lineAccountView.frame = CGRectMake(82,  12 , 0.5, 22);
-    tfAccount.frame = CGRectMake(92,  12 , width - 140, 22);
+    tfNewPass.frame = CGRectMake(92,  12 , width - 140, 22);
     lineBgView.frame = CGRectMake(10,  42 , (width - offset*2) - 20, 0.5);
     
     lbPass.frame = CGRectMake(16,  14 + 42 , 80, 18);
     linePassView.frame = CGRectMake(82,  12 + 42, 0.5, 22);
-    tfPass.frame = CGRectMake(92,  12 + 42, width - 140, 22);
+    tfAgainPass.frame = CGRectMake(92,  12 + 42, width - 140, 22);
     
     btnSubmit.frame = CGRectMake(offset, 105 , (width - offset*2), 40);
 }

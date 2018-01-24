@@ -48,6 +48,10 @@
 		4B33968220074CD800801E74 /* contact_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968020074CD800801E74 /* contact_qq.png */; };
 		4B33968320074CD800801E74 /* contact_qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968120074CD800801E74 /* contact_qq1.png */; };
 		4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4CE45C20170D6B003B9EC8 /* account_close.png */; };
+		4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */; };
+		4B4CE46120181981003B9EC8 /* BindPhoneModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */; };
+		4B4CE46420183911003B9EC8 /* UnBindPhoneViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */; };
+		4B4CE46520183911003B9EC8 /* UnBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CE46320183911003B9EC8 /* UnBindPhoneViewController.m */; };
 		4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CB3200F290E00BEB12C /* YYCache.h */; };
 		4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CB4200F290E00BEB12C /* YYCache.m */; };
 		4B5F4CBD200F290E00BEB12C /* YYDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CB5200F290E00BEB12C /* YYDiskCache.h */; };
@@ -165,6 +169,10 @@
 		4B33968020074CD800801E74 /* contact_qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_qq.png; sourceTree = "<group>"; };
 		4B33968120074CD800801E74 /* contact_qq1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_qq1.png; sourceTree = "<group>"; };
 		4B4CE45C20170D6B003B9EC8 /* account_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_close.png; sourceTree = "<group>"; };
+		4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindPhoneModifyPasswordViewController.h; sourceTree = "<group>"; };
+		4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindPhoneModifyPasswordViewController.m; sourceTree = "<group>"; };
+		4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnBindPhoneViewController.h; sourceTree = "<group>"; };
+		4B4CE46320183911003B9EC8 /* UnBindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnBindPhoneViewController.m; sourceTree = "<group>"; };
 		4B5F4CB3200F290E00BEB12C /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
 		4B5F4CB4200F290E00BEB12C /* YYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCache.m; sourceTree = "<group>"; };
 		4B5F4CB5200F290E00BEB12C /* YYDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDiskCache.h; sourceTree = "<group>"; };
@@ -463,6 +471,8 @@
 				4B33965B2005C87A00801E74 /* RegViewController.m */,
 				4B33965E2005C8B400801E74 /* ForgotPasswordViewController.h */,
 				4B33965F2005C8B400801E74 /* ForgotPasswordViewController.m */,
+				4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */,
+				4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */,
 				4B3396622005CFD900801E74 /* Reg2LoginViewController.h */,
 				4B3396632005CFD900801E74 /* Reg2LoginViewController.m */,
 				4BAE8C4220089B080022248C /* UIAlertView+Block.h */,
@@ -471,6 +481,8 @@
 				4B5F4D1E201080D400BEB12C /* SettingViewController.m */,
 				4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */,
 				4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */,
+				4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */,
+				4B4CE46320183911003B9EC8 /* UnBindPhoneViewController.m */,
 				4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */,
 				4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */,
 				4B5F4D2F2010997100BEB12C /* AuthViewController.h */,
@@ -551,10 +563,12 @@
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
 				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
 				4B33964620059C1800801E74 /* STPopupLeftBarItem.h in Headers */,
+				4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */,
 				4B3396582005C5EC00801E74 /* QQViewController.h in Headers */,
 				4B33963F20059C1800801E74 /* STPopup.h in Headers */,
 				4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */,
 				4B339671200612A800801E74 /* MBProgressHUD.h in Headers */,
+				4B4CE46420183911003B9EC8 /* UnBindPhoneViewController.h in Headers */,
 				4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */,
 				4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */,
 				4B33964220059C1800801E74 /* STPopupControllerTransitioningFade.h in Headers */,
@@ -708,6 +722,7 @@
 			files = (
 				4BAE8C382008456C0022248C /* NSData+GZIP.m in Sources */,
 				4BAE8C41200868630022248C /* NetUtils.m in Sources */,
+				4B4CE46520183911003B9EC8 /* UnBindPhoneViewController.m in Sources */,
 				4B33967D20073A9A00801E74 /* IAPManager.m in Sources */,
 				4BAE8C2F200844800022248C /* EncrytUtils.m in Sources */,
 				4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */,
@@ -725,6 +740,7 @@
 				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
 				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
+				4B4CE46120181981003B9EC8 /* BindPhoneModifyPasswordViewController.m in Sources */,
 				4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */,
 				4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */,
 				4B5F4CCA200F2FE200BEB12C /* UserTableViewCell.m in Sources */,

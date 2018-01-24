@@ -7,6 +7,7 @@
 //
 
 #import "ForgotPasswordViewController.h"
+#import "BindPhoneModifyPasswordViewController.h"
 
 @interface ForgotPasswordViewController ()
 
@@ -17,13 +18,13 @@
     
     UILabel *lbAccount;
     UIView *lineAccountView;
-    UITextField *tfAccount;
+    UITextField *tfPhone;
     
     UIView *lineBgView;
     
     UILabel *lbPass;
     UIView *linePassView;
-    UITextField *tfPass;
+    UITextField *tfCode;
     
     UIButton *btnCode;
     
@@ -52,11 +53,11 @@
 
     lineAccountView = [UIView new];
     lineAccountView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfAccount = [UITextField new];
-    tfAccount.placeholder = @"请输入手机号";
-    tfAccount.font = [UIFont systemFontOfSize: 14];
-    tfAccount.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfAccount.keyboardType = UIKeyboardTypeNumberPad;
+    tfPhone = [UITextField new];
+    tfPhone.placeholder = @"请输入手机号";
+    tfPhone.font = [UIFont systemFontOfSize: 14];
+    tfPhone.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfPhone.keyboardType = UIKeyboardTypeNumberPad;
     
     lineBgView = [UIView new];
     lineBgView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
@@ -79,19 +80,19 @@
     
     linePassView = [UIView new];
     linePassView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfPass = [UITextField new];
-    tfPass.placeholder = @"请输入验证码";
-    tfPass.font = [UIFont systemFontOfSize: 14];
-    tfPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    tfPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfCode = [UITextField new];
+    tfCode.placeholder = @"请输入验证码";
+    tfCode.font = [UIFont systemFontOfSize: 14];
+    tfCode.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
+    tfCode.keyboardType = UIKeyboardTypeNumberPad;
     
     [loginView addSubview:lbAccount];
     [loginView addSubview:lineAccountView];
-    [loginView addSubview:tfAccount];
+    [loginView addSubview:tfPhone];
     [loginView addSubview:lineBgView];
     [loginView addSubview:lbPass];
     [loginView addSubview:linePassView];
-    [loginView addSubview:tfPass];
+    [loginView addSubview:tfCode];
     
     //登录按钮
     btnSubmit = [[UIButton alloc] init];
@@ -105,7 +106,43 @@
     
     //事件
     [btnCode addTarget:self action:@selector(countDown:) forControlEvents:UIControlEventTouchUpInside];
+    [btnSubmit addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
+}
 
+- (void)submit:(id)sender {
+    NSString *phone = tfPhone.text;
+    NSString *code = tfCode.text;
+    
+    if([phone length] == 0){
+        [self alert:@"请输入手机号"];
+        return;
+    }
+    
+    if([code length] == 0){
+        [self alert:@"请输入验证码"];
+        return;
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/mobile_regORlogin/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+    [params setObject:phone forKey:@"m"];
+    [params setObject:code forKey:@"code"];
+    
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            BindPhoneModifyPasswordViewController *bindPhoneModifyPasswordViewController = [BindPhoneModifyPasswordViewController new];
+            bindPhoneModifyPasswordViewController.phone = phone;
+            [self.popupController pushViewController:bindPhoneModifyPasswordViewController animated:YES];
+        } else {
+            [self alertByfail:res[@"msg"]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error];
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -115,28 +152,54 @@
     loginView.frame = CGRectMake(offset,  offset , (width - offset*2), 84);
     lbAccount.frame = CGRectMake(16,  14 , 60, 18);
     lineAccountView.frame = CGRectMake(62,  12 , 0.5, 22);
-    tfAccount.frame = CGRectMake(72,  12 , width - 200, 22);
+    tfPhone.frame = CGRectMake(72,  12 , width - 200, 22);
     btnCode.frame = CGRectMake(width - 100,  8, 70, 26);
     lineBgView.frame = CGRectMake(10,  42 , (width - offset*2) - 20, 0.5);
     
     lbPass.frame = CGRectMake(16,  14 + 42 , 60, 18);
     linePassView.frame = CGRectMake(62,  12 + 42, 0.5, 22);
-    tfPass.frame = CGRectMake(72,  12 + 42, width - 240, 22);
+    tfCode.frame = CGRectMake(72,  12 + 42, width - 240, 22);
     
     btnSubmit.frame = CGRectMake(offset, 105 , (width - offset*2), 40);
 }
 
 - (void)countDown:(id)sender {
-    [self initWithGCD:59 beginState:^(int seconds){
-        [btnCode setTitle:[NSString stringWithFormat:@"%d秒后重试",seconds] forState:UIControlStateNormal];
-        [btnCode setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
-        btnCode.layer.borderColor = [kColorWithHex(0x999999) CGColor];
-        btnCode.userInteractionEnabled = NO;
-    } endState:^{
-        [btnCode setTitle:@"重新发送" forState:UIControlStateNormal];
-        btnCode.layer.borderColor = [kColorWithHex(0x19b1f5) CGColor];
-        [btnCode setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateNormal];
-        btnCode.userInteractionEnabled = YES;
+    
+    NSString *phone = tfPhone.text;
+    if([phone length] == 0){
+        [self alert:@"请输入手机号"];
+        return;
+    }
+    
+    [self show:@"获取中..."];
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/send_code/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+    [params setObject:phone forKey:@"m"];
+    
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            [self dismiss:nil];
+            [self initWithGCD:59 beginState:^(int seconds){
+                [btnCode setTitle:[NSString stringWithFormat:@"%d秒后重试",seconds] forState:UIControlStateNormal];
+                [btnCode setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
+                btnCode.layer.borderColor = [kColorWithHex(0x999999) CGColor];
+                btnCode.userInteractionEnabled = NO;
+            } endState:^{
+                [btnCode setTitle:@"重新发送" forState:UIControlStateNormal];
+                btnCode.layer.borderColor = [kColorWithHex(0x19b1f5) CGColor];
+                [btnCode setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateNormal];
+                btnCode.userInteractionEnabled = YES;
+            }];
+            [self alert:@"验证码已发送，请注意查收"];
+        } else {
+            [self alertByfail:res[@"msg"]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error];
     }];
 }
 

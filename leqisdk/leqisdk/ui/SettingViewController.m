@@ -10,6 +10,7 @@
 #import "MenuTableViewCell.h"
 #import "ModifyPasswordViewController.h"
 #import "BindPhoneViewController.h"
+#import "UnBindPhoneViewController.h"
 #import "AuthViewController.h"
 
 #define MENU_CELL_HEIGHT 40
@@ -79,26 +80,31 @@
     [self.view addSubview:serviceView];
     
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
-    
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reload:)
+                                                 name:kRefreshMenu
+                                               object:nil];
 }
 
 -(void)viewDidLayoutSubviews {
     int offset = 10;
     int width = self.view.frame.size.width;
     lbUserName.frame = CGRectMake(offset,  offset , (width - offset*2), 14);
-    
+
     [self initMenuTableView:offset y:offset + 25 w:(width - offset*2)];
-    
+
     serviceView.frame = CGRectMake(offset, 205 , (width - offset*2), 26);
     btnPhone.frame = CGRectMake((width - 285) / 2, 5 , 175, 16);
     btnQQ.frame = CGRectMake((width - 285) / 2 + 150, 5 , 94, 16);
     [self initUserInfo];
+    
 }
 
 - (void)initUserInfo {
     NSDictionary *user = [[CacheHelper shareInstance] getCurrentUser];
-    lbUserName.text = [NSString stringWithFormat: @"帐号: %@", [self getUserName]];
+    lbUserName.text = [NSString stringWithFormat: @"用户名: %@", [[self getUser] objectForKey:@"name"]];
 }
 
 - (void)initMenuTableView:(int)x y:(int)y w:(int)w {
@@ -125,19 +131,38 @@
     }
     NSDictionary *dict = datasource[indexPath.row];
     cell.lbMenuName.text = [dict objectForKey:@"name"];
-    if(indexPath.row == 3){
+    cell.ivArrow.hidden = NO;
+    cell.sAutoLogin.hidden = YES;
+    if(indexPath.row == 1){
+        if([[[self getUser] objectForKey:@"is_vali_mobile"] intValue] == 1){
+            cell.lbSel.hidden = NO;
+            cell.lbSel.text = @"(已绑定)";
+            cell.lbSel.frame = CGRectMake(cell.frame.size.width - 72, 11, 60, 20);
+        }
+    }
+    else if(indexPath.row == 2){
+        if([[CacheHelper shareInstance] getRealAuth]){
+            cell.ivArrow.hidden = YES;
+            cell.lbSel.hidden = NO;
+            cell.lbSel.text = @"(已认证)";
+            cell.lbSel.frame = CGRectMake(cell.frame.size.width - 72, 11, 60, 20);
+        }
+    }
+    else if(indexPath.row == 3){
         cell.ivArrow.hidden = YES;
         cell.sAutoLogin.hidden = NO;
-    }else {
-        cell.ivArrow.hidden = NO;
-        cell.sAutoLogin.hidden = YES;
     }
+    
     cell.ivArrow.frame = CGRectMake(cell.frame.size.width - 28, 12, 18, 18);
     cell.sAutoLogin.frame = CGRectMake(cell.frame.size.width - 72, 4, 60, 20);
     [cell.sAutoLogin addTarget:self action:@selector(autoLogin:) forControlEvents:UIControlEventValueChanged];
     BOOL isON = [[CacheHelper shareInstance] getAutoLogin];
     [cell.sAutoLogin setOn: isON];
     return cell;
+}
+
+- (void)reload:(NSNotification *)noti {
+    [tvMenu reloadData];
 }
 
 - (void)autoLogin:(id)sender {
@@ -156,12 +181,19 @@
         [self.popupController pushViewController:modifyPasswordViewController animated:YES];
     }
     else if(indexPath.row == 1){
-        BindPhoneViewController *bindPhoneViewController = [BindPhoneViewController new];
-        [self.popupController pushViewController:bindPhoneViewController animated:YES];
+        if([[[self getUser] objectForKey:@"is_vali_mobile"] intValue] == 1){
+            UnBindPhoneViewController *unBindPhoneViewController = [UnBindPhoneViewController new];
+            [self.popupController pushViewController:unBindPhoneViewController animated:YES];
+        } else {
+            BindPhoneViewController *bindPhoneViewController = [BindPhoneViewController new];
+            [self.popupController pushViewController:bindPhoneViewController animated:YES];
+        }
     }
     else if(indexPath.row == 2){
-        AuthViewController *authViewController = [AuthViewController new];
-        [self.popupController pushViewController:authViewController animated:YES];
+        if(![[CacheHelper shareInstance] getRealAuth]){
+            AuthViewController *authViewController = [AuthViewController new];
+            [self.popupController pushViewController:authViewController animated:YES];
+        }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

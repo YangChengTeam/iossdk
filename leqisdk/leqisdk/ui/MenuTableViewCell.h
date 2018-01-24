@@ -12,4 +12,5 @@
 @property UILabel *lbMenuName;
 @property UIImageView *ivArrow;
 @property UISwitch *sAutoLogin;
+@property UILabel *lbSel;
 @end

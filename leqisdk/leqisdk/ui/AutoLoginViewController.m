@@ -70,7 +70,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if(!self.isCancel){
+    if(!self.noCancel){
         NSLog(@"%@:%@", TAG, @"cancel auto login");
         self.isCancel = true;
     }

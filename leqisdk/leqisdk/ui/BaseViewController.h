@@ -28,9 +28,13 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define kScreenSize \
 ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? CGSizeMake([UIScreen mainScreen].nativeBounds.size.width/[UIScreen mainScreen].nativeScale,[UIScreen mainScreen].nativeBounds.size.height/[UIScreen mainScreen].nativeScale) : [UIScreen mainScreen].bounds.size)
 
+#define kRefreshUser @"refresh_user"
+#define kRefreshMenu @"refresh_menu"
 
 @interface BaseViewController : UIViewController
 @property (nonatomic, assign) BOOL isCancel;
+@property (nonatomic, assign) BOOL noCancel;
+
 @property (nonatomic, strong) MBProgressHUD *hud;
 
 - (UIImage*)createImageWithColor: (UIColor*) color;
@@ -49,12 +53,11 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 - (void)loginWithAccount:(NSString *)account password:(NSString *)passwrod;
 - (void)regWithAccount:(NSString *)account password:(NSString *)password isQuick:(BOOL)isQuick callback:(void (^)())callback;
 
-- (void)showByError:(NSError *)error message:(NSString *)message;
+- (void)showByError:(NSError *)error;
 - (void)alert:(NSString *)message;
 - (void)alertByfail:(NSString *)message;
 
 - (void)openQQ:(id)sender;
 - (void)openPhone:(id)sender;
-
 
 @end

@@ -13,6 +13,7 @@
 #define CURRENT_USER_KEY @"current_user_key"
 #define AUTO_LOGIN_KEY @"auto_login_key"
 #define INIT_KEY_INFO @"init_info_key"
+#define REAL_AUTH_INFO @"real_auth_key"
 
 @interface CacheHelper()
 
@@ -50,7 +51,11 @@ static CacheHelper* instance = nil;
     }
     [data setObject:[NSNumber numberWithInt:mainkey] forKey:MAIN_KEY];
     for(NSMutableDictionary *info in users){
-        //int value = [[info objectForKey:MAIN_KEY] intValue];
+        int value = [[data objectForKey:MAIN_KEY] intValue];
+        if(value == 2 && [[data objectForKey:@"user_id"] isEqual:@"0"] && [[data objectForKey:@"mobile"] isEqual:[info objectForKey:@"mobile"]]){
+            [data setObject:[info objectForKey:@"user_id"] forKey:@"user_id"];
+            [data setObject:[info objectForKey:@"name"] forKey:@"name"];
+        }
         if([[data objectForKey:@"user_id"] isEqual:[info objectForKey:@"user_id"]]){
             [users removeObject:info];
             break;
@@ -89,5 +94,16 @@ static CacheHelper* instance = nil;
     [self.diskCache setObject:initinfo forKey:INIT_KEY_INFO];
 }
 
+- (void)setRealAuth {
+    [self.diskCache setObject:@"authed" forKey:REAL_AUTH_INFO];
+}
+
+- (BOOL)getRealAuth {
+    NSString *realAuth = (NSString *)[self.diskCache objectForKey:REAL_AUTH_INFO];
+    if(realAuth && [realAuth isEqual:@"authed"]){
+        return YES;
+    }
+    return NO;
+}
 
 @end

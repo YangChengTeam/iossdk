@@ -22,4 +22,6 @@
 - (void)setUsers:(nonnull NSArray *)users;
 - (NSDictionary *)getInitInfo;
 - (void)setInitInfo:(NSDictionary *)initinfo;
+- (void)setRealAuth;
+- (BOOL)getRealAuth;
 @end

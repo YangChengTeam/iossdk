@@ -72,7 +72,7 @@
         
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if(error){
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"无法连接服务器,请重试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"无法连接服务器,请重试" message:@"" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             [alertView showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
                 if(buttonIndex == 1){
                     if(errorcallback){
