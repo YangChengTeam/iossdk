@@ -20,7 +20,7 @@
 }
 
 + (void)postWithUrl:(NSString *)url params:(NSDictionary *)data callback:(void (^)(NSDictionary *))finishcallback error:(void (^)(NSError *))errorcallback {
-    NSLog(@"leqisdk请求url:%@", url);
+    NSLog(@"leqisdk:请求url->%@", url);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer] ;
@@ -63,7 +63,7 @@
     NSData *jsonData = [NetUtils dict2jsonString:defaultParams];
     NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSData *params = [EncrytUtils gzipByRsa:jsonStr];
-    NSLog(@"leqisdk请求参数:%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+    NSLog(@"leqisdk:请求参数->%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
     [req setHTTPBody:params];
     
     [[manager dataTaskWithRequest:req uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
@@ -93,7 +93,7 @@
         NSString *jsonStr = [EncrytUtils upgzipByResponse:responseObject];
         NSData *jsonData =[jsonStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-        NSLog(@"leqisdk服务器返回数据:%@", dictionary);
+        NSLog(@"leqisdk:服务器返回数据->%@", dictionary);
         if([dictionary[@"code"] integerValue] == -100){
             [EncrytUtils setPubKey:dictionary[@"data"][@"publickey"]];
             [NetUtils postWithUrl:url params:data callback:finishcallback error: errorcallback];
@@ -102,7 +102,6 @@
         if(finishcallback != nil){
             finishcallback(dictionary);
         }
-        
     }] resume];
 }
 

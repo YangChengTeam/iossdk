@@ -9,5 +9,4 @@
 #import "BaseViewController.h"
 
 @interface AutoLoginViewController : BaseViewController
-
 @end

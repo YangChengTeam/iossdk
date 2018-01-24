@@ -11,4 +11,5 @@
 @interface MenuTableViewCell : UITableViewCell
 @property UILabel *lbMenuName;
 @property UIImageView *ivArrow;
+@property UISwitch *sAutoLogin;
 @end

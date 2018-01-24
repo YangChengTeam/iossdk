@@ -8,6 +8,7 @@
 
 #import "RegViewController.h"
 #import "LoginViewController.h"
+#import "Reg2LoginViewController.h"
 
 @interface RegViewController ()
 
@@ -139,6 +140,35 @@
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
     
     [btnAccount addTarget:self action:@selector(openAccount:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnReg addTarget:self action:@selector(reg:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)reg:(id)sender {
+    NSString *username = tfAccount.text;
+    NSString *password = tfPass.text;
+    if([username length] == 0){
+        [self alert:@"请输入账号"];
+        return;
+    }
+    if([password length] == 0){
+        [self alert:@"请输入密码"];
+        return;
+    }
+    NSString *pattern = @"(^[A-Za-z0-9]{6,16}$)";;
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if(![regex evaluateWithObject:username]){
+        [self alert:@"账号只能由6至16位英文或数字组成"];
+        return;
+    }
+    
+    if(![regex evaluateWithObject:password]){
+        [self alert:@"密码只能由6至16位16位英文或数字组成"];
+        return;
+    }
+    
+    [self show:@"注册中..."];
+    [self regWithAccount:username password:password isQuick:FALSE callback:nil];
 }
 
 - (void)openAccount:(id)sender {

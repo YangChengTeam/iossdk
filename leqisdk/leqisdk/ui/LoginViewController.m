@@ -12,9 +12,8 @@
 #import "Reg2LoginViewController.h"
 #import "UserTableViewCell.h"
 
-
 #define USER_CELL_HEIGHT 40
-@interface LoginViewController()<UITableViewDelegate, UITableViewDataSource>
+@interface LoginViewController()<UITableViewDelegate, UITableViewDataSource, UserTableViewCellDelegate>
 @end
 
 @implementation LoginViewController {
@@ -210,20 +209,46 @@
     
     [btnTryPlay addTarget:self action:@selector(tryPlay:) forControlEvents:UIControlEventTouchUpInside];
     
+    [self initUserInfo];
+    
 }
 
 - (void)tryPlay:(id)sender {
-    [self show:@"请稍后..."];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self dismiss:nil];
-            [self.popupController pushViewController:[Reg2LoginViewController new] animated:YES];
-        });
-    });
+    [self show:@"注册中..."];
+    [self regWithAccount:@"" password:@"" isQuick:YES callback:^{
+        [self initUserInfo];
+        [self initUserTableView];
+    }];
 }
 
 - (void)openLogin:(id)sender {
-    [self show:@"正在登录"];
+    NSString *username = tfAccount.text;
+    NSString *password = tfPass.text;
+    if([username length] == 0){
+        [self dismiss:nil];
+        [self alert:@"请输入账号"];
+        return;
+    }
+    if([password length] == 0){
+        [self dismiss:nil];
+        [self alert:@"请输入密码"];
+        return;
+    }
+    NSString *pattern = @"(^[A-Za-z0-9]{6,16}$)";;
+    NSPredicate *regex = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if(![regex evaluateWithObject:username]){
+        [self dismiss:nil];
+        [self alert:@"账号只能由6至16位英文或数字组成"];
+        return;
+    }
+    
+    if(![regex evaluateWithObject:password]){
+        [self dismiss:nil];
+        [self alert:@"密码只能由6至16位16位英文或数字组成"];
+        return;
+    }
+    [self show:@"登录中..."];
+    [self loginWithAccount:username password:password];
 }
 
 - (void)toogleAccout:(id)sender {
@@ -243,8 +268,6 @@
 - (void)openForgotPassword:(id)sender {
     [self.popupController pushViewController:[ForgotPasswordViewController new] animated:YES];
 }
-
-
 
 - (void)viewDidLayoutSubviews
 {
@@ -272,21 +295,42 @@
     btnReg.frame = CGRectMake(0, 155 , 100, 16); //186
     btnTryPlay.frame = CGRectMake(width - 90, 155 , 90, 16); // 185
     
-    [self initUserTableView:loginView.frame.origin.x +50 y: loginView.frame.origin.y + 42 w:width - 100 ];
-    if(datasource && [datasource count] > 1){
-        ivAccount.hidden = NO;
-    } else {
-        ivAccount.hidden = YES;
+    [self initUserTableView];
+    
+}
+
+- (void)initUserInfo:(NSDictionary *)user {
+    if(user){
+        tfAccount.text = [self getUserName:user];
+        tfPass.text = [self getPassword:user];
     }
 }
 
-- (void)initUserTableView:(int)x y:(int)y w:(int)w {
-    datasource = @[@{@"name":@"zhangkai"},@{@"name":@"dinghui"},@{@"name":@"dinghui"},@{@"name":@"dinghui"}];
-    long len = [datasource count];
-    if(len > 3){
-        len = 3;
+- (void)initUserInfo {
+    [self initUserInfo:[self getUser]];
+}
+
+- (void)initUserTableView {
+    datasource = [[CacheHelper shareInstance] getUsers];
+    long len = 0;
+    if(datasource){
+        len = [datasource count];
+        if(len > 3){
+            len = 3;
+        }
     }
-    tvMoreAccount.frame = CGRectMake(x, y , w, USER_CELL_HEIGHT*len);
+    if(datasource && [datasource count] > 1){
+        btnAccountView.hidden = NO;
+        if(tvMoreAccount.tag == 1){
+            tvMoreAccount.hidden = NO;
+        }
+    } else {
+        btnAccountView.hidden = YES;
+        if(tvMoreAccount.tag == 1){
+            tvMoreAccount.hidden = YES;
+        }
+    }
+    tvMoreAccount.frame = CGRectMake(loginView.frame.origin.x + 50, loginView.frame.origin.y + 42, self.view.frame.size.width - 100, USER_CELL_HEIGHT*len);
     [tvMoreAccount reloadData];
 }
 
@@ -304,11 +348,15 @@
     static NSString *ID = @"user_cell";
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        //单元格样式设置为UITableViewCellStyleDefault
         cell = [[UserTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
+    cell.btnClose.frame = CGRectMake(cell.frame.size.width - 25, 10, 20, 20);
+    cell.lbNickname.frame = CGRectMake(14, 0, cell.frame.size.width - 40, cell.frame.size.height-4);
     NSDictionary *dict = datasource[indexPath.row];
-    cell.lbNickname.text = [dict objectForKey:@"name"];
+    cell.delegate = self;
+    cell.lbNickname.text = [self getUserName:dict];
+    cell.btnClose.tag = indexPath.row;
+    
     return cell;
 }
 
@@ -317,11 +365,24 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", indexPath);
-    NSDictionary *userDict = datasource[indexPath.row];
-    tfAccount.text = [userDict objectForKey:@"name"];
-    tfPass.text = [userDict objectForKey:@"name"];
+    NSDictionary *dict = datasource[indexPath.row];
+    [self initUserInfo:dict];
     tvMoreAccount.hidden = YES;
+}
+
+-(void)close:(id)sender {
+    NSDictionary *dict = datasource[((UIButton*)sender).tag];
+    NSMutableArray *users = [[NSMutableArray alloc] initWithArray:datasource];
+    [users removeObject:dict];
+    NSDictionary *currDict = [[CacheHelper shareInstance] getCurrentUser];
+    if([[dict objectForKey:@"name"] isEqualToString:[currDict objectForKey:@"name"]]){
+        [[CacheHelper shareInstance] setCurrentUser:datasource[1]];
+    }
+    [[CacheHelper shareInstance] setUsers:users];
+    tvMoreAccount.tag = 1;
+    [self initUserTableView];
+    [self initUserInfo];
+    tvMoreAccount.tag = 0;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "QQViewController.h"
+#import "Reg2LoginViewController.h"
 
 @interface BaseViewController ()
 
@@ -123,6 +124,56 @@
     dispatch_resume(timer);
 }
 
+- (NSDictionary *)getUser {
+    NSDictionary *user = [LeqiSDK shareInstance].user;
+    if(!user){
+        user = [[CacheHelper shareInstance] getCurrentUser];
+    }
+    return user;
+}
+
+- (NSString *)getUserName {
+    NSDictionary *user = [self getUser];
+    NSString *username = @"";
+    if(user){
+        if([[user objectForKey:MAIN_KEY] intValue] == 1){
+            username = [user objectForKey:@"name"];
+        } else {
+            username = [user objectForKey:@"mobile"];
+        }
+    }
+    return username;
+}
+
+- (NSString *)getUserName:(NSDictionary *)user {
+    NSString *username = @"";
+    if(user){
+        if([[user objectForKey:MAIN_KEY] intValue] == 1){
+            username = [user objectForKey:@"name"];
+        } else {
+            username = [user objectForKey:@"mobile"];
+        }
+    }
+    return username;
+}
+
+- (NSString *)getPassword {
+    NSDictionary *user = [self getUser];
+    NSString *password = @"";
+    if(user){
+        password = [user objectForKey:@"pwd"];
+    }
+    return password;
+}
+
+- (NSString *)getPassword:(NSDictionary *)user {
+    NSString *password = @"";
+    if(user){
+        password = [user objectForKey:@"pwd"];
+    }
+    return password;
+}
+
 - (void)openQQ:(id)sender {
     [self.popupController pushViewController:[QQViewController new] animated:YES];
 }
@@ -130,6 +181,98 @@
 - (void)openPhone:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://400-796-6071"]];
 }
+
+- (void)loginWithAccount:(NSString *)account password:(NSString *)passwrod {
+    if(self.isCancel){
+        return;
+    }
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/login/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params =  [[LeqiSDK shareInstance] setParams];
+    [params setValue:account forKey:@"n"];
+    [params setValue:passwrod forKey:@"p"];
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(self.isCancel){
+            return;
+        }
+        self.isCancel = true; //AutoLogin Controller
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
+            int mainkey = 1;
+            if([[user objectForKey:@"is_vali_mobile"] intValue] == 1 && [[user objectForKey:@"mobile"] isEqualToString:account]){
+                mainkey = 2;
+            }
+            [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
+            NSDictionary *dict = @{
+                                   @"userId":[user objectForKey:@"user_id"],
+                                   @"sign":[user objectForKey:@"sign"],
+                                   @"loginTime": [user objectForKey:@"last_login_time"]
+                                   };
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:dict];
+            [LeqiSDK shareInstance].user = user;
+            [self.popupController dismiss];
+            [[LeqiSDK shareInstance] showFloatView];
+        } else {
+            [self alertByfail:res[@"msg"]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error message:@"重新登录"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
+    }];
+}
+
+- (void)regWithAccount:(NSString *)account password:(NSString *)password isQuick:(BOOL)isQuick callback:(void (^)())callback{
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/reg/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+    [params setValue:[NSNumber numberWithBool:isQuick] forKey:@"is_quick"];
+    [params setValue:account forKey:@"n"];
+    [params setValue:password forKey:@"p"];
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [self dismiss:nil];
+        if(!res){
+            return;
+        }
+        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
+            [[CacheHelper shareInstance] setUser:user mainKey:1];
+            Reg2LoginViewController *reg2LoginViewController = [Reg2LoginViewController new];
+            [self.popupController pushViewController:reg2LoginViewController animated:YES];
+            if(callback){
+                callback();
+            }
+        } else {
+            [self alertByfail:res[@"msg"]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error message:@"注册失败"];
+    }];
+}
+
+- (void)showByError:(NSError *)error message:(NSString *)message{
+    if(error){
+        [self show:message];
+    }
+    [self dismiss:nil];
+}
+
+#pragma mark -- alert
+- (void)alert:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+- (void)alertByfail:(NSString *)message {
+    NSString *msg = message;
+    if(!msg){
+        msg = @"服务器未知错误";
+    }
+    [self alert:message];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

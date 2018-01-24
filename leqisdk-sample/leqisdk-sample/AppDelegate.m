@@ -28,7 +28,10 @@
     config.agentid = @"default";
     config.gameid = @"24";
     config.appid = @"24";
-    [[LeqiSDK shareInstance] initWithConfig:config];
+    int error = [[LeqiSDK shareInstance] initWithConfig:config];
+    if(error != 0){
+        NSLog(@"不能启动初始化：%d",error);
+    }
     return YES;
 }
 

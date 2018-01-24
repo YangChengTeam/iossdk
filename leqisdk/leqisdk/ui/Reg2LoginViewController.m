@@ -41,7 +41,6 @@
     
     //用户名
     lUserName = [UILabel new];
-    lUserName.text = @"帐号: zhangkai";
     lUserName.font = [UIFont systemFontOfSize: 16];
     lUserName.textColor = kColorWithHex(0x333333);
     lUserName.textAlignment = NSTextAlignmentCenter;
@@ -87,8 +86,20 @@
     [self.view addSubview:serviceView];
     
     //事件
+    [btnLogin addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+    
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self initUserInfo];
+}
+
+- (void)initUserInfo {
+    lUserName.text = [NSString stringWithFormat: @"帐号: %@", [self getUserName]];
+}
+
+- (void)login:(id)sender {
+    [self loginWithAccount:[self getUserName]  password:[self getPassword]];
 }
 
 - (void)openQQ:(id)sender {

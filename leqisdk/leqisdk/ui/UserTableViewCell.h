@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol UserTableViewCellDelegate <NSObject>
+- (void)close:(id)sender;
+@end
 
 @interface UserTableViewCell : UITableViewCell
+
 @property UILabel *lbNickname;
+@property UIButton *btnClose;
+@property (nonatomic,assign) id<UserTableViewCellDelegate> delegate;
 @end
+
+
+

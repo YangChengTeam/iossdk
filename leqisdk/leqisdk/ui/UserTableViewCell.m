@@ -22,10 +22,21 @@
         self.lbNickname  = [UILabel new];
         self.lbNickname.textColor = kColorWithHex(0x333333);
         self.lbNickname.font = [UIFont systemFontOfSize: 16];
-        self.lbNickname.frame = CGRectMake(14, 0, self.frame.size.width - 10, self.frame.size.height-4);
+        
         [self addSubview:self.lbNickname];
+        
+        self.btnClose =  [UIButton new];
+        [self.btnClose setImage:[UIImage imageNamed:@"account_close" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+        [self.btnClose addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.btnClose];
     }
     return self;
+}
+
+- (void)close:(id)sender {
+    if(self.delegate){
+        [self.delegate close:sender];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

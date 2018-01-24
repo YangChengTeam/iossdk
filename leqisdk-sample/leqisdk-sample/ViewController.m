@@ -28,6 +28,14 @@
     self.btnPay.layer.borderWidth = 1;
     [self.btnPay addTarget:self action:@selector(pay) forControlEvents:UIControlEventTouchUpInside];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(leqiLoginResult:)
+                                                 name:kLeqiSDKNotiLogin
+                                               object:nil];
+}
+
+- (void)leqiLoginResult:(NSNotification *)notify {
+    NSLog(@"%@", notify.object);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

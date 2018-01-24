@@ -41,13 +41,13 @@
 		4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3396622005CFD900801E74 /* Reg2LoginViewController.h */; };
 		4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3396632005CFD900801E74 /* Reg2LoginViewController.m */; };
 		4B3396692005FA0600801E74 /* change_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396672005FA0600801E74 /* change_icon.png */; };
-		4B33966B2006004D00801E74 /* change_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33966A2006004D00801E74 /* change_icon1.png */; };
 		4B339671200612A800801E74 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33966F200612A700801E74 /* MBProgressHUD.h */; };
 		4B339672200612A800801E74 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B339670200612A700801E74 /* MBProgressHUD.m */; };
 		4B33967C20073A9A00801E74 /* IAPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33967A20073A9A00801E74 /* IAPManager.h */; };
 		4B33967D20073A9A00801E74 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33967B20073A9A00801E74 /* IAPManager.m */; };
 		4B33968220074CD800801E74 /* contact_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968020074CD800801E74 /* contact_qq.png */; };
 		4B33968320074CD800801E74 /* contact_qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968120074CD800801E74 /* contact_qq1.png */; };
+		4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4CE45C20170D6B003B9EC8 /* account_close.png */; };
 		4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CB3200F290E00BEB12C /* YYCache.h */; };
 		4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CB4200F290E00BEB12C /* YYCache.m */; };
 		4B5F4CBD200F290E00BEB12C /* YYDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CB5200F290E00BEB12C /* YYDiskCache.h */; };
@@ -62,8 +62,6 @@
 		4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */; };
 		4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */; };
-		4B5F4CD7200F4E5E00BEB12C /* UserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */; };
-		4B5F4CD8200F4E5E00BEB12C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */; };
 		4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */; };
 		4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */; };
 		4B5F4CE1200F4E9700BEB12C /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */; };
@@ -91,6 +89,9 @@
 		4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D332011795900BEB12C /* AutoLoginViewController.h */; };
 		4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D342011795900BEB12C /* AutoLoginViewController.m */; };
 		4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D37201193EE00BEB12C /* float_drag.png */; };
+		4B71D0092016CC3600F31C0C /* CacheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B71D0072016CC3600F31C0C /* CacheHelper.h */; };
+		4B71D00A2016CC3600F31C0C /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B71D0082016CC3600F31C0C /* CacheHelper.m */; };
+		4B71D00C2016D6F100F31C0C /* change_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B71D00B2016D6F100F31C0C /* change_icon1.png */; };
 		4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AED20045E24001847A8 /* LeqiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0AEE20045E24001847A8 /* LeqiSDK.m */; };
 		4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AF120045E24001847A8 /* BaseViewController.h */; };
@@ -157,13 +158,13 @@
 		4B3396622005CFD900801E74 /* Reg2LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reg2LoginViewController.h; sourceTree = "<group>"; };
 		4B3396632005CFD900801E74 /* Reg2LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reg2LoginViewController.m; sourceTree = "<group>"; };
 		4B3396672005FA0600801E74 /* change_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_icon.png; sourceTree = "<group>"; };
-		4B33966A2006004D00801E74 /* change_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = change_icon1.png; path = "../../FYSDK3.1/res/drawable-xhdpi/change_icon1.png"; sourceTree = "<group>"; };
 		4B33966F200612A700801E74 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		4B339670200612A700801E74 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4B33967A20073A9A00801E74 /* IAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPManager.h; sourceTree = "<group>"; };
 		4B33967B20073A9A00801E74 /* IAPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPManager.m; sourceTree = "<group>"; };
 		4B33968020074CD800801E74 /* contact_qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_qq.png; sourceTree = "<group>"; };
 		4B33968120074CD800801E74 /* contact_qq1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_qq1.png; sourceTree = "<group>"; };
+		4B4CE45C20170D6B003B9EC8 /* account_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account_close.png; sourceTree = "<group>"; };
 		4B5F4CB3200F290E00BEB12C /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
 		4B5F4CB4200F290E00BEB12C /* YYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCache.m; sourceTree = "<group>"; };
 		4B5F4CB5200F290E00BEB12C /* YYDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDiskCache.h; sourceTree = "<group>"; };
@@ -178,8 +179,6 @@
 		4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDKOrderInfo.h; sourceTree = "<group>"; };
 		4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKInitConfigure.m; sourceTree = "<group>"; };
 		4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKOrderInfo.m; sourceTree = "<group>"; };
-		4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
-		4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
 		4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
@@ -207,6 +206,9 @@
 		4B5F4D332011795900BEB12C /* AutoLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoLoginViewController.h; sourceTree = "<group>"; };
 		4B5F4D342011795900BEB12C /* AutoLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoLoginViewController.m; sourceTree = "<group>"; };
 		4B5F4D37201193EE00BEB12C /* float_drag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_drag.png; sourceTree = "<group>"; };
+		4B71D0072016CC3600F31C0C /* CacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
+		4B71D0082016CC3600F31C0C /* CacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
+		4B71D00B2016D6F100F31C0C /* change_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_icon1.png; sourceTree = "<group>"; };
 		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0AE020045D38001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0AED20045E24001847A8 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDK.h; sourceTree = "<group>"; };
@@ -313,6 +315,8 @@
 			children = (
 				4B5F4CD9200F4E9700BEB12C /* YYModel */,
 				4B5F4CB2200F290E00BEB12C /* YYCache */,
+				4B71D0072016CC3600F31C0C /* CacheHelper.h */,
+				4B71D0082016CC3600F31C0C /* CacheHelper.m */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -362,11 +366,12 @@
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
+				4B4CE45C20170D6B003B9EC8 /* account_close.png */,
+				4B71D00B2016D6F100F31C0C /* change_icon1.png */,
 				4B5F4D37201193EE00BEB12C /* float_drag.png */,
 				4B5F4D2120108BED00BEB12C /* right_icon.png */,
 				4B33968020074CD800801E74 /* contact_qq.png */,
 				4B33968120074CD800801E74 /* contact_qq1.png */,
-				4B33966A2006004D00801E74 /* change_icon1.png */,
 				4B3396672005FA0600801E74 /* change_icon.png */,
 				4B3396522005B9CA00801E74 /* back_icon_select.png */,
 				4B3396532005B9CA00801E74 /* back_icon.png */,
@@ -414,8 +419,6 @@
 				4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */,
 				4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */,
 				4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */,
-				4B5F4CD5200F4E5E00BEB12C /* UserInfo.h */,
-				4B5F4CD6200F4E5E00BEB12C /* UserInfo.m */,
 			);
 			path = domin;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				4B5F4CBF200F290E00BEB12C /* YYKVStorage.h in Headers */,
 				4B5F4D1320107CC500BEB12C /* XHDraggableButton.h in Headers */,
 				4B33965C2005C87A00801E74 /* RegViewController.h in Headers */,
+				4B71D0092016CC3600F31C0C /* CacheHelper.h in Headers */,
 				4BAE8C3C200845AB0022248C /* RSA.h in Headers */,
 				4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */,
 				4BAE8C2E200844800022248C /* EncrytUtils.h in Headers */,
@@ -584,7 +588,6 @@
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
 				4B33964820059C1800801E74 /* STPopupNavigationBar.h in Headers */,
 				4BAE8C2220083C5E0022248C /* AFNetworkReachabilityManager.h in Headers */,
-				4B5F4CD7200F4E5E00BEB12C /* UserInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,11 +679,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */,
+				4B71D00C2016D6F100F31C0C /* change_icon1.png in Resources */,
 				4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */,
 				4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */,
 				4B33968220074CD800801E74 /* contact_qq.png in Resources */,
 				4B33968320074CD800801E74 /* contact_qq1.png in Resources */,
-				4B33966B2006004D00801E74 /* change_icon1.png in Resources */,
 				4B3396692005FA0600801E74 /* change_icon.png in Resources */,
 				4B3396542005B9CA00801E74 /* back_icon_select.png in Resources */,
 				4B3396552005B9CA00801E74 /* back_icon.png in Resources */,
@@ -720,7 +724,6 @@
 				4BAE8C2B20083C5E0022248C /* AFURLSessionManager.m in Sources */,
 				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
 				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
-				4B5F4CD8200F4E5E00BEB12C /* UserInfo.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
 				4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */,
 				4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */,
@@ -746,6 +749,7 @@
 				4B33964120059C1800801E74 /* STPopupController.m in Sources */,
 				4BAE8C3D200845AB0022248C /* RSA.m in Sources */,
 				4B5F4D1620107CC500BEB12C /* XHFloatWindow.m in Sources */,
+				4B71D00A2016CC3600F31C0C /* CacheHelper.m in Sources */,
 				4B33964720059C1800801E74 /* STPopupLeftBarItem.m in Sources */,
 				4BAE8C2920083C5E0022248C /* AFURLResponseSerialization.m in Sources */,
 				4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */,
@@ -930,7 +934,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = leqibundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqibundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -950,7 +954,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = leqibundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqibundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";

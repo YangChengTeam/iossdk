@@ -17,7 +17,7 @@
     UIView *bgView;
     UIActivityIndicatorView *indicator;
     
-    UILabel *lbUsername;
+    UILabel *lUserName;
     
     UIButton *btnSwitch;
 }
@@ -40,14 +40,13 @@
     indicator.transform = CGAffineTransformMakeScale(2, 2);
     [bgView addSubview:indicator];
     [indicator startAnimating];
-
-    lbUsername = [UILabel new];
-    lbUsername.text = @"帐号: zhangkai";
-    lbUsername.adjustsFontSizeToFitWidth = YES;
-    lbUsername.textColor = kColorWithHex(0x333333);
-    lbUsername.textAlignment = NSTextAlignmentCenter;
-    lbUsername.font = [UIFont systemFontOfSize: 16];
-    [self.view addSubview:lbUsername];
+    
+    lUserName = [UILabel new];
+    lUserName.adjustsFontSizeToFitWidth = YES;
+    lUserName.textColor = kColorWithHex(0x333333);
+    lUserName.textAlignment = NSTextAlignmentCenter;
+    lUserName.font = [UIFont systemFontOfSize: 16];
+    [self.view addSubview:lUserName];
     
     //登录按钮
     btnSwitch = [[UIButton alloc] init];
@@ -60,6 +59,25 @@
     [self.view addSubview:btnSwitch];
     
     [btnSwitch addTarget:self action:@selector(switchLogin:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self initUserInfo];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self loginWithAccount:[self getUserName]  password:[self getPassword]];
+        });
+    });
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if(!self.isCancel){
+        NSLog(@"%@:%@", TAG, @"cancel auto login");
+        self.isCancel = true;
+    }
+}
+
+- (void)initUserInfo {
+    lUserName.text = [NSString stringWithFormat: @"帐号: %@", [self getUserName]];
 }
 
 - (void)switchLogin:(id)sender {
@@ -75,9 +93,8 @@
     int width = self.view.frame.size.width;
     bgView.frame = CGRectMake(0, 0, width, 80);
     indicator.center = bgView.center;
-    lbUsername.frame = CGRectMake(0, 80, width, 20);
+    lUserName.frame = CGRectMake(0, 80, width, 20);
     btnSwitch.frame = CGRectMake((width - 120) / 2, 120, 120, 40);
-
 }
 
 - (void)didReceiveMemoryWarning {

@@ -29,6 +29,10 @@
         
         self.ivArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"right_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil]];
         self.ivArrow.frame = CGRectMake(self.frame.size.width - 28, 12, 18, 18);
+        
+        self.sAutoLogin = [UISwitch new];
+        [self addSubview:self.sAutoLogin];
+        
         [self addSubview:self.ivArrow];
     }
     return self;

@@ -53,29 +53,42 @@
     [self.view addSubview:btnQQ2];
     
     [btnQQ addTarget:self action:@selector(openQQ) forControlEvents:UIControlEventTouchUpInside];
-    
     [btnQQ2 addTarget:self action:@selector(openQQ2) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)openQQ:(NSString *)qq{
-    
     @try {
-        NSString *url = [NSString stringWithFormat:@"%@%@", @"mqqwpa://im/chat?chat_type=wpa&uin=" , qq];
+        NSString *url = [NSString stringWithFormat:@"mqq://im/chat?chat_type=wpa&uin=%@&version=1&src_type=web"  , qq];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     } @catch (NSException *exception) {
         
     } @finally {
         
     }
-   
+}
+
+
+- (NSArray *)getKeQQ {
+    NSDictionary *initInfo = [[CacheHelper shareInstance] getInitInfo];
+    NSString *kefuQQ = [initInfo objectForKey:@"game_kefu_qq"];
+    if(kefuQQ){
+        return [kefuQQ componentsSeparatedByString:@","];
+    }
+    return nil;
 }
 
 - (void)openQQ {
-    [self openQQ:@"972403325"];
+    NSArray *qqs = [self getKeQQ];
+    if([qqs count]){
+        [self openQQ:qqs[0]];
+    }
 }
 
 - (void)openQQ2 {
-    [self openQQ:@"123456"];
+    NSArray *qqs = [self getKeQQ];
+    if([qqs count] > 1){
+        [self openQQ:qqs[1]];
+    }
 }
 
 - (void)viewDidLayoutSubviews {

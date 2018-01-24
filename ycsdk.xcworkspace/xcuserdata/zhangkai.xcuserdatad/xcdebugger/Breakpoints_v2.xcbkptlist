@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/net/NetUtils.m"
-            timestampString = "537870265.982015"
+            filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
+            timestampString = "538391108.681411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "+postWithUrl:params:callback:error:"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "-loginWithAccount:password:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/net/NetUtils.m"
-            timestampString = "537870265.9821171"
+            filePath = "leqisdk/leqisdk/ui/LoginViewController.m"
+            timestampString = "538391108.6815031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "+postWithUrl:params:callback:error:"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "-close:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,61 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/net/NetUtils.m"
-            timestampString = "537870265.982281"
+            filePath = "leqisdk/leqisdk/ui/LoginViewController.m"
+            timestampString = "538391108.681569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "+postWithUrl:params:callback:error:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "538022902.97774"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-viewDidLayoutSubviews"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "538022902.977841"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "-initMenuTableView:y:w:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/MenuTableViewCell.m"
-            timestampString = "538022902.977923"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-initWithStyle:reuseIdentifier:"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
+            landmarkName = "-close:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

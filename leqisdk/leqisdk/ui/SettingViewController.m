@@ -18,7 +18,7 @@
 @end
 
 @implementation SettingViewController {
-    UILabel *lbNickname;
+    UILabel *lbUserName;
     
     UITableView *tvMenu;
     
@@ -34,13 +34,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"设置";
-    [self setViewHieght:210];
+    [self setViewHieght:250];
     
-    lbNickname = [UILabel new];
-    lbNickname.textColor = kColorWithHex(0x333333);
-    lbNickname.font = [UIFont systemFontOfSize: 14];
-    lbNickname.text = @"帐号:zhangkai";
-    [self.view addSubview:lbNickname];
+    lbUserName = [UILabel new];
+    lbUserName.textColor = kColorWithHex(0x333333);
+    lbUserName.font = [UIFont systemFontOfSize: 14];
+    [self.view addSubview:lbUserName];
     
     //菜单
     tvMenu = [UITableView new];
@@ -87,18 +86,23 @@
 -(void)viewDidLayoutSubviews {
     int offset = 10;
     int width = self.view.frame.size.width;
-    lbNickname.frame = CGRectMake(offset,  offset , (width - offset*2), 14);
+    lbUserName.frame = CGRectMake(offset,  offset , (width - offset*2), 14);
     
     [self initMenuTableView:offset y:offset + 25 w:(width - offset*2)];
     
-    serviceView.frame = CGRectMake(offset, 165 , (width - offset*2), 26);
+    serviceView.frame = CGRectMake(offset, 205 , (width - offset*2), 26);
     btnPhone.frame = CGRectMake((width - 285) / 2, 5 , 175, 16);
     btnQQ.frame = CGRectMake((width - 285) / 2 + 150, 5 , 94, 16);
-    
+    [self initUserInfo];
+}
+
+- (void)initUserInfo {
+    NSDictionary *user = [[CacheHelper shareInstance] getCurrentUser];
+    lbUserName.text = [NSString stringWithFormat: @"帐号: %@", [self getUserName]];
 }
 
 - (void)initMenuTableView:(int)x y:(int)y w:(int)w {
-    datasource = @[@{@"name":@"修改密码"},@{@"name":@"绑定手机号"},@{@"name":@"身份认证"}];
+    datasource = @[@{@"name":@"修改密码"},@{@"name":@"绑定手机号"},@{@"name":@"身份认证"},@{@"name":@"自动登录"}];
     long len = [datasource count];
     tvMenu.frame = CGRectMake(x, y , w, MENU_CELL_HEIGHT*len - 1);
     [tvMenu reloadData];
@@ -117,13 +121,29 @@
     static NSString *ID = @"menu_cell";
     MenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        //单元格样式设置为UITableViewCellStyleDefault
         cell = [[MenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     NSDictionary *dict = datasource[indexPath.row];
     cell.lbMenuName.text = [dict objectForKey:@"name"];
+    if(indexPath.row == 3){
+        cell.ivArrow.hidden = YES;
+        cell.sAutoLogin.hidden = NO;
+    }else {
+        cell.ivArrow.hidden = NO;
+        cell.sAutoLogin.hidden = YES;
+    }
     cell.ivArrow.frame = CGRectMake(cell.frame.size.width - 28, 12, 18, 18);
+    cell.sAutoLogin.frame = CGRectMake(cell.frame.size.width - 72, 4, 60, 20);
+    [cell.sAutoLogin addTarget:self action:@selector(autoLogin:) forControlEvents:UIControlEventValueChanged];
+    BOOL isON = [[CacheHelper shareInstance] getAutoLogin];
+    [cell.sAutoLogin setOn: isON];
     return cell;
+}
+
+- (void)autoLogin:(id)sender {
+    UISwitch *sAutoLogin = (UISwitch *)sender;
+    BOOL isAutoLogin = [sAutoLogin isOn];
+    [[CacheHelper shareInstance] setAutoLogin:isAutoLogin];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,7 +151,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", indexPath);
     if(indexPath.row == 0){
         ModifyPasswordViewController *modifyPasswordViewController = [ModifyPasswordViewController new];
         [self.popupController pushViewController:modifyPasswordViewController animated:YES];
