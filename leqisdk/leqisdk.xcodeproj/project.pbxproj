@@ -66,11 +66,6 @@
 		4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */; };
 		4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */; };
-		4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */; };
-		4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */; };
-		4B5F4CE1200F4E9700BEB12C /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */; };
-		4B5F4CE2200F4E9700BEB12C /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */; };
-		4B5F4CE3200F4E9700BEB12C /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4CDE200F4E9700BEB12C /* YYModel.h */; };
 		4B5F4D1320107CC500BEB12C /* XHDraggableButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D0B20107CC500BEB12C /* XHDraggableButton.h */; };
 		4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D0C20107CC500BEB12C /* XHDraggableButton.m */; };
 		4B5F4D1520107CC500BEB12C /* XHFloatWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D0D20107CC500BEB12C /* XHFloatWindow.h */; };
@@ -187,11 +182,6 @@
 		4B5F4CCE200F422100BEB12C /* LeqiSDKOrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDKOrderInfo.h; sourceTree = "<group>"; };
 		4B5F4CCF200F422100BEB12C /* LeqiSDKInitConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKInitConfigure.m; sourceTree = "<group>"; };
 		4B5F4CD0200F422100BEB12C /* LeqiSDKOrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDKOrderInfo.m; sourceTree = "<group>"; };
-		4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
-		4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
-		4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
-		4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
-		4B5F4CDE200F4E9700BEB12C /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		4B5F4D0B20107CC500BEB12C /* XHDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDraggableButton.h; sourceTree = "<group>"; };
 		4B5F4D0C20107CC500BEB12C /* XHDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDraggableButton.m; sourceTree = "<group>"; };
 		4B5F4D0D20107CC500BEB12C /* XHFloatWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFloatWindow.h; sourceTree = "<group>"; };
@@ -321,7 +311,6 @@
 		4B5F4CB1200F290E00BEB12C /* service */ = {
 			isa = PBXGroup;
 			children = (
-				4B5F4CD9200F4E9700BEB12C /* YYModel */,
 				4B5F4CB2200F290E00BEB12C /* YYCache */,
 				4B71D0072016CC3600F31C0C /* CacheHelper.h */,
 				4B71D0082016CC3600F31C0C /* CacheHelper.m */,
@@ -342,18 +331,6 @@
 				4B5F4CBA200F290E00BEB12C /* YYMemoryCache.m */,
 			);
 			path = YYCache;
-			sourceTree = "<group>";
-		};
-		4B5F4CD9200F4E9700BEB12C /* YYModel */ = {
-			isa = PBXGroup;
-			children = (
-				4B5F4CDA200F4E9700BEB12C /* NSObject+YYModel.h */,
-				4B5F4CDB200F4E9700BEB12C /* NSObject+YYModel.m */,
-				4B5F4CDC200F4E9700BEB12C /* YYClassInfo.h */,
-				4B5F4CDD200F4E9700BEB12C /* YYClassInfo.m */,
-				4B5F4CDE200F4E9700BEB12C /* YYModel.h */,
-			);
-			path = YYModel;
 			sourceTree = "<group>";
 		};
 		4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */ = {
@@ -559,7 +536,6 @@
 				4B5F4D1720107CC500BEB12C /* XHFloatWindowController.h in Headers */,
 				4BAE8C1F20083C5E0022248C /* AFHTTPSessionManager.h in Headers */,
 				4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */,
-				4B5F4CE1200F4E9700BEB12C /* YYClassInfo.h in Headers */,
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
 				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
 				4B33964620059C1800801E74 /* STPopupLeftBarItem.h in Headers */,
@@ -591,13 +567,11 @@
 				4B33965C2005C87A00801E74 /* RegViewController.h in Headers */,
 				4B71D0092016CC3600F31C0C /* CacheHelper.h in Headers */,
 				4BAE8C3C200845AB0022248C /* RSA.h in Headers */,
-				4B5F4CDF200F4E9700BEB12C /* NSObject+YYModel.h in Headers */,
 				4BAE8C2E200844800022248C /* EncrytUtils.h in Headers */,
 				4B5F4D312010997100BEB12C /* AuthViewController.h in Headers */,
 				4BAE8C2620083C5E0022248C /* AFURLRequestSerialization.h in Headers */,
 				4BAE8C2A20083C5E0022248C /* AFURLSessionManager.h in Headers */,
 				4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */,
-				4B5F4CE3200F4E9700BEB12C /* YYModel.h in Headers */,
 				4B33964020059C1800801E74 /* STPopupController.h in Headers */,
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
 				4B33964820059C1800801E74 /* STPopupNavigationBar.h in Headers */,
@@ -755,9 +729,7 @@
 				4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */,
 				4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */,
 				4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */,
-				4B5F4CE2200F4E9700BEB12C /* YYClassInfo.m in Sources */,
 				4B33964D20059C1800801E74 /* UIViewController+STPopup.m in Sources */,
-				4B5F4CE0200F4E9700BEB12C /* NSObject+YYModel.m in Sources */,
 				4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */,
 				4B3396592005C5EC00801E74 /* QQViewController.m in Sources */,
 				4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */,
