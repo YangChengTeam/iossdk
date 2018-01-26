@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol UserTableViewCellDelegate <NSObject>
-- (void)close:(id)sender;
+- (void)delInfo:(id)sender;
 @end
 
 @interface UserTableViewCell : UITableViewCell

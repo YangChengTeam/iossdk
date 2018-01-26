@@ -16,6 +16,7 @@
 #import "SettingViewController.h"
 #import "AutoLoginViewController.h"
 #import "CacheHelper.h"
+#import "PayViewController.h"
 
 #define FIRST_LOGIN @"first_login"
 
@@ -27,6 +28,8 @@
     BOOL isInitOk;
     BOOL isReInit;
     BOOL isFloatViewAdded;
+    
+    NSString *currentOrderId;
 }
 
 static LeqiSDK* instance = nil;
@@ -42,13 +45,13 @@ static LeqiSDK* instance = nil;
 }
 
 #pragma mark -- 初始化
-- (int)initWithConfig:(LeqiSDKInitConfigure *)configure {
+- (int)initWithConfig:(nonnull LeqiSDKInitConfigure *)configure {
     if(isReInit){
         [self show:@"重试中..."];
     }
     
     self.configInfo = configure;
-    if(self.configInfo){
+    if(self.configInfo.gameid){
         NSMutableDictionary *params =[self setParams];
         NSString *url = [NSString stringWithFormat:@"%@%@?ios", @"http://api.6071.com/index3/init/p/", self.configInfo.appid];
         [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
@@ -70,10 +73,10 @@ static LeqiSDK* instance = nil;
         } error:^(NSError *error) {
             [self showByError:error];
         }];
-        return 0;
+        return LEQI_SDK_ERROR_NONE;
     } else {
-        [self alert:@"初始化信息未配置"];
-        return -1;
+        [self alert:@"初始化信息配置错误"];
+        return LEQI_SDK_ERROR_INIT_CONFIG_ERROR;
     }
     
 
@@ -139,18 +142,18 @@ static LeqiSDK* instance = nil;
 - (int)login {
     NSLog(@"%@:%@", TAG, @"login");
     if(self.user){
-        return -10002;  //已经登录
+        return LEQI_SDK_ERROR_ALREADY_LOGIN;  //已经登录
     }
     if(!isInitOk){
         isReInit = YES;
         [self initWithConfig: self.configInfo];
-        return -10001; //初始化失败
+        return LEQI_SDK_ERROR_INIT_FAILED; //初始化失败
     }
     
     BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
     if(isAutoLogin){
         [self openAutoLogin];
-        return 0;
+        return LEQI_SDK_ERROR_NONE;
     }
     
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
@@ -160,16 +163,60 @@ static LeqiSDK* instance = nil;
     } else {
         [self openNormalLogin];
     }
-    return 0;
+    return LEQI_SDK_ERROR_NONE;
 }
 
+
 #pragma mark -- 支付
-- (int)payWithOrderInfo:(id)orderInfo {
-    if(!self.user) return -10003; //没有登录
-    
+- (int)payWithOrderInfo:(nonnull LeqiSDKOrderInfo *)orderInfo {
+    if(!self.user) return LEQI_SDK_ERROR_NO_LOGIN; //没有登录
+
     [self show:@"请稍后..."];
-    [[IAPManager sharedManager] requestProductWithId: @"sdktest1"];
-    return 0;
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_pay_init/p", self.configInfo.appid];
+    NSMutableDictionary *params = [self setParams];
+    [params setValue:[self.user objectForKey:@"user_id"] forKey:@"user_id"];
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        if(res && res[@"data"]){
+            [self dismiss:nil];
+            if([res[@"data"][@"type"] isEqual:@"h5"]){
+                [self iapPayISO:orderInfo];
+                return;
+            }
+        }
+        [BaseViewController payWithOrderInfo:orderInfo callback:^(id res) {
+            if([res isKindOfClass:[NSError class]]){
+                [self showByError:res];
+                return;
+            }
+            
+            [self dismiss:nil];
+            if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
+                currentOrderId = res[@"data"][@"order_sn"];
+                if(currentOrderId){
+                    [self iapPay:orderInfo];
+                }
+                return;
+            }
+            [self alert:res[@"msg"]];
+        }];
+    } error:^(NSError * error) {
+        [self showByError:error];
+    }];
+    return LEQI_SDK_ERROR_NONE;
+}
+
+
+- (void)iapPayISO:(LeqiSDKOrderInfo *)orderInfo  {
+    PayViewController *payViewController = [PayViewController new];
+    payViewController.orderInfo = orderInfo;
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:payViewController];
+    popupController.containerView.layer.cornerRadius = 4;
+    [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+}
+
+- (void)iapPay:(LeqiSDKOrderInfo *)orderInfo {
+    [self show:@"请稍后..."];
+    [[IAPManager sharedManager] requestProductWithId: orderInfo.goodId];
 }
 
 - (void)showFloatView {
@@ -186,10 +233,12 @@ static LeqiSDK* instance = nil;
         [XHFloatWindow xh_setHideWindow:NO];
     }
     isFloatViewAdded = true;
+
 }
 
 - (void)hideFloatView {
     [XHFloatWindow xh_setHideWindow:YES];
+    
 }
 
 #pragma mark -- SDK版本号
@@ -199,7 +248,8 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 退出
 - (int)logout {
-    return 0;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogout object:nil];
+    return LEQI_SDK_ERROR_NONE;
 }
 
 #pragma mark -- 接收内购支付回调
@@ -211,7 +261,7 @@ static LeqiSDK* instance = nil;
            [self alert:@"您禁止了应用内购买权限,请到设置中开启!"];
         }
     } else {
-        [self alert:@"无法连接App Store!"];
+        [self alert:@"无法获取产品信息"];
     }
 }
 
@@ -221,20 +271,24 @@ static LeqiSDK* instance = nil;
     NSString  *transactionReceiptString = [transactionReceipt base64EncodedStringWithOptions:0];
     
     if ([transactionReceiptString length] > 0) {
-        // 向自己的服务器验证购买凭证（此处应该考虑将凭证本地保存,对服务器有失败重发机制）
-        /**
-         服务器要做的事情:
-         接收ios端发过来的购买凭证。
-         判断凭证是否已经存在或验证过，然后存储该凭证。
-         将该凭证发送到苹果的服务器验证，并将验证结果返回给客户端。
-         如果需要，修改用户相应的会员权限
-         */
-        
-        /**
-         if (凭证校验成功) {
-         [[MLIAPManager sharedManager] finishTransaction];
-         }
-         */
+        NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order_query/p", self.configInfo.appid];
+        NSMutableDictionary *params = [self setParams];
+        [params setValue:transactionReceiptString forKey:@"receipt"];
+        [params setValue:currentOrderId forKey:@"order_sn"];
+        [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+            [self dismiss:nil];
+            if(!res){
+                return;
+            }
+            [[IAPManager sharedManager] finishTransaction];
+            if([res[@"code"] integerValue] == 1 && res[@"data"]){
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
+            } else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
+            }
+        } error:^(NSError * error) {
+            [self showByError:error];
+        }];
     }
 }
 
@@ -243,6 +297,13 @@ static LeqiSDK* instance = nil;
 - (void)failedPurchaseWithError:(NSString *)errorDescripiton {
     NSLog(@"%@:%@", TAG, @"购买失败");
     [self alert:errorDescripiton];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
+}
+
+#pragma mark -- 取消购买
+- (void)canceledPurchaseWithError:(NSString *)errorDescripiton {
+    NSLog(@"%@:%@", TAG, @"取消购买");
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_CANCELED]];
 }
 
 #pragma mark -- 显示Loading
@@ -250,14 +311,14 @@ static LeqiSDK* instance = nil;
     self.hud = [MBProgressHUD showHUDAddedTo:[BaseViewController getCurrentViewController].view animated:YES];
     self.hud.label.font = [UIFont systemFontOfSize: 14];
     self.hud.label.text = message;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if(self.hud){
-                [self.hud hideAnimated:YES];
-                self.hud = nil;
-            }
-        });
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            if(self.hud){
+//                [self.hud hideAnimated:YES];
+//                self.hud = nil;
+//            }
+//        });
+//    });
 }
 
 #pragma mark -- 关闭Loading

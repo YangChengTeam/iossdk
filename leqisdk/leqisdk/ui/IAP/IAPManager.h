@@ -17,6 +17,8 @@
 
 - (void)failedPurchaseWithError:(NSString *)errorDescripiton;
 
+- (void)canceledPurchaseWithError:(NSString *)errorDescripiton;
+
 
 @end
 

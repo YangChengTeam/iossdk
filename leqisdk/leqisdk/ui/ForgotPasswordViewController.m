@@ -86,6 +86,7 @@
     tfCode.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     tfCode.keyboardType = UIKeyboardTypeNumberPad;
     
+    
     [loginView addSubview:lbAccount];
     [loginView addSubview:lineAccountView];
     [loginView addSubview:tfPhone];

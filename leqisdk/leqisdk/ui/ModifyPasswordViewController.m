@@ -54,6 +54,7 @@
     tfNewPass.font = [UIFont systemFontOfSize: 14];
     tfNewPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     tfNewPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfNewPass.secureTextEntry = YES;
     
     lineBgView = [UIView new];
     lineBgView.backgroundColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
@@ -71,6 +72,7 @@
     tfAgainPass.font = [UIFont systemFontOfSize: 14];
     tfAgainPass.tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     tfAgainPass.keyboardType = UIKeyboardTypeNumberPad;
+    tfAgainPass.secureTextEntry = YES;
     
     [loginView addSubview:lbAccount];
     [loginView addSubview:lineAccountView];

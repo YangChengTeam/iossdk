@@ -33,15 +33,13 @@
 
 #pragma mark ==== 请求商品
 - (BOOL)requestProductWithId:(NSString *)productId {
-    
+
     if (productId.length > 0) {
-        NSLog(@"请求商品: %@", productId);
+        NSLog(@"leqisdk:请求商品->%@", productId);
         SKProductsRequest *productRequest = [[SKProductsRequest alloc]initWithProductIdentifiers:[NSSet setWithObject:productId]];
         productRequest.delegate = self;
         [productRequest start];
         return YES;
-    } else {
-        NSLog(@"商品ID为空");
     }
     return NO;
 }
@@ -56,9 +54,7 @@
             [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
             [[SKPaymentQueue defaultQueue] addPayment:payment];
             return YES;
-        } else {
-            NSLog(@"失败，用户禁止应用内付费购买.");
-        }
+        } 
     }
     return NO;
 }
@@ -67,10 +63,8 @@
 - (BOOL)restorePurchase {
     if ([SKPaymentQueue canMakePayments]) {
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-        [[SKPaymentQueue defaultQueue]restoreCompletedTransactions];
+        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
         return YES;
-    } else {
-        NSLog(@"失败,用户禁止应用内付费购买.");
     }
     return NO;
 }
@@ -107,7 +101,6 @@
         myProduct = [myProductArray objectAtIndex:0];
         [_delegate receiveProduct:myProduct];
     } else {
-        NSLog(@"无法获取产品信息，购买失败。");
         [_delegate receiveProduct:myProduct];
     }
 }
@@ -119,7 +112,7 @@
     for (SKPaymentTransaction *transaction in transactions) {
         switch (transaction.transactionState) {
             case SKPaymentTransactionStatePurchasing: //商品添加进列表
-                NSLog(@"商品:%@被添加进购买列表",myProduct.localizedTitle);
+                NSLog(@"leqisdk:商品->%@被添加进购买列表",myProduct.localizedTitle);
                 break;
             case SKPaymentTransactionStatePurchased://交易成功
                 [self completeTransaction:transaction];
@@ -128,8 +121,10 @@
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored://已购买过该商品
+                [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
                 break;
             case SKPaymentTransactionStateDeferred://交易延迟
+                
                 break;
             default:
                 break;
@@ -140,7 +135,6 @@
 #pragma mark - ================ Private Methods =================
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
-    
     NSURL *receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
     NSData *receiptData = [NSData dataWithContentsOfURL:receiptUrl];
     [_delegate successedWithReceipt:receiptData];
@@ -153,6 +147,11 @@
     if (transaction.error.code != SKErrorPaymentCancelled && transaction.error.code != SKErrorUnknown) {
         [_delegate failedPurchaseWithError:transaction.error.localizedDescription];
     }
+    
+    if(transaction.error.code == SKErrorPaymentCancelled && transaction.error.code != SKErrorUnknown){
+        [_delegate canceledPurchaseWithError:transaction.error.localizedDescription];
+    }
+    
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
     self.currentTransaction = transaction;
 }

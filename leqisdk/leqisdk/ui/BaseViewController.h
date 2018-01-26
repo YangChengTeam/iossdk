@@ -34,8 +34,10 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 @interface BaseViewController : UIViewController
 @property (nonatomic, assign) BOOL isCancel;
 @property (nonatomic, assign) BOOL noCancel;
+@property (nonatomic, assign) int width;
 
 @property (nonatomic, strong) MBProgressHUD *hud;
+
 
 - (UIImage*)createImageWithColor: (UIColor*) color;
 - (void)setViewHieght:(int)height;
@@ -53,11 +55,16 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 - (void)loginWithAccount:(NSString *)account password:(NSString *)passwrod;
 - (void)regWithAccount:(NSString *)account password:(NSString *)password isQuick:(BOOL)isQuick callback:(void (^)())callback;
 
+
+- (void)setViewHieght:(int)height lan:(BOOL)lan;
+
 - (void)showByError:(NSError *)error;
 - (void)alert:(NSString *)message;
 - (void)alertByfail:(NSString *)message;
 
 - (void)openQQ:(id)sender;
 - (void)openPhone:(id)sender;
+
++ (void)payWithOrderInfo:(LeqiSDKOrderInfo *)orderInfo  callback:(void (^)(id))callback;
 
 @end

@@ -32,9 +32,27 @@
                                              selector:@selector(leqiLoginResult:)
                                                  name:kLeqiSDKNotiLogin
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(leqiPayResult:)
+                                                 name:kLeqiSDKNotiPay
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(leqiLogoutResult:)
+                                                 name:kLeqiSDKNotiLogout
+                                               object:nil];
 }
 
 - (void)leqiLoginResult:(NSNotification *)notify {
+    NSLog(@"%@", notify.object);
+}
+
+- (void)leqiPayResult:(NSNotification *)notify {
+    NSLog(@"%@", notify.object);
+}
+
+- (void)leqiLogoutResult:(NSNotification *)notify {
     NSLog(@"%@", notify.object);
 }
 
@@ -51,7 +69,15 @@
 }
 
 - (void)pay {
-    [[LeqiSDK shareInstance] payWithOrderInfo:NULL];
+    LeqiSDKOrderInfo *orderInfo = [LeqiSDKOrderInfo new];
+    orderInfo.goodId = @"sdktest2";
+    orderInfo.productName = @"阴阳师:640枚勾玉";
+    orderInfo.amount = 0.01f;
+    orderInfo.count = 1;
+    orderInfo.roleId = @"111";
+    orderInfo.orderId = @"111111111";
+    orderInfo.serverId = @"11111122";
+    [[LeqiSDK shareInstance] payWithOrderInfo:orderInfo];
 }
 
 - (void)didReceiveMemoryWarning {

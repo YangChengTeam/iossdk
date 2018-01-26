@@ -27,15 +27,16 @@
         
         self.btnClose =  [UIButton new];
         [self.btnClose setImage:[UIImage imageNamed:@"account_close" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-        [self.btnClose addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
+        [self.btnClose addTarget:self action:@selector(delInfo:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self addSubview:self.btnClose];
     }
     return self;
 }
 
-- (void)close:(id)sender {
+- (void)delInfo:(id)sender {
     if(self.delegate){
-        [self.delegate close:sender];
+        [self.delegate delInfo:sender];
     }
 }
 

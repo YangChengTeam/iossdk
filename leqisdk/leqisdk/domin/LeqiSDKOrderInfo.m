@@ -10,4 +10,11 @@
 
 @implementation LeqiSDKOrderInfo
 
+- (instancetype)init {
+    if([super init]){
+        self.payways = @"iap";
+    }
+    return self;
+}
+
 @end

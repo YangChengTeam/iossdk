@@ -23,6 +23,7 @@
     [STPopupNavigationBar appearance].barTintColor = [UIColor whiteColor];
     [STPopupNavigationBar appearance].tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
     [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x333333) };
+    self.popupController.navigationBar.draggable = NO;
 }
 
 
@@ -55,19 +56,23 @@
 }
 
 - (void)setViewHieght:(int)height {
+    [self setViewHieght:height lan:YES];
+}
+
+- (void)setViewHieght:(int)height lan:(BOOL)lan {
     int offset = 20;
     int width = kScreenWidth - offset * 2;
     int maxWidth = 400;
-    if(width >= maxWidth){
+    if(width >= maxWidth && lan){
         width = maxWidth;
     }
     self.contentSizeInPopup = CGSizeMake(width, height);
-    self.landscapeContentSizeInPopup = CGSizeMake(maxWidth, height);
+    self.landscapeContentSizeInPopup = CGSizeMake(width, height);
 }
 
 - (UIImage*)createImageWithColor: (UIColor*) color
 {
-    CGRect rect=CGRectMake(0,0, 1, 1);
+    CGRect rect= CGRectMake(0,0, 1, 1);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
@@ -252,6 +257,27 @@
     }];
 }
 
++ (void)payWithOrderInfo:(LeqiSDKOrderInfo *)orderInfo callback:(void (^)(id))callback {
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order/p", [LeqiSDK shareInstance].configInfo.appid];
+    NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+    [params setValue:[[LeqiSDK shareInstance].user objectForKey:@"user_id"] forKey:@"user_id"];
+    [params setValue:orderInfo.payways forKey:@"pay_ways"];
+    [params setValue:[NSNumber numberWithFloat:orderInfo.amount]  forKey:@"amount"];
+    [params setValue:orderInfo.roleId forKey:@"role"];
+    [params setValue:orderInfo.serverId forKey:@"server"];
+    [params setValue:orderInfo.productName forKey:@"productname"];
+    [params setValue:orderInfo.orderId forKey:@"attach"];
+    [params setValue:orderInfo.extrasParams forKey:@"extra"];
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        if(callback){
+            callback(res);
+        }
+    } error:^(NSError * error) {
+        if(callback){
+           callback(error);
+        }
+    }];
+}
 
 - (void)showByError:(NSError *)error {
     [self dismiss:nil];

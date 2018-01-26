@@ -10,11 +10,16 @@
 
 @interface LeqiSDKOrderInfo : NSObject
 
+//兼容android sdk
+@property (nonatomic, copy) NSString *roleId;
+@property (nonatomic, copy) NSString *serverId;
+
 @property (nonatomic, copy) NSString *goodId;
 @property (nonatomic, copy) NSString *productName;
 @property (nonatomic, copy) NSString *orderId;
-@property (nonatomic, copy) NSString *count;
-@property (nonatomic, copy) NSString *amount;
+@property (nonatomic, copy) NSString *payways;
+@property (nonatomic, assign) int count;
+@property (nonatomic, assign) float amount;
 @property (nonatomic, copy) NSString *callback;
 @property (nonatomic, copy) NSString *extrasParams;
 

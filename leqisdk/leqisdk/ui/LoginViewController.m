@@ -350,10 +350,11 @@
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[UserTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        
     }
-    cell.btnClose.frame = CGRectMake(cell.frame.size.width - 25, 10, 20, 20);
-    cell.lbNickname.frame = CGRectMake(14, 0, cell.frame.size.width - 40, cell.frame.size.height-4);
     NSDictionary *dict = datasource[indexPath.row];
+    cell.btnClose.frame = CGRectMake(tvMoreAccount.frame.size.width - 25, 10, 20, 20);
+    cell.lbNickname.frame = CGRectMake(14, 0, tvMoreAccount.frame.size.width - 40, USER_CELL_HEIGHT);
     cell.delegate = self;
     cell.lbNickname.text = [self getUserName:dict];
     cell.btnClose.tag = indexPath.row;
@@ -371,7 +372,7 @@
     tvMoreAccount.hidden = YES;
 }
 
--(void)close:(id)sender {
+-(void)delInfo:(id)sender {
     NSDictionary *dict = datasource[((UIButton*)sender).tag];
     NSMutableArray *users = [[NSMutableArray alloc] initWithArray:datasource];
     [users removeObject:dict];
