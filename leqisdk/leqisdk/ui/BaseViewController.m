@@ -63,11 +63,11 @@
     int offset = 20;
     int width = kScreenWidth - offset * 2;
     int maxWidth = 400;
-    if(width >= maxWidth && lan){
-        width = maxWidth;
+    if(!lan){
+        maxWidth = width;
     }
     self.contentSizeInPopup = CGSizeMake(width, height);
-    self.landscapeContentSizeInPopup = CGSizeMake(width, height);
+    self.landscapeContentSizeInPopup = CGSizeMake(maxWidth, height);
 }
 
 - (UIImage*)createImageWithColor: (UIColor*) color
@@ -184,7 +184,12 @@
 }
 
 - (void)openPhone:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://400-796-6071"]];
+    NSDictionary *initInfo = [[CacheHelper shareInstance] getInitInfo];
+    NSString *phone = [initInfo objectForKey:@"iso_tel"];
+    if([phone length] ==  0){
+        phone = @"tel://400-796-6071";
+    }
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
 }
 
 - (void)loginWithAccount:(NSString *)account password:(NSString *)passwrod {
@@ -294,7 +299,7 @@
 
 - (void)alertByfail:(NSString *)message {
     NSString *msg = message;
-    if(!msg){
+    if([msg length] == 0){
         msg = @"服务器未知错误";
     }
     [self alert:message];

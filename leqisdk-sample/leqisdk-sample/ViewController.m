@@ -72,7 +72,7 @@
     LeqiSDKOrderInfo *orderInfo = [LeqiSDKOrderInfo new];
     orderInfo.goodId = @"sdktest2";
     orderInfo.productName = @"阴阳师:640枚勾玉";
-    orderInfo.amount = 0.01f;
+    orderInfo.amount = 0.02f;
     orderInfo.count = 1;
     orderInfo.roleId = @"111";
     orderInfo.orderId = @"111111111";

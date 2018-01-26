@@ -21,6 +21,8 @@
 @implementation SettingViewController {
     UILabel *lbUserName;
     
+    UIButton *btnCheckOrder;
+    
     UITableView *tvMenu;
     
     UIView *serviceView;
@@ -28,6 +30,8 @@
     UIButton *btnQQ;
     
     NSArray *datasource;
+    
+    NSMutableArray *orderList;
     
 }
 
@@ -41,6 +45,17 @@
     lbUserName.textColor = kColorWithHex(0x333333);
     lbUserName.font = [UIFont systemFontOfSize: 14];
     [self.view addSubview:lbUserName];
+    
+    btnCheckOrder = [UIButton new];
+    [btnCheckOrder setTitle:@"同步订单" forState: UIControlStateNormal];
+    [btnCheckOrder setTitleColor:kColorWithHex(0x19b1f5) forState: UIControlStateNormal];
+    [btnCheckOrder setTitleColor:kColorWithHex(0xbfbfbf) forState: UIControlStateHighlighted];
+    btnCheckOrder.font = [UIFont systemFontOfSize: 12];
+    [btnCheckOrder addTarget:self action:@selector(checkOrder:) forControlEvents:UIControlEventTouchUpInside];
+    btnCheckOrder.layer.borderWidth = 0.5;
+    btnCheckOrder.layer.borderColor = [kColorWithHex(0x19b1f5) CGColor];
+    btnCheckOrder.layer.cornerRadius = 2;
+    [self.view addSubview:btnCheckOrder];
     
     //菜单
     tvMenu = [UITableView new];
@@ -58,13 +73,13 @@
     
     btnPhone = [UIButton new];
     [btnPhone setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnPhone setTitle:@"客服电话:400-796-6071" forState:UIControlStateNormal];
+    [btnPhone setTitle:@"客服电话" forState:UIControlStateNormal];
     [btnPhone setImage:[UIImage imageNamed:@"call_service_icon" inBundle:leqiBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [btnPhone setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
     btnPhone.titleLabel.font = [UIFont systemFontOfSize: 12];
     btnPhone.imageView.contentMode =  UIViewContentModeScaleAspectFit;
     [btnPhone setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    btnPhone.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+    btnPhone.titleEdgeInsets = UIEdgeInsetsMake(0, -12, 0, 0);
     [serviceView addSubview:btnPhone];
     
     btnQQ = [UIButton new];
@@ -86,18 +101,54 @@
                                              selector:@selector(reload:)
                                                  name:kRefreshMenu
                                                object:nil];
+    
+    orderList = [[CacheHelper shareInstance] getCheckFailOrderList];
+    if([orderList count] > 0){
+        btnCheckOrder.hidden = NO;
+    } else {
+        btnCheckOrder.hidden = YES;
+    }
+}
+
+#pragma mark -- 订单验证
+- (void)checkOrder:(id)sender {
+    [self show:@"订单校验中..."];
+    __block int n = 0;
+    for(NSMutableDictionary *info in orderList){
+        NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order_query/p", [LeqiSDK shareInstance].configInfo.appid];
+        NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
+        [params setValue:[info objectForKey:@"receipt"] forKey:@"receipt"];
+        [params setValue:[info objectForKey:@"order_sn"] forKey:@"order_sn"];
+        [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+            if(res && [res[@"code"] integerValue] == 1){
+                [orderList removeObject:info];
+                [[CacheHelper shareInstance] setCheckFailOrderList:orderList];
+            }
+            n++;
+            if(n >= [orderList count]){
+                [self dismiss:nil];
+            }
+        } error:^(NSError * error) {
+            [self showByError:error];
+            n++;
+            if(n >= [orderList count]){
+                [self dismiss:nil];
+            }
+        }];
+    }
 }
 
 -(void)viewDidLayoutSubviews {
     int offset = 10;
     int width = self.view.frame.size.width;
     lbUserName.frame = CGRectMake(offset,  offset , (width - offset*2), 14);
-
+    btnCheckOrder.frame = CGRectMake(width - 70,  offset - 4 , 60, 20);
+    
     [self initMenuTableView:offset y:offset + 25 w:(width - offset*2)];
 
     serviceView.frame = CGRectMake(offset, 205 , (width - offset*2), 26);
-    btnPhone.frame = CGRectMake((width - 285) / 2, 5 , 175, 16);
-    btnQQ.frame = CGRectMake((width - 285) / 2 + 150, 5 , 94, 16);
+    btnPhone.frame = CGRectMake(50, 5 , 94, 16);
+    btnQQ.frame = CGRectMake(serviceView.frame.size.width - 50 - 94, 5 , 94, 16);
     [self initUserInfo];
     
 }

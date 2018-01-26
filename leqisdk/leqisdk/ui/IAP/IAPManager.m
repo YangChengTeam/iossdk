@@ -5,6 +5,7 @@
 
 
 #import "IAPManager.h"
+#import "LeqiSDK.h"
 
 @interface IAPManager() <SKProductsRequestDelegate, SKPaymentTransactionObserver> {
     SKProduct *myProduct;
@@ -32,10 +33,10 @@
 #pragma mark - ================ Public Methods =================
 
 #pragma mark ==== 请求商品
-- (BOOL)requestProductWithId:(NSString *)productId {
-
+- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId {
+    self.userId = userId;
     if (productId.length > 0) {
-        NSLog(@"leqisdk:请求商品->%@", productId);
+        NSLog(@"leqisdk:请求商品%@", productId);
         SKProductsRequest *productRequest = [[SKProductsRequest alloc]initWithProductIdentifiers:[NSSet setWithObject:productId]];
         productRequest.delegate = self;
         [productRequest start];
@@ -50,7 +51,8 @@
     
     if (skProduct != nil) {
         if ([SKPaymentQueue canMakePayments]) {
-            SKPayment *payment = [SKPayment paymentWithProduct:skProduct];
+            SKMutablePayment *payment = [SKMutablePayment paymentWithProduct:skProduct];
+            payment.applicationUsername = self.userId;
             [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
             [[SKPaymentQueue defaultQueue] addPayment:payment];
             return YES;
@@ -112,7 +114,7 @@
     for (SKPaymentTransaction *transaction in transactions) {
         switch (transaction.transactionState) {
             case SKPaymentTransactionStatePurchasing: //商品添加进列表
-                NSLog(@"leqisdk:商品->%@被添加进购买列表",myProduct.localizedTitle);
+                NSLog(@"leqisdk:商品%@被添加进购买列表",myProduct.localizedTitle);
                 break;
             case SKPaymentTransactionStatePurchased://交易成功
                 [self completeTransaction:transaction];
@@ -121,12 +123,10 @@
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored://已购买过该商品
-                [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
-                break;
-            case SKPaymentTransactionStateDeferred://交易延迟
-                
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             default:
+                
                 break;
         }
     }
@@ -137,8 +137,10 @@
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     NSURL *receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
     NSData *receiptData = [NSData dataWithContentsOfURL:receiptUrl];
-    [_delegate successedWithReceipt:receiptData];
     self.currentTransaction = transaction;
+    if(_delegate){
+        [_delegate successedWithReceipt:receiptData];
+    }
 }
 
 

@@ -20,51 +20,69 @@
 }
 
 + (void)postWithUrl:(NSString *)url params:(NSDictionary *)data callback:(void (^)(NSDictionary *))finishcallback error:(void (^)(NSError *))errorcallback {
+    [self postWithUrl:url params:data callback:finishcallback error:errorcallback encryt:YES];
+}
+
++ (void)postWithUrl:(NSString *)url params:(NSDictionary *)data callback:(void (^)(NSDictionary *))finishcallback error:(void (^)(NSError *))errorcallback encryt:(BOOL)encryt {
     NSLog(@"leqisdk:请求url->%@", url);
-    
+   
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    if(!encryt){
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        [securityPolicy setAllowInvalidCertificates:YES];
+        manager.securityPolicy = securityPolicy;
+        [manager.securityPolicy setValidatesDomainName:NO];
+    }
     manager.responseSerializer = [AFHTTPResponseSerializer serializer] ;
     NSMutableURLRequest *req = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
     [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [req setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
-    //timestamp
-    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
-    NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
     NSMutableDictionary *defaultParams = [NSMutableDictionary new];
-    [defaultParams setValue:[NSString stringWithFormat:@"%ld", (long)[timeStampObj integerValue]] forKey:@"ts"];
-    
-    //uuid
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSString *uuidString = [defaults stringForKey:UUID];
-    if(!uuidString){
-        CFUUIDRef udid = CFUUIDCreate(NULL);
-        uuidString = (NSString *) CFBridgingRelease(CFUUIDCreateString(NULL, udid));
-        uuidString = [[uuidString stringByReplacingOccurrencesOfString:@"-"
-                                                            withString:@""] lowercaseString];
-        [defaults setObject:uuidString forKey:UUID];
-        [defaults synchronize];
+    if(encryt){
+        //timestamp
+        NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+        NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
+        
+        [defaultParams setValue:[NSString stringWithFormat:@"%ld", (long)[timeStampObj integerValue]] forKey:@"ts"];
+        
+        //uuid
+        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+        NSString *uuidString = [defaults stringForKey:UUID];
+        if(!uuidString){
+            CFUUIDRef udid = CFUUIDCreate(NULL);
+            uuidString = (NSString *) CFBridgingRelease(CFUUIDCreateString(NULL, udid));
+            uuidString = [[uuidString stringByReplacingOccurrencesOfString:@"-"
+                                                                withString:@""] lowercaseString];
+            [defaults setObject:uuidString forKey:UUID];
+            [defaults synchronize];
+        }
+        [defaultParams setValue:uuidString forKey:@"i"];
+        
+        //systemVersion
+        NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+        [defaultParams setValue:[NSString stringWithFormat:@"iOS%@", systemVersion] forKey:@"sv"];
+        
+        //设备类型
+        //[defaultParams setValue:@"3" forKey:@"d"];
     }
-    [defaultParams setValue:uuidString forKey:@"i"];
-    
-    //systemVersion
-    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-    [defaultParams setValue:[NSString stringWithFormat:@"iOS%@", systemVersion] forKey:@"sv"];
-    
-    //设备类型
-//    [defaultParams setValue:@"3" forKey:@"d"];
     
     if(data){
         [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             [defaultParams setObject:obj forKey:key];
         }];
     }
-    
+   
     NSData *jsonData = [NetUtils dict2jsonString:defaultParams];
     NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSData *params = [EncrytUtils gzipByRsa:jsonStr];
     NSLog(@"leqisdk:请求参数->%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
-    [req setHTTPBody:params];
+    
+    if(encryt){
+        NSData *params  = [EncrytUtils gzipByRsa:jsonStr];
+        [req setHTTPBody:params];
+    } else {
+        [req setHTTPBody:jsonData];
+    }
     
     [[manager dataTaskWithRequest:req uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -90,11 +108,16 @@
             }
             return;
         }
-        NSString *jsonStr = [EncrytUtils upgzipByResponse:responseObject];
-        NSData *jsonData =[jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSData *jsonData = nil;
+        if(encryt){
+            NSString *jsonStr  = [EncrytUtils upgzipByResponse:responseObject];
+            jsonData =[jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+        } else {
+            jsonData = responseObject;
+        }
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
         NSLog(@"leqisdk:服务器返回数据->%@", dictionary);
-        if([dictionary[@"code"] integerValue] == -100){
+        if(encryt && [dictionary[@"code"] integerValue] == -100){
             [EncrytUtils setPubKey:dictionary[@"data"][@"publickey"]];
             [NetUtils postWithUrl:url params:data callback:finishcallback error: errorcallback];
             return;

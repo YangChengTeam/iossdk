@@ -26,11 +26,11 @@
 @interface IAPManager : NSObject
 
 @property (nonatomic, assign)id<IAPManagerDelegate> delegate;
-
+@property (nonatomic, assign) NSString* userId;
 
 + (instancetype)sharedManager;
 
-- (BOOL)requestProductWithId:(NSString *)productId;
+- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId;
 - (BOOL)purchaseProduct:(SKProduct *)skProduct;
 - (BOOL)restorePurchase;
 - (void)refreshReceipt;

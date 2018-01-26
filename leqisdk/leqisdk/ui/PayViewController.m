@@ -19,6 +19,8 @@
     
     UIButton *btnAlipay;
     UIButton *btnWxPay;
+    UILabel *lbAlipay;
+    UILabel *lbWxPay;
     
     UILabel *lbRealMoeny;
     UIButton *btnPay;
@@ -61,11 +63,25 @@
     [btnAlipay setBackgroundImage:[UIImage imageNamed:@"alipay_selected_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     [self.view addSubview:btnAlipay];
     
+    lbAlipay = [UILabel new];
+    lbAlipay.textColor = kColorWithHex(0xffffff);
+    lbAlipay.textAlignment = NSTextAlignmentCenter;
+    lbAlipay.font = [UIFont systemFontOfSize: 12];
+    lbAlipay.text = @"支付宝";
+    [self.view addSubview:lbAlipay];
+    
     btnWxPay = [UIButton new];
     [btnWxPay setBackgroundImage:[UIImage imageNamed:@"wxpay_normal_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [btnWxPay setBackgroundImage:[UIImage imageNamed:@"wxpay_selected_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateHighlighted];
     [btnWxPay setBackgroundImage:[UIImage imageNamed:@"wxpay_selected_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
     [self.view addSubview:btnWxPay];
+    
+    lbWxPay = [UILabel new];
+    lbWxPay.textColor = kColorWithHex(0xffffff);
+    lbWxPay.font = [UIFont systemFontOfSize: 12];
+    lbWxPay.text = @"微信";
+    lbWxPay.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:lbWxPay];
     
     self.orderInfo.payways = @"alipay";
     lbRealMoeny = [UILabel new];
@@ -125,7 +141,7 @@
             [self.popupController dismissWithCompletion:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
         } else {
-            if(n-- <= 0){
+            if(--n <= 0){
                 [self dismiss:nil];
                 [self.popupController dismissWithCompletion:nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
@@ -217,6 +233,9 @@
     lbAmount.frame = CGRectMake(width / 2,  offset , width / 2 - 10, 20);
     btnAlipay.frame = CGRectMake(20,  40 , 135, 63);
     btnWxPay.frame = CGRectMake(width - 155,  40 , 135, 63);
+    
+    lbAlipay.frame = CGRectMake(20,  82 , 135, 20);
+    lbWxPay.frame = CGRectMake(width - 155,  82 , 135, 20);
     
     lbRealMoeny.frame = CGRectMake(0,  120 , width / 2 , 40);
     btnPay.frame = CGRectMake(width / 2 ,  120 , width / 2 + 2 , 40);

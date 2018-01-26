@@ -30,6 +30,8 @@
     BOOL isFloatViewAdded;
     
     NSString *currentOrderId;
+    
+    int n;
 }
 
 static LeqiSDK* instance = nil;
@@ -40,6 +42,7 @@ static LeqiSDK* instance = nil;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
     });
+    
     [IAPManager sharedManager].delegate = instance;
     return instance;
 }
@@ -49,7 +52,7 @@ static LeqiSDK* instance = nil;
     if(isReInit){
         [self show:@"重试中..."];
     }
-    
+    n = 3;
     self.configInfo = configure;
     if(self.configInfo.gameid){
         NSMutableDictionary *params =[self setParams];
@@ -192,10 +195,10 @@ static LeqiSDK* instance = nil;
             [self dismiss:nil];
             if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
                 currentOrderId = res[@"data"][@"order_sn"];
-                if(currentOrderId){
+                if([currentOrderId length] > 0){
                     [self iapPay:orderInfo];
+                    return;
                 }
-                return;
             }
             [self alert:res[@"msg"]];
         }];
@@ -216,7 +219,7 @@ static LeqiSDK* instance = nil;
 
 - (void)iapPay:(LeqiSDKOrderInfo *)orderInfo {
     [self show:@"请稍后..."];
-    [[IAPManager sharedManager] requestProductWithId: orderInfo.goodId];
+    [[IAPManager sharedManager] requestProductWithId: orderInfo.goodId userId: [self.user objectForKey:@"user_id"]];
 }
 
 - (void)showFloatView {
@@ -238,7 +241,6 @@ static LeqiSDK* instance = nil;
 
 - (void)hideFloatView {
     [XHFloatWindow xh_setHideWindow:YES];
-    
 }
 
 #pragma mark -- SDK版本号
@@ -265,30 +267,47 @@ static LeqiSDK* instance = nil;
     }
 }
 
-#pragma mark -- 购买成功
-- (void)successedWithReceipt:(NSData *)transactionReceipt {
-    NSLog(@"%@:%@", TAG, @"购买成功");
-    NSString  *transactionReceiptString = [transactionReceipt base64EncodedStringWithOptions:0];
-    
-    if ([transactionReceiptString length] > 0) {
-        NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order_query/p", self.configInfo.appid];
-        NSMutableDictionary *params = [self setParams];
-        [params setValue:transactionReceiptString forKey:@"receipt"];
-        [params setValue:currentOrderId forKey:@"order_sn"];
-        [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+#pragma mark -- 订单验证
+- (void)checkOrder:(NSString *)transactionReceiptString {
+    NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order_query/p", self.configInfo.appid];
+    NSMutableDictionary *params = [self setParams];
+    [params setValue:transactionReceiptString forKey:@"receipt"];
+    [params setValue:currentOrderId forKey:@"order_sn"];
+    [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
+        [[IAPManager sharedManager] finishTransaction];
+        if(res && [res[@"code"] integerValue] == 1){
             [self dismiss:nil];
-            if(!res){
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
+            
+        } else {
+            if(--n > 0){
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self checkOrder:transactionReceiptString];
+                    });
+                });
                 return;
             }
-            [[IAPManager sharedManager] finishTransaction];
-            if([res[@"code"] integerValue] == 1 && res[@"data"]){
-                [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
-            } else {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
-            }
-        } error:^(NSError * error) {
-            [self showByError:error];
-        }];
+            [[CacheHelper shareInstance] setCheckFailOrder:params];
+            [self dismiss:nil];
+            n = 3;
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
+        }
+    } error:^(NSError * error) {
+        [self showByError:error];
+        if(!error){
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_CANCELED]];
+        }
+    }];
+}
+
+#pragma mark -- 购买成功
+- (void)successedWithReceipt:(NSData *)transactionReceipt {
+    NSLog(@"%@:%@", TAG, @"购买成功 开始验证订单");
+    NSString  *transactionReceiptString = [transactionReceipt base64EncodedStringWithOptions:0];
+    if ([transactionReceiptString length] > 0) {
+        [self show:@"订单校验中..."];
+        [self checkOrder:transactionReceiptString];
     }
 }
 
@@ -296,7 +315,6 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 购买失败
 - (void)failedPurchaseWithError:(NSString *)errorDescripiton {
     NSLog(@"%@:%@", TAG, @"购买失败");
-    [self alert:errorDescripiton];
     [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
 }
 
@@ -351,7 +369,7 @@ static LeqiSDK* instance = nil;
 
 - (void)alertByfail:(NSString *)message {
     NSString *msg = message;
-    if(!msg){
+    if([msg length] == 0){
         msg = @"服务器未知错误";
     }
     [self alert:message];

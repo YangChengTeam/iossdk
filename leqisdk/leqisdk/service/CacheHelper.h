@@ -19,9 +19,14 @@
 - (void)setAutoLogin:(BOOL)autologin;
 - (BOOL)getAutoLogin;
 - (void)setCurrentUser:(NSDictionary *)user;
-- (void)setUsers:(nonnull NSArray *)users;
+- (void)setUsers:(nonnull NSMutableArray *)users;
 - (NSDictionary *)getInitInfo;
 - (void)setInitInfo:(NSDictionary *)initinfo;
 - (void)setRealAuth;
 - (BOOL)getRealAuth;
+
+- (NSMutableArray *_Nullable)getCheckFailOrderList;
+- (void)setCheckFailOrderList:(nonnull NSMutableArray *)orderList;
+- (void)setCheckFailOrder:(NSDictionary *_Nonnull)dict;
+
 @end

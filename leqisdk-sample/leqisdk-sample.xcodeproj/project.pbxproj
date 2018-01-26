@@ -48,7 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B3396732006F04400801E74 /* leqisdk-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "leqisdk-sample.entitlements"; sourceTree = "<group>"; };
 		4B33967720072DC300801E74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -74,8 +73,8 @@
 			files = (
 				4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */,
 				4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */,
-				4B9D0B2420046B2F001847A8 /* leqisdk.framework in Frameworks */,
 				4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */,
+				4B9D0B2420046B2F001847A8 /* leqisdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +114,6 @@
 		4B9D0B0C2004617B001847A8 /* leqisdk-sample */ = {
 			isa = PBXGroup;
 			children = (
-				4B3396732006F04400801E74 /* leqisdk-sample.entitlements */,
 				4B9D0B0D2004617B001847A8 /* AppDelegate.h */,
 				4B9D0B0E2004617B001847A8 /* AppDelegate.m */,
 				4B9D0B102004617B001847A8 /* ViewController.h */,
@@ -363,7 +361,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yc.leqisdk-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b77331d1-8ae7-4bbd-8df7-44b81df17da5";
+				PROVISIONING_PROFILE = "272e2870-315a-46a8-a092-ba7020b070e7";
 				PROVISIONING_PROFILE_SPECIFIER = leqisdk;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

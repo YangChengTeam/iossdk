@@ -14,6 +14,8 @@
 #define AUTO_LOGIN_KEY @"auto_login_key"
 #define INIT_KEY_INFO @"init_info_key"
 #define REAL_AUTH_INFO @"real_auth_key"
+#define FAIL_ORDER_LIST @"fail_order_list"
+#import "LeqiSDK.h"
 
 @interface CacheHelper()
 
@@ -104,6 +106,35 @@ static CacheHelper* instance = nil;
         return YES;
     }
     return NO;
+}
+
+- (void)setCheckFailOrder:(NSDictionary *)dict {
+    id orders =  [self.diskCache objectForKey:[NSString stringWithFormat:@"%@%@", FAIL_ORDER_LIST, [[LeqiSDK shareInstance].user objectForKey:@"userid"]]];
+    if(!orders || ![orders isKindOfClass:[NSMutableArray class]]){
+        orders = [NSMutableArray new];
+    }
+    for(NSMutableDictionary *info in orders){
+        id rececipt = [dict objectForKey:@"rececipt"];
+        id rececipt2 = [info objectForKey:@"rececipt"];
+        if([rececipt isEqual:[info objectForKey:rececipt2]]){
+           [orders removeObject:info];
+            break;
+        }
+    }
+    [orders insertObject:dict atIndex:0];
+    [self.diskCache setObject:orders forKey:[NSString stringWithFormat:@"%@%@", FAIL_ORDER_LIST, [[LeqiSDK shareInstance].user objectForKey:@"user_id"]]];
+}
+
+- (void)setCheckFailOrderList:(NSMutableArray *)orderList {
+    [self.diskCache setObject:orderList forKey:[NSString stringWithFormat:@"%@%@", FAIL_ORDER_LIST, [[LeqiSDK shareInstance].user objectForKey:@"user_id"]]];
+}
+
+- (NSMutableArray *)getCheckFailOrderList {
+    id orderList =  [self.diskCache objectForKey:[NSString stringWithFormat:@"%@%@", FAIL_ORDER_LIST, [[LeqiSDK shareInstance].user objectForKey:@"user_id"]]];
+    if(orderList && [orderList isKindOfClass:[NSMutableArray class]]){
+        return orderList;
+    }
+    return nil;
 }
 
 @end
