@@ -200,7 +200,6 @@ static LeqiSDK* instance = nil;
                     return;
                 }
             }
-            [self alert:res[@"msg"]];
         }];
     } error:^(NSError * error) {
         [self showByError:error];

@@ -267,8 +267,9 @@
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
     [params setValue:[[LeqiSDK shareInstance].user objectForKey:@"user_id"] forKey:@"user_id"];
     [params setValue:orderInfo.payways forKey:@"pay_ways"];
-    [params setValue:[NSNumber numberWithFloat:orderInfo.amount]  forKey:@"amount"];
+    [params setValue:[NSString stringWithFormat:@"%.02f", orderInfo.amount]  forKey:@"amount"];
     [params setValue:orderInfo.roleId forKey:@"role"];
+    [params setValue:orderInfo.callback forKey:@"callback"];
     [params setValue:orderInfo.serverId forKey:@"server"];
     [params setValue:orderInfo.productName forKey:@"productname"];
     [params setValue:orderInfo.orderId forKey:@"attach"];

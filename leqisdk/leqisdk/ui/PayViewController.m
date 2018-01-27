@@ -9,7 +9,7 @@
 #import "PayViewController.h"
 #import "UIAlertView+Block.h"
 
-@interface PayViewController ()<PopupControllerDelegate>
+@interface PayViewController ()<PopupControllerDelegate, UIWebViewDelegate>
 
 @end
 
@@ -33,7 +33,6 @@
     UIWebView *webView;
     
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,6 +106,8 @@
     
     [btnPay addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
     self.popupController.delegate = self;
+    
+    
 }
 
 - (void)cancel {
@@ -185,7 +186,6 @@
             [self openPay:url];
             return;
         }
-        [self alert:res[@"msg"]];
     }];
 }
 

@@ -79,7 +79,7 @@
     btnPhone.titleLabel.font = [UIFont systemFontOfSize: 12];
     btnPhone.imageView.contentMode =  UIViewContentModeScaleAspectFit;
     [btnPhone setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    btnPhone.titleEdgeInsets = UIEdgeInsetsMake(0, -12, 0, 0);
+    btnPhone.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0);
     [serviceView addSubview:btnPhone];
     
     btnQQ = [UIButton new];
