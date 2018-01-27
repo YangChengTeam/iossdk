@@ -221,7 +221,7 @@ static LeqiSDK* instance = nil;
 
 - (void)iapPay:(LeqiSDKOrderInfo *)orderInfo {
     [self show:@"请稍后..."];
-    [[IAPManager sharedManager] requestProductWithId: orderInfo.goodId userId: [self.user objectForKey:@"user_id"]];
+    [[IAPManager sharedManager] requestProductWithId: orderInfo.goodId userId: [self.user objectForKey:@"user_id"] count:orderInfo.count];
 }
 
 - (void)showFloatView {

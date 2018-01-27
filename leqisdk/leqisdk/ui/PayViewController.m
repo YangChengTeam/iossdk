@@ -213,6 +213,10 @@
 
 - (void)initOrderInfo {
     if(self.orderInfo){
+        if(self.orderInfo.count > 1){
+            self.orderInfo.productName = [NSString stringWithFormat:@"%@  数量:%d", self.orderInfo.productName, self.orderInfo.count];
+        }
+        lbGood.adjustsFontSizeToFitWidth = YES;
         lbGood.text = self.orderInfo.productName;
         lbAmount.text = [NSString stringWithFormat:@"订单金额: %.02f", self.orderInfo.amount];
         NSString *str =[NSString stringWithFormat:@"实付款: %.02f", self.orderInfo.amount] ;

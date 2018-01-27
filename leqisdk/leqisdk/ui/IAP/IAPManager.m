@@ -33,8 +33,12 @@
 #pragma mark - ================ Public Methods =================
 
 #pragma mark ==== 请求商品
-- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId {
+- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId count:(int)count {
     self.userId = userId;
+    self.count = count;
+    if(count < 1){
+        self.count = 1;
+    }
     if (productId.length > 0) {
         NSLog(@"leqisdk:请求商品%@", productId);
         SKProductsRequest *productRequest = [[SKProductsRequest alloc]initWithProductIdentifiers:[NSSet setWithObject:productId]];
@@ -53,6 +57,7 @@
         if ([SKPaymentQueue canMakePayments]) {
             SKMutablePayment *payment = [SKMutablePayment paymentWithProduct:skProduct];
             payment.applicationUsername = self.userId;
+            payment.quantity = self.count;
             [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
             [[SKPaymentQueue defaultQueue] addPayment:payment];
             return YES;

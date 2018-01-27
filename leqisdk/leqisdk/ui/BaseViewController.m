@@ -266,10 +266,12 @@
 
 + (void)payWithOrderInfo:(LeqiSDKOrderInfo *)orderInfo callback:(void (^)(id))callback {
     NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order/p", [LeqiSDK shareInstance].configInfo.appid];
+    
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
     [params setValue:[[LeqiSDK shareInstance].user objectForKey:@"user_id"] forKey:@"user_id"];
     [params setValue:orderInfo.payways forKey:@"pay_ways"];
     [params setValue:[NSString stringWithFormat:@"%.02f", orderInfo.amount]  forKey:@"amount"];
+    [params setValue:[NSString stringWithFormat:@"%d", orderInfo.count] forKey:@"count"];
     [params setValue:orderInfo.roleId forKey:@"role"];
     [params setValue:orderInfo.callback forKey:@"callback"];
     [params setValue:orderInfo.serverId forKey:@"server"];

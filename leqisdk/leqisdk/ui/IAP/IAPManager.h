@@ -27,10 +27,10 @@
 
 @property (nonatomic, assign)id<IAPManagerDelegate> delegate;
 @property (nonatomic, assign) NSString* userId;
-
+@property (nonatomic, assign) int count;
 + (instancetype)sharedManager;
 
-- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId;
+- (BOOL)requestProductWithId:(NSString *)productId userId:(NSString *)userId count:(int)count;
 - (BOOL)purchaseProduct:(SKProduct *)skProduct;
 - (BOOL)restorePurchase;
 - (void)refreshReceipt;

@@ -13,6 +13,7 @@
 - (instancetype)init {
     if([super init]){
         self.payways = @"iap";
+        self.count = 1;
     }
     return self;
 }
