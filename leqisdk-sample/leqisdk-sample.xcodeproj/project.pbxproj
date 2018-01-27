@@ -10,8 +10,8 @@
 		4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B33967720072DC300801E74 /* StoreKit.framework */; };
 		4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */; };
 		4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */; };
-		4B6D5850201C021000A2FD5F /* leqisdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6D584E201C021000A2FD5F /* leqisdk.framework */; };
-		4B6D5851201C021000A2FD5F /* leqibundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B6D584F201C021000A2FD5F /* leqibundle.bundle */; };
+		4B6D585D201C16ED00A2FD5F /* leqibundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */; };
+		4B6D5865201C1CFC00A2FD5F /* leqisdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6D5864201C1CFC00A2FD5F /* leqisdk.framework */; };
 		4B9D0B0F2004617B001847A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B0E2004617B001847A8 /* AppDelegate.m */; };
 		4B9D0B122004617B001847A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B112004617B001847A8 /* ViewController.m */; };
 		4B9D0B152004617B001847A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D0B132004617B001847A8 /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 		4B33967720072DC300801E74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		4B6D584E201C021000A2FD5F /* leqisdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leqisdk.framework; sourceTree = "<group>"; };
-		4B6D584F201C021000A2FD5F /* leqibundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = leqibundle.bundle; sourceTree = "<group>"; };
+		4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = leqibundle.bundle; sourceTree = "<group>"; };
+		4B6D5864201C1CFC00A2FD5F /* leqisdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leqisdk.framework; sourceTree = "<group>"; };
 		4B9D0B0A2004617B001847A8 /* leqisdk-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leqisdk-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0B0D2004617B001847A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B9D0B0E2004617B001847A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 			files = (
 				4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */,
 				4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */,
-				4B6D5850201C021000A2FD5F /* leqisdk.framework in Frameworks */,
+				4B6D5865201C1CFC00A2FD5F /* leqisdk.framework in Frameworks */,
 				4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,8 +67,8 @@
 		4B9D0B012004617B001847A8 = {
 			isa = PBXGroup;
 			children = (
-				4B6D584F201C021000A2FD5F /* leqibundle.bundle */,
-				4B6D584E201C021000A2FD5F /* leqisdk.framework */,
+				4B6D5864201C1CFC00A2FD5F /* leqisdk.framework */,
+				4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */,
 				4B9D0B0C2004617B001847A8 /* leqisdk-sample */,
 				4B9D0B2C20046EB1001847A8 /* leqibundle */,
 				4B9D0B0B2004617B001847A8 /* Products */,
@@ -176,7 +176,7 @@
 			files = (
 				4B9D0B1A2004617B001847A8 /* LaunchScreen.storyboard in Resources */,
 				4B9D0B172004617B001847A8 /* Assets.xcassets in Resources */,
-				4B6D5851201C021000A2FD5F /* leqibundle.bundle in Resources */,
+				4B6D585D201C16ED00A2FD5F /* leqibundle.bundle in Resources */,
 				4B9D0B152004617B001847A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

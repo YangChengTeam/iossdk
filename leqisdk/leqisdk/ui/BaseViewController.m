@@ -231,7 +231,9 @@
         }
     } error:^(NSError * error) {
         [self showByError:error];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
+        if(!error){
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
+        }
     }];
 }
 

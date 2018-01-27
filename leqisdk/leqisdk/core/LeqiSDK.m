@@ -50,7 +50,7 @@ static LeqiSDK* instance = nil;
 #pragma mark -- 初始化
 - (int)initWithConfig:(nonnull LeqiSDKInitConfigure *)configure {
     if(isReInit){
-        [self show:@"重试中..."];
+        [self show:@"重新初始化..."];
     }
     n = 3;
     self.configInfo = configure;
@@ -143,7 +143,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 登录
 - (int)login {
-    NSLog(@"%@:%@", TAG, @"login");
+    
     if(self.user){
         return LEQI_SDK_ERROR_ALREADY_LOGIN;  //已经登录
     }
@@ -155,6 +155,7 @@ static LeqiSDK* instance = nil;
     
     BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
     if(isAutoLogin){
+        NSLog(@"%@:%@", TAG, @"auto login");
         [self openAutoLogin];
         return LEQI_SDK_ERROR_NONE;
     }
@@ -162,8 +163,10 @@ static LeqiSDK* instance = nil;
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
     if(!isNotFirstLogin){
+        NSLog(@"%@:%@", TAG, @"quick login");
         [self openQuickLogin];
     } else {
+        NSLog(@"%@:%@", TAG, @"normal login");
         [self openNormalLogin];
     }
     return LEQI_SDK_ERROR_NONE;
@@ -295,7 +298,7 @@ static LeqiSDK* instance = nil;
     } error:^(NSError * error) {
         [self showByError:error];
         if(!error){
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_CANCELED]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
         }
     }];
 }

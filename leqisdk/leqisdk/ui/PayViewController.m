@@ -134,15 +134,13 @@
     [params setValue:@"0" forKey:@"receipt"];
     [params setValue:currentOrderId forKey:@"order_sn"];
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        if(!res){
-            return;
-        }
-        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+        if(res && [res[@"code"] integerValue] == 1){
             [self dismiss:nil];
             [self.popupController dismissWithCompletion:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
         } else {
             if(--n <= 0){
+                //[[CacheHelper shareInstance] setCheckFailOrder:params];
                 [self dismiss:nil];
                 [self.popupController dismissWithCompletion:nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
@@ -157,18 +155,24 @@
         }
     } error:^(NSError * error) {
         [self showByError:error];
+        if(!error){
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
+        }
     }];
 }
 
-
 - (void)checkingOrder {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确认是否完成支付？" message:@"" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
-        if(buttonIndex == 1){
-            [self show:@"订单校验中..."];
-            [self checkOrder];
-        }
-    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确认完成支付" message:@"校验订单,请务必完成操作，支付完成请点击[已支付]，否则点击[未支付]" delegate:nil cancelButtonTitle:@"未支付" otherButtonTitles:@"已支付", nil];
+            [alertView showAlertViewWithCompleteBlock:^(NSInteger buttonIndex) {
+                if(buttonIndex == 1){
+                    [self show:@"订单校验中..."];
+                    [self checkOrder];
+                }
+            }];
+        });
+    });
 }
 
 - (void)pay:(id)sender {

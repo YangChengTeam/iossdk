@@ -219,7 +219,7 @@
 		4B71D0072016CC3600F31C0C /* CacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
 		4B71D0082016CC3600F31C0C /* CacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
 		4B71D00B2016D6F100F31C0C /* change_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_icon1.png; sourceTree = "<group>"; };
-		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = leqisdk.framework; path = "/Users/zhangkai/Desktop/ycsdk/leqisdk/build/Release-iphoneos/leqisdk.framework"; sourceTree = "<absolute>"; };
 		4B9D0AE020045D38001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0AED20045E24001847A8 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDK.h; sourceTree = "<group>"; };
 		4B9D0AEE20045E24001847A8 /* LeqiSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDK.m; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		4B9D0AF220045E24001847A8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		4B9D0AF320045E24001847A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4B9D0AF420045E24001847A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		4B9D0B3520046EE8001847A8 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leqibundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9D0B3520046EE8001847A8 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = leqibundle.bundle; path = "/Users/zhangkai/Desktop/ycsdk/leqisdk/build/Debug-iphoneos/leqibundle.bundle"; sourceTree = "<absolute>"; };
 		4B9D0B3720046EE8001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BAE8C1220083C5E0022248C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4BAE8C1320083C5E0022248C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -386,18 +386,8 @@
 				4B3396232004AEBF00801E74 /* user_account_icon.png */,
 				4B9D0ADE20045D38001847A8 /* leqisdk */,
 				4B9D0B3620046EE8001847A8 /* leqibundle */,
-				4B9D0ADD20045D38001847A8 /* Products */,
 				4B3395FC2004A22900801E74 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		4B9D0ADD20045D38001847A8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B9D0ADC20045D38001847A8 /* leqisdk.framework */,
-				4B9D0B3520046EE8001847A8 /* leqibundle.bundle */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4B9D0ADE20045D38001847A8 /* leqisdk */ = {
@@ -664,7 +654,7 @@
 				Base,
 			);
 			mainGroup = 4B9D0AD220045D38001847A8;
-			productRefGroup = 4B9D0ADD20045D38001847A8 /* Products */;
+			productRefGroup = 4B9D0AD220045D38001847A8;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
