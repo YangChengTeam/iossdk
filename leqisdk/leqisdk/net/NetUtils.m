@@ -64,7 +64,7 @@
         [defaultParams setValue:[NSString stringWithFormat:@"iOS%@", systemVersion] forKey:@"sv"];
         
         //设备类型
-        //[defaultParams setValue:@"3" forKey:@"d"];
+        [defaultParams setValue:@"3" forKey:@"d"];
     }
     
     if(data){

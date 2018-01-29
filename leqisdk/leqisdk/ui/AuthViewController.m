@@ -102,9 +102,14 @@
         [self alert:@"请输入真实姓名"];
         return;
     }
+    
+    if([cardNum length] == 0){
+        [self alert:@"请输入身份证号"];
+        return;
+    }
    
     if([cardNum length] < 10){
-        [self alert:@"身份证输入不正确"];
+        [self alert:@"请输入正确的身份证号"];
         return;
     }
     [self show:@"请稍后..."];
