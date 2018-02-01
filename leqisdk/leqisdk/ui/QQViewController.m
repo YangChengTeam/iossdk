@@ -61,7 +61,7 @@
         NSString *url = [NSString stringWithFormat:@"mqq://im/chat?chat_type=wpa&uin=%@&version=1&src_type=web"  , qq];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     } @catch (NSException *exception) {
-        
+        [self alert:@"请先安装QQ"];
     } @finally {
         
     }

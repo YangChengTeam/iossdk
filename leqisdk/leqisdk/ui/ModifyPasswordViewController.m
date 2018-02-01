@@ -123,10 +123,7 @@
     
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
         [self dismiss:nil];
-        if(!res){
-            return;
-        }
-        if([res[@"code"] integerValue] == 1 && res[@"data"]){
+        if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
             NSMutableDictionary *user = [self getUser];
             [user setObject:newPass forKey:@"pwd"];
             int mainkey = [[user objectForKey:MAIN_KEY] intValue];

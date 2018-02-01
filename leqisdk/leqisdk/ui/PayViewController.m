@@ -9,7 +9,7 @@
 #import "PayViewController.h"
 #import "UIAlertView+Block.h"
 
-@interface PayViewController ()<PopupControllerDelegate, UIWebViewDelegate>
+@interface PayViewController ()<PopupControllerDelegate>
 
 @end
 
@@ -30,7 +30,6 @@
     BOOL isPaying;
     int n;
     
-    UIWebView *webView;
     
 }
 
@@ -41,8 +40,7 @@
     n = 5;
     [self setViewHieght:160 lan:NO];
     
-    webView = [UIWebView new];
-    [self.view addSubview:webView];
+
     
     lbGood = [UILabel new];
     lbGood.textColor = kColorWithHex(0x333333);
@@ -194,22 +192,19 @@
 }
 
 - (void)openPay:(NSString *)url{
-    if([self.orderInfo.payways isEqual:@"wxpay"]){
-        @try {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-            [self checkingOrder];
-        } @catch (NSException *exception) {
+    if(![self.orderInfo.payways isEqual:@"wxpay"]){
         
-        } @finally {
-        
-        }
-    } else {
-        [webView loadHTMLString:url baseURL:nil];
+        url = [NSString stringWithFormat:@"http://h5.6071.com/pay/%@", currentOrderId];
+    }
+    @try {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         [self checkingOrder];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
     }
 }
-
-
 
 - (void)initOrderInfo {
     if(self.orderInfo){
@@ -234,9 +229,7 @@
 - (void)viewDidLayoutSubviews {
     int offset = 10;
     int width = self.view.frame.size.width;
-    
-    webView.frame = CGRectMake(0,  134, width, 1);
-    
+        
     lbGood.frame = CGRectMake(offset,  offset , width / 2 - 10, 20);
     lbAmount.frame = CGRectMake(width / 2,  offset , width / 2 - 10, 20);
     btnAlipay.frame = CGRectMake(20,  40 , 135, 63);

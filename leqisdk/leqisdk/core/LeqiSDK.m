@@ -247,7 +247,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0";
+    return @"1.0.1";
 }
 
 #pragma mark -- 退出
@@ -370,9 +370,11 @@ static LeqiSDK* instance = nil;
 }
 
 - (void)alertByfail:(NSString *)message {
-    NSString *msg = message;
+    NSString *msg = [message stringByTrimmingCharactersInSet:
+                     [NSCharacterSet whitespaceCharacterSet]];
     if([msg length] == 0){
-        msg = @"服务器未知错误";
+        msg = @"服务器未知错误, 请重试";
+        message = msg;
     }
     [self alert:message];
 }

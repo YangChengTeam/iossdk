@@ -303,11 +303,13 @@
 }
 
 - (void)alertByfail:(NSString *)message {
-    NSString *msg = message;
+    NSString *msg = [message stringByTrimmingCharactersInSet:
+                      [NSCharacterSet whitespaceCharacterSet]];
     if([msg length] == 0){
-        msg = @"服务器未知错误";
+        msg = @"服务器未知错误, 请重试";
+        message = msg;
     }
-    [self alert:message];
+    [self alert:msg];
 }
 
 

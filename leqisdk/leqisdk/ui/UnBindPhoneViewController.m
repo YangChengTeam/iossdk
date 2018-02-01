@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"验证原手机号";
-    [self setViewHieght:190];
+    [self setViewHieght:170];
     
     //登录框
     loginView = [UIView new];

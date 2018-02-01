@@ -20,6 +20,7 @@
 
 @implementation SettingViewController {
     UILabel *lbUserName;
+    UILabel *lbVersion;
     
     UIButton *btnCheckOrder;
     
@@ -39,7 +40,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"设置";
-    [self setViewHieght:250];
+    NSDictionary *initInfo = [[CacheHelper shareInstance] getInitInfo];
+    serviceView = [UIView new];
+    if([initInfo objectForKey:@"is_connect_show"] && [[initInfo objectForKey:@"is_connect_show"] integerValue] == 1){
+        [self setViewHieght:250];
+        serviceView.hidden = NO;
+    } else {
+        [self setViewHieght:220];
+        serviceView.hidden = YES;
+    }
     
     lbUserName = [UILabel new];
     lbUserName.textColor = kColorWithHex(0x333333);
@@ -68,7 +77,7 @@
     [self.view addSubview:tvMenu];
     
     //客服
-    serviceView = [UIView new];
+    
     serviceView.backgroundColor = [UIColor whiteColor];
     
     btnPhone = [UIButton new];
@@ -96,6 +105,17 @@
     
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
+    
+    lbVersion = [UILabel new];
+    lbVersion.textColor = kColorWithHex(0x999999);
+    if(serviceView.hidden){
+        lbVersion.font = [UIFont systemFontOfSize: 12];
+    } else {
+        lbVersion.font = [UIFont systemFontOfSize: 10];
+    }
+    lbVersion.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:lbVersion];
+    lbVersion.text = [NSString stringWithFormat:@"当前版本:%@", [[LeqiSDK shareInstance] getVersion]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reload:)
@@ -149,6 +169,11 @@
     serviceView.frame = CGRectMake(offset, 205 , (width - offset*2), 26);
     btnPhone.frame = CGRectMake(50, 5 , 94, 16);
     btnQQ.frame = CGRectMake(serviceView.frame.size.width - 50 - 94, 5 , 94, 16);
+    if(serviceView.hidden){
+        lbVersion.frame = CGRectMake(0, self.view.frame.size.height - 26 , width, 26);
+    } else {
+        lbVersion.frame = CGRectMake(0, self.view.frame.size.height - 20 , width, 20);
+    }
     [self initUserInfo];
     
 }
