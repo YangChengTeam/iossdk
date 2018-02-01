@@ -247,11 +247,12 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0.1";
+    return @"1.0.2";
 }
 
 #pragma mark -- 退出
 - (int)logout {
+    self.user = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogout object:nil];
     return LEQI_SDK_ERROR_NONE;
 }

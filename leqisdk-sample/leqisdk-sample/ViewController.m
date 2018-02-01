@@ -45,6 +45,7 @@
 }
 
 - (void)leqiLoginResult:(NSNotification *)notify {
+    
     NSLog(@"%@", notify.object);
 }
 
@@ -53,6 +54,7 @@
 }
 
 - (void)leqiLogoutResult:(NSNotification *)notify {
+    [[LeqiSDK shareInstance] login];
     NSLog(@"%@", notify.object);
 }
 
@@ -65,6 +67,10 @@
 }
 
 - (void)login {
+    if([LeqiSDK shareInstance].user){
+        [[LeqiSDK shareInstance] logout];
+        return;
+    }
     [[LeqiSDK shareInstance] login];
 }
 
