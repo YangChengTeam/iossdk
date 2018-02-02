@@ -83,6 +83,9 @@
 }
 
 + (UIViewController *)getCurrentViewController {
+    if([LeqiSDK shareInstance].currentViewController){
+        return [LeqiSDK shareInstance].currentViewController;
+    }
     UIViewController *result = nil;
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
     if (window.windowLevel != UIWindowLevelNormal)
@@ -97,13 +100,18 @@
             }
         }
     }
-    UIView *frontView = [[window subviews] objectAtIndex:0];
-    id nextResponder = [frontView nextResponder];
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else
-        result = window.rootViewController;
-    
+    @try {
+        UIView *frontView = [[window subviews] objectAtIndex:0];
+        id nextResponder = [frontView nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+            result = nextResponder;
+        else
+            result = window.rootViewController;
+    } @catch(NSException *exception){
+        if(window){
+            result = window.rootViewController;
+        }
+    }
     return result;
 }
 
