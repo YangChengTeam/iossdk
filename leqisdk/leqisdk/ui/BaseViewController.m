@@ -197,6 +197,10 @@
     if([phone length] ==  0){
         phone = @"tel://400-796-6071";
     }
+    
+    if([phone rangeOfString:@"tel:"].location == NSNotFound){
+        phone = [NSString stringWithFormat:@"tel://%@", phone];
+    }
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
 }
 

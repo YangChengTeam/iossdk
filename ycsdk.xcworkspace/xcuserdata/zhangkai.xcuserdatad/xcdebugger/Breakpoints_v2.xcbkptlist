@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
-            timestampString = "539232119.007342"
+            timestampString = "539595701.9331371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-loginWithAccount:password:"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,22 +106,6 @@
             startingLineNumber = "135"
             endingLineNumber = "135"
             landmarkName = "-checkOrder:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/service/CacheHelper.m"
-            timestampString = "539170585.441875"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "-getCheckFailOrderList"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -212,28 +196,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
-            timestampString = "539232119.0081609"
+            timestampString = "539595701.9333121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "+getCurrentViewController"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
-            timestampString = "539232119.0084341"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "+getCurrentViewController"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-openPhone:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
