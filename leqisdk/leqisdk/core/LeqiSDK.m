@@ -57,9 +57,10 @@ static LeqiSDK* instance = nil;
     if(self.configInfo.gameid){
         NSMutableDictionary *params =[self setParams];
         NSString *url = [NSString stringWithFormat:@"%@%@?ios", @"http://api.6071.com/index3/init/p/", self.configInfo.appid];
+        __weak typeof(self) weakSelf = self;
         [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
             if(isReInit){
-               [self dismiss:nil];
+               [weakSelf dismiss:nil];
             }
             if(!res){
                 return;
@@ -70,15 +71,15 @@ static LeqiSDK* instance = nil;
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiInitDidFinished object:nil];
             } else {
                 if(isReInit){
-                    [self alertByfail:res[@"msg"]];
+                    [weakSelf alertByfail:res[@"msg"]];
                 }
             }
         } error:^(NSError *error) {
-            [self showByError:error];
+            [weakSelf showByError:error];
         }];
         return LEQI_SDK_ERROR_NONE;
     } else {
-        [self alert:@"初始化信息配置错误"];
+        [weakSelf alert:@"初始化信息配置错误"];
         return LEQI_SDK_ERROR_INIT_CONFIG_ERROR;
     }
     
@@ -102,9 +103,9 @@ static LeqiSDK* instance = nil;
     [params setValue:[NSNumber numberWithBool:YES] forKey:@"is_quick"];
     [params setValue:@"" forKey:@"n"];
     [params setValue:@"" forKey:@"p"];
-    
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
@@ -126,10 +127,10 @@ static LeqiSDK* instance = nil;
             [defaults setBool:YES forKey:FIRST_LOGIN];
             [defaults synchronize];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 
@@ -181,31 +182,33 @@ static LeqiSDK* instance = nil;
     NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_pay_init/p", self.configInfo.appid];
     NSMutableDictionary *params = [self setParams];
     [params setValue:[self.user objectForKey:@"user_id"] forKey:@"user_id"];
+    __weak typeof(self) weakSelf = self;
+
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
         if(res && res[@"data"]){
-            [self dismiss:nil];
+            [weakSelf dismiss:nil];
             if([res[@"data"][@"type"] isEqual:@"h5"]){
-                [self iapPayISO:orderInfo];
+                [weakSelf iapPayISO:orderInfo];
                 return;
             }
         }
         [BaseViewController payWithOrderInfo:orderInfo callback:^(id res) {
             if([res isKindOfClass:[NSError class]]){
-                [self showByError:res];
+                [weakSelf showByError:res];
                 return;
             }
             
-            [self dismiss:nil];
+            [weakSelf dismiss:nil];
             if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
                 currentOrderId = res[@"data"][@"order_sn"];
                 if([currentOrderId length] > 0){
-                    [self iapPay:orderInfo];
+                    [weakSelf iapPay:orderInfo];
                     return;
                 }
             }
         }];
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
     return LEQI_SDK_ERROR_NONE;
 }
@@ -276,28 +279,29 @@ static LeqiSDK* instance = nil;
     NSMutableDictionary *params = [self setParams];
     [params setValue:transactionReceiptString forKey:@"receipt"];
     [params setValue:currentOrderId forKey:@"order_sn"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
         [[IAPManager sharedManager] finishTransaction];
         if(res && [res[@"code"] integerValue] == 1){
-            [self dismiss:nil];
+            [weakSelf dismiss:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
             
         } else {
             if(--n > 0){
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self checkOrder:transactionReceiptString];
+                        [weakSelf checkOrder:transactionReceiptString];
                     });
                 });
                 return;
             }
             [[CacheHelper shareInstance] setCheckFailOrder:params];
-            [self dismiss:nil];
+            [weakSelf dismiss:nil];
             n = 3;
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
         if(!error){
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_RECHARGE_FAILED]];
         }
@@ -344,14 +348,15 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 关闭Loading
 - (void)dismiss:(void (^)(void))callback {
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
         if(callback){
             callback();
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(self.hud){
-                [self.hud hideAnimated:YES];
-                self.hud = nil;
+            if(weakSelf.hud){
+                [weakSelf.hud hideAnimated:YES];
+                weakSelf.hud = nil;
             }
         });
     });
