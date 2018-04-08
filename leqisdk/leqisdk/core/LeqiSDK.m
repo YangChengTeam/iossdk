@@ -79,7 +79,7 @@ static LeqiSDK* instance = nil;
         }];
         return LEQI_SDK_ERROR_NONE;
     } else {
-        [weakSelf alert:@"初始化信息配置错误"];
+        [self alert:@"初始化信息配置错误"];
         return LEQI_SDK_ERROR_INIT_CONFIG_ERROR;
     }
     
