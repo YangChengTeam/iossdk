@@ -134,6 +134,7 @@
 - (void)checkOrder:(id)sender {
     [self show:@"订单校验中..."];
     __block int n = 0;
+    __weak typeof(self) weakSelf = self;
     for(NSMutableDictionary *info in orderList){
         NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/ios_order_query/p", [LeqiSDK shareInstance].configInfo.appid];
         NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
@@ -146,13 +147,13 @@
             }
             n++;
             if(n >= [orderList count]){
-                [self dismiss:nil];
+                [weakSelf dismiss:nil];
             }
         } error:^(NSError * error) {
-            [self showByError:error];
+            [weakSelf showByError:error];
             n++;
             if(n >= [orderList count]){
-                [self dismiss:nil];
+                [weakSelf dismiss:nil];
             }
         }];
     }

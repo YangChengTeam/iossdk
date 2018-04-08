@@ -102,10 +102,7 @@
                         errorcallback(nil);
                     }
                 }
-            }];
-            if(finishcallback != nil){
-                finishcallback(nil);
-            }
+            }]; 
             return;
         }
         NSData *jsonData = nil;

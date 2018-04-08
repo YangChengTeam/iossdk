@@ -120,20 +120,20 @@
     [params setObject:newPass forKey:@"new_pwd"];
     [params setObject:[self getUserName]  forKey:@"n"];
     [params setObject:[self getPassword]  forKey:@"old_pwd"];
-    
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(res && [res[@"code"] integerValue] == 1 && res[@"data"]){
-            NSMutableDictionary *user = [self getUser];
+            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:[weakSelf getUser]];
             [user setObject:newPass forKey:@"pwd"];
             int mainkey = [[user objectForKey:MAIN_KEY] intValue];
             [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
-            [self.popupController popToRootViewControllerAnimated:YES];
+            [weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 

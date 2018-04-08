@@ -129,8 +129,9 @@
     [params setObject:phone forKey:@"mobile"];
     [params setObject:code forKey:@"code"];
     [params setObject:[[self getUser]  objectForKey:@"name"] forKey:@"user_name"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
@@ -138,12 +139,12 @@
 //            NSMutableDictionary *user = [self getUser];
 //            [user setObject:[NSNumber numberWithInt:0] forKey:@"is_vali_mobile"];
 //            [[CacheHelper shareInstance] setUser:user mainKey:[[user objectForKey:MAIN_KEY] intValue]];
-            [self.popupController pushViewController:[BindPhoneViewController new] animated:YES];
+            [weakSelf.popupController pushViewController:[BindPhoneViewController new] animated:YES];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 

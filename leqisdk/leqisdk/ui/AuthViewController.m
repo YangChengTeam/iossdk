@@ -118,22 +118,23 @@
     [params setObject:[[self getUser] objectForKey:@"user_id"] forKey:@"user_id"];
     [params setObject:realName  forKey:@"real_name"];
     [params setObject:cardNum  forKey:@"card_num"];
-    
+    __weak typeof(self) weakSelf = self;
+
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
-            [self alert:@"身份认证成功"];
+            [weakSelf alert:@"身份认证成功"];
             [[CacheHelper shareInstance] setRealAuth];
             [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshMenu object:nil];
-            [self.popupController popToRootViewControllerAnimated:YES];
+            [weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 

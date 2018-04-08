@@ -220,9 +220,10 @@
 
 - (void)tryPlay:(id)sender {
     [self show:@"注册中..."];
+    __weak typeof(self) weakSelf = self;
     [self regWithAccount:@"" password:@"" isQuick:YES callback:^{
-        [self initUserInfo];
-        [self initUserTableView];
+        [weakSelf initUserInfo];
+        [weakSelf initUserTableView];
     }];
 }
 

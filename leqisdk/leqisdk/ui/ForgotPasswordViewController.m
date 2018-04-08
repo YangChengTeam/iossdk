@@ -128,21 +128,21 @@
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
     [params setObject:phone forKey:@"m"];
     [params setObject:code forKey:@"code"];
-    
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
             BindPhoneModifyPasswordViewController *bindPhoneModifyPasswordViewController = [BindPhoneModifyPasswordViewController new];
             bindPhoneModifyPasswordViewController.phone = phone;
-            [self.popupController pushViewController:bindPhoneModifyPasswordViewController animated:YES];
+            [weakSelf.popupController pushViewController:bindPhoneModifyPasswordViewController animated:YES];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 
@@ -176,15 +176,15 @@
     NSString *url = [NSString stringWithFormat:@"%@/%@?ios", @"http://api.6071.com/index3/send_code/p", [LeqiSDK shareInstance].configInfo.appid];
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
     [params setObject:phone forKey:@"m"];
-    
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
-            [self dismiss:nil];
-            [self initWithGCD:59 beginState:^(int seconds){
+            [weakSelf dismiss:nil];
+            [weakSelf initWithGCD:59 beginState:^(int seconds){
                 [btnCode setTitle:[NSString stringWithFormat:@"%d秒后重试",seconds] forState:UIControlStateNormal];
                 [btnCode setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
                 btnCode.layer.borderColor = [kColorWithHex(0x999999) CGColor];
@@ -195,9 +195,9 @@
                 [btnCode setTitleColor:kColorWithHex(0x19b1f5) forState:UIControlStateNormal];
                 btnCode.userInteractionEnabled = YES;
             }];
-            [self alert:@"验证码已发送，请注意查收"];
+            [weakSelf alert:@"验证码已发送，请注意查收"];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
         [self showByError:error];

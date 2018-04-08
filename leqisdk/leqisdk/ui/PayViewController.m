@@ -175,17 +175,18 @@
 
 - (void)pay:(id)sender {
     [self show:@"创建订单中..."];
+    __weak typeof(self) weakSelf = self;
     [BaseViewController payWithOrderInfo:self.orderInfo callback:^(id res) {
         if([res isKindOfClass:[NSError class]]){
-            [self showByError:res];
+            [weakSelf showByError:res];
             return;
         }
         
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(res && [res[@"code"] integerValue] == 1){
             currentOrderId = res[@"data"][@"order_sn"];
             NSString *url = res[@"data"][@"url"];
-            [self openPay:url];
+            [weakSelf openPay:url];
             return;
         }
     }];
@@ -193,7 +194,6 @@
 
 - (void)openPay:(NSString *)url{
     if(![self.orderInfo.payways isEqual:@"wxpay"]){
-        
         url = [NSString stringWithFormat:@"http://h5.6071.com/pay/%@", currentOrderId];
     }
     @try {

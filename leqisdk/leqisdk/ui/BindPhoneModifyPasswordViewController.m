@@ -128,26 +128,27 @@
     NSMutableDictionary *params = [[LeqiSDK shareInstance] setParams];
     [params setObject:newPass forKey:@"new_pwd"];
     [params setObject:self.phone forKey:@"n"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
             NSMutableDictionary *user = [NSMutableDictionary new];
-            [user setObject:self.phone forKey:@"mobile"];
+            [user setObject:weakSelf.phone forKey:@"mobile"];
             [user setObject:newPass forKey:@"pwd"];
             [user setObject:@"0" forKey:@"user_id"];
             
             int mainkey = 2;
             [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
             [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshUser object:nil];
-            [self.popupController popToRootViewControllerAnimated:YES];
+            [weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 

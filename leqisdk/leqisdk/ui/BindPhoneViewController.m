@@ -144,22 +144,23 @@
     [params setObject:phone forKey:@"m"];
     [params setObject:code forKey:@"code"];
     [params setObject:[[self getUser]  objectForKey:@"name"] forKey:@"n"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
         if([res[@"code"] integerValue] == 1 && res[@"data"]){
-            NSMutableDictionary *user = [self getUser];
+            NSMutableDictionary *user = [weakSelf getUser];
             [user setObject:[NSNumber numberWithInt:1] forKey:@"is_vali_mobile"];
             [user setObject:phone forKey:@"mobile"];
             [[CacheHelper shareInstance] setUser:user mainKey:[[user objectForKey:MAIN_KEY] intValue]];
-            [self.popupController dismiss];
+            [weakSelf.popupController dismiss];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 

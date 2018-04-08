@@ -212,12 +212,13 @@
     NSMutableDictionary *params =  [[LeqiSDK shareInstance] setParams];
     [params setValue:account forKey:@"n"];
     [params setValue:passwrod forKey:@"p"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
-        if(self.isCancel){
+        [weakSelf dismiss:nil];
+        if(weakSelf.isCancel){
             return;
         }
-        self.noCancel = true;
+        weakSelf.noCancel = true;
         if(!res){
             return;
         }
@@ -235,14 +236,14 @@
                                    };
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:dict];
             [LeqiSDK shareInstance].user = user;
-            [self.popupController dismiss];
+            [weakSelf.popupController dismiss];
             [[LeqiSDK shareInstance] showFloatView];
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
         if(!error){
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
         }
@@ -255,8 +256,9 @@
     [params setValue:[NSNumber numberWithBool:isQuick] forKey:@"is_quick"];
     [params setValue:account forKey:@"n"];
     [params setValue:password forKey:@"p"];
+    __weak typeof(self) weakSelf = self;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
-        [self dismiss:nil];
+        [weakSelf dismiss:nil];
         if(!res){
             return;
         }
@@ -264,15 +266,15 @@
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
             [[CacheHelper shareInstance] setUser:user mainKey:1];
             Reg2LoginViewController *reg2LoginViewController = [Reg2LoginViewController new];
-            [self.popupController pushViewController:reg2LoginViewController animated:YES];
+            [weakSelf.popupController pushViewController:reg2LoginViewController animated:YES];
             if(callback){
                 callback();
             }
         } else {
-            [self alertByfail:res[@"msg"]];
+            [weakSelf alertByfail:res[@"msg"]];
         }
     } error:^(NSError * error) {
-        [self showByError:error];
+        [weakSelf showByError:error];
     }];
 }
 
