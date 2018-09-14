@@ -138,7 +138,6 @@
 }
 
 #pragma mark - ================ Private Methods =================
-
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     NSURL *receiptUrl = [[NSBundle mainBundle] appStoreReceiptURL];
     NSData *receiptData = [NSData dataWithContentsOfURL:receiptUrl];
@@ -159,6 +158,7 @@
         [_delegate canceledPurchaseWithError:transaction.error.localizedDescription];
     }
     
+
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
     self.currentTransaction = transaction;
 }

@@ -242,6 +242,15 @@
     btnPay.frame = CGRectMake(width / 2 ,  120 , width / 2 + 2 , 40);
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[LeqiSDK shareInstance] hideFloatView];
+}
+
+- (void)dealloc {
+    [[LeqiSDK shareInstance] showFloatView];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

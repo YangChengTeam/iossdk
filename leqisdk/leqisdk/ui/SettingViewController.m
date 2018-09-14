@@ -29,6 +29,7 @@
     UIView *serviceView;
     UIButton *btnPhone;
     UIButton *btnQQ;
+    UIButton *btnWx;
     
     NSArray *datasource;
     
@@ -42,6 +43,8 @@
     self.title = @"设置";
     NSDictionary *initInfo = [[CacheHelper shareInstance] getInitInfo];
     serviceView = [UIView new];
+    [self setViewHieght:250];
+    serviceView.hidden = NO;
     if([initInfo objectForKey:@"is_connect_show"] && [[initInfo objectForKey:@"is_connect_show"] integerValue] == 1){
         [self setViewHieght:250];
         serviceView.hidden = NO;
@@ -77,7 +80,6 @@
     [self.view addSubview:tvMenu];
     
     //客服
-    
     serviceView.backgroundColor = [UIColor whiteColor];
     
     btnPhone = [UIButton new];
@@ -101,10 +103,22 @@
     btnQQ.titleEdgeInsets = UIEdgeInsetsMake(0, -12, 0, 0);
     [btnQQ setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [serviceView addSubview:btnQQ];
+    
+    btnWx = [UIButton new];
+    [btnWx setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnWx setTitle:@"公众号" forState:UIControlStateNormal];
+    [btnWx setImage:[UIImage imageNamed:@"service_weixin_icon" inBundle:leqiBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [btnWx setTitleColor:kColorWithHex(0x999999) forState:UIControlStateNormal];
+    btnWx.titleLabel.font = [UIFont systemFontOfSize: 12];
+    btnWx.imageView.contentMode =  UIViewContentModeScaleAspectFit;
+    btnWx.titleEdgeInsets = UIEdgeInsetsMake(0, -12, 0, 0);
+    [btnWx setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [serviceView addSubview:btnWx];
     [self.view addSubview:serviceView];
     
     [btnQQ addTarget:self action:@selector(openQQ:) forControlEvents:UIControlEventTouchUpInside];
     [btnPhone addTarget:self action:@selector(openPhone:) forControlEvents:UIControlEventTouchUpInside];
+    [btnWx addTarget:self action:@selector(copyWx:) forControlEvents:UIControlEventTouchUpInside];
     
     lbVersion = [UILabel new];
     lbVersion.textColor = kColorWithHex(0x999999);
@@ -130,6 +144,25 @@
     }
 }
 
+- (void)copyWx:(id)sender {
+    NSDictionary *initInfo = [[CacheHelper shareInstance] getInitInfo];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    NSString *weixin = [initInfo objectForKey:@"weixin"];
+    [pasteboard setString: weixin];
+    [self alert:[NSString stringWithFormat:@"公众号已成功复制,微信搜索公众号:%@", weixin]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[LeqiSDK shareInstance] hideFloatView];
+}
+
+- (void)dealloc {
+    [[LeqiSDK shareInstance] showFloatView];
+}
+
+
+
 #pragma mark -- 订单验证
 - (void)checkOrder:(id)sender {
     [self show:@"订单校验中..."];
@@ -142,6 +175,7 @@
         [params setValue:[info objectForKey:@"order_sn"] forKey:@"order_sn"];
         [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
             if(res && [res[@"code"] integerValue] == 1){
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
                 [orderList removeObject:info];
                 [[CacheHelper shareInstance] setCheckFailOrderList:orderList];
             }
@@ -168,8 +202,9 @@
     [self initMenuTableView:offset y:offset + 25 w:(width - offset*2)];
 
     serviceView.frame = CGRectMake(offset, 205 , (width - offset*2), 26);
-    btnPhone.frame = CGRectMake(50, 5 , 94, 16);
-    btnQQ.frame = CGRectMake(serviceView.frame.size.width - 50 - 94, 5 , 94, 16);
+    btnPhone.frame = CGRectMake(0, 5 , 94, 16);
+    btnQQ.frame = CGRectMake(serviceView.frame.size.width/2 - 20 - 94/2, 5 , 94, 16);
+    btnWx.frame = CGRectMake(serviceView.frame.size.width - 10 - 94, 5 , 94, 16);
     if(serviceView.hidden){
         lbVersion.frame = CGRectMake(0, self.view.frame.size.height - 26 , width, 26);
     } else {

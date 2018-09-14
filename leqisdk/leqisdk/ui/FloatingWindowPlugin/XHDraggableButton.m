@@ -11,29 +11,22 @@
 #define xh_ScreenH [UIScreen mainScreen].bounds.size.height
 #define xh_ScreenW [UIScreen mainScreen].bounds.size.width
 
+
+
 @interface XHDraggableButton()
 
 @property (nonatomic, assign)CGPoint touchStartPosition;
 
 @end
 
-@implementation XHDraggableButton
+@implementation XHDraggableButton {
+    BOOL isHalf;
+}
 
-typedef NS_ENUM(NSInteger ,xh_FloatWindowDirection) {
-    xh_FloatWindowLEFT,
-    xh_FloatWindowRIGHT,
-    xh_FloatWindowTOP,
-    xh_FloatWindowBOTTOM
-};
 
-typedef NS_ENUM(NSInteger, xh_ScreenChangeOrientation) {
-    xh_Change2Origin,
-    xh_Change2Upside,
-    xh_Change2Left,
-    xh_Change2Right
-};
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    
     UITouch *touch = [touches anyObject];
     self.touchStartPosition = [touch locationInView:_rootView];
     self.touchStartPosition = [self ConvertDir:_touchStartPosition];
@@ -41,10 +34,66 @@ typedef NS_ENUM(NSInteger, xh_ScreenChangeOrientation) {
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    isHalf = NO;
+    self.superview.alpha = 1;
     UITouch *touch = [touches anyObject];
     CGPoint curPoint = [touch locationInView:_rootView];
     curPoint = [self ConvertDir:curPoint];
     self.superview.center = curPoint;
+}
+
+- (void)reset {
+    isHalf = NO;
+    self.superview.alpha = 1;
+    switch (_minDir) {
+        case xh_FloatWindowLEFT: {
+            self.superview.frame =  CGRectMake(0, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+            break;
+        }
+        case xh_FloatWindowRIGHT: {
+            self.superview.frame =  CGRectMake(xh_ScreenW - floatWindowSize, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+            break;
+        }
+        case xh_FloatWindowTOP: {
+            self.superview.frame =  CGRectMake(self.superview.frame.origin.x, 0, floatWindowSize, floatWindowSize);
+            break;
+        }
+        case xh_FloatWindowBOTTOM: {
+            self.superview.frame =  CGRectMake(self.superview.frame.origin.x, xh_ScreenH - floatWindowSize, floatWindowSize, floatWindowSize);
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)animateHalf {
+    if(isHalf) return;
+    [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.superview.alpha = 0.6;
+    } completion:^(BOOL finished) {
+        switch (_minDir) {
+            case xh_FloatWindowLEFT: {
+                self.superview.frame =  CGRectMake(-floatWindowSize/2, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+                break;
+            }
+            case xh_FloatWindowRIGHT: {
+                self.superview.frame =  CGRectMake(xh_ScreenW - floatWindowSize/2, self.superview.frame.origin.y, floatWindowSize, floatWindowSize);
+                break;
+            }
+            case xh_FloatWindowTOP: {
+                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, -floatWindowSize/2, floatWindowSize, floatWindowSize);
+                break;
+            }
+            case xh_FloatWindowBOTTOM: {
+                self.superview.frame =  CGRectMake(self.superview.frame.origin.x, xh_ScreenH - floatWindowSize/2, floatWindowSize, floatWindowSize);
+                break;
+            }
+            default:
+                break;
+        }
+        isHalf = YES;
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -72,42 +121,50 @@ typedef NS_ENUM(NSInteger, xh_ScreenChangeOrientation) {
     CGFloat top = curPoint.y;
     CGFloat bottom = H - curPoint.y;
     // find the direction to go
-    xh_FloatWindowDirection minDir = xh_FloatWindowLEFT;
+    _minDir = xh_FloatWindowLEFT;
     CGFloat minDistance = left;
     if (right < minDistance) {
         minDistance = right;
-        minDir = xh_FloatWindowRIGHT;
+        _minDir = xh_FloatWindowRIGHT;
     }
     if (top < minDistance) {
         minDistance = top;
-        minDir = xh_FloatWindowTOP;
+        _minDir = xh_FloatWindowTOP;
     }
     if (bottom < minDistance) {
-        minDir = xh_FloatWindowBOTTOM;
+        _minDir = xh_FloatWindowBOTTOM;
     }
     
-    switch (minDir) {
+    switch (_minDir) {
         case xh_FloatWindowLEFT: {
             [UIView animateWithDuration:0.3 animations:^{
                 self.superview.center = CGPointMake(self.superview.frame.size.width/2, self.superview.center.y);
+            } completion:^(BOOL finished) {
+                [self animateHalf];
             }];
             break;
         }
         case xh_FloatWindowRIGHT: {
             [UIView animateWithDuration:0.3 animations:^{
                 self.superview.center = CGPointMake(W - self.superview.frame.size.width/2, self.superview.center.y);
+            } completion:^(BOOL finished) {
+                [self animateHalf];
             }];
             break;
         }
         case xh_FloatWindowTOP: {
             [UIView animateWithDuration:0.3 animations:^{
                 self.superview.center = CGPointMake(self.superview.center.x, self.superview.frame.size.height/2);
+            } completion:^(BOOL finished) {
+                [self animateHalf];
             }];
             break;
         }
         case xh_FloatWindowBOTTOM: {
             [UIView animateWithDuration:0.3 animations:^{
                 self.superview.center = CGPointMake(self.superview.center.x, H - self.superview.frame.size.height/2);
+            } completion:^(BOOL finished) {
+                [self animateHalf];
             }];
             break;
         }

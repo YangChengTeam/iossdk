@@ -29,6 +29,7 @@
 @interface LeqiSDK : NSObject
 @property (nonatomic, strong) NSMutableDictionary *user;
 @property (nonatomic, strong) LeqiSDKInitConfigure *configInfo;
+@property (nonatomic, strong) UIViewController *currentViewController;
 
 + (instancetype) shareInstance;
 

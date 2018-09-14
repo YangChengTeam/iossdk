@@ -324,21 +324,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wu ChuHao (7AJ6JFPUHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wu ChuHao (7AJ6JFPUHQ)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7HN7Z6PV35;
+				DEVELOPMENT_TEAM = 2888MVGDCL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "leqisdk-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yc.leqisdk-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leqi.bxxyios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "47e0485c-c06a-49f2-8aa0-8774243fdf42";
-				PROVISIONING_PROFILE_SPECIFIER = "leqisdk-sample";
+				PROVISIONING_PROFILE = "8e288c82-82c8-49cb-8c3a-cfc21912fa25";
+				PROVISIONING_PROFILE_SPECIFIER = kafa_com.leqi.bxxyios;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -347,21 +348,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wu ChuHao (2888MVGDCL)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7Y7A556WLX;
+				DEVELOPMENT_TEAM = 2888MVGDCL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "leqisdk-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yc.leqisdk-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leqi.bxxyios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5ba04eaa-70c4-48fe-8eb6-5d34aaa4f210";
-				PROVISIONING_PROFILE_SPECIFIER = leqiSample;
+				PROVISIONING_PROFILE = "654f19c1-ea9d-4655-a487-456b1bc4629b";
+				PROVISIONING_PROFILE_SPECIFIER = fabu;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -91,6 +91,8 @@
     }
 }
 
+
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     btnQQ.frame = CGRectMake(40, 20, 80, 80);

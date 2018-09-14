@@ -39,8 +39,11 @@ static LeqiSDK* instance = nil;
 + (instancetype) shareInstance
 {
     static dispatch_once_t onceToken;
+    
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
+        instance.hasShowing = YES;
+        instance.isShowingInWindow = YES;
     });
     
     [IAPManager sharedManager].delegate = instance;
@@ -144,7 +147,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 登录
 - (int)login {
-    
+
     if(self.user){
         return LEQI_SDK_ERROR_ALREADY_LOGIN;  //已经登录
     }
@@ -241,7 +244,6 @@ static LeqiSDK* instance = nil;
         [XHFloatWindow xh_setHideWindow:NO];
     }
     isFloatViewAdded = true;
-
 }
 
 - (void)hideFloatView {
@@ -250,7 +252,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0.5";
+    return @"1.0.92";
 }
 
 #pragma mark -- 退出
@@ -284,8 +286,7 @@ static LeqiSDK* instance = nil;
         [[IAPManager sharedManager] finishTransaction];
         if(res && [res[@"code"] integerValue] == 1){
             [weakSelf dismiss:nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiPay object:[NSNumber numberWithInt:LEQI_SDK_ERROR_NONE]];      
         } else {
             if(--n > 0){
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -333,7 +334,16 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 显示Loading
 - (void)show:(NSString *)message {
-    self.hud = [MBProgressHUD showHUDAddedTo:[BaseViewController getCurrentViewController].view animated:YES];
+    if(!self.hasShowing) return;
+    UIViewController *currentViewController = [BaseViewController getCurrentViewController];
+    if(self.isShowingInWindow){
+        UIWindow *window = [[[UIApplication sharedApplication] windows] lastObject];
+        NSLog(@"%@:window%@", TAG, window);
+        self.hud = [MBProgressHUD showHUDAddedTo:window animated:YES];
+    } else {
+        NSLog(@"%@:currentViewController%@", TAG, currentViewController);
+        self.hud = [MBProgressHUD showHUDAddedTo:currentViewController.view animated:YES];
+    }
     self.hud.label.font = [UIFont systemFontOfSize: 14];
     self.hud.label.text = message;
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -404,7 +414,6 @@ static LeqiSDK* instance = nil;
     
     return params;
 }
-
 
 
 

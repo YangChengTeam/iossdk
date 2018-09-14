@@ -9,8 +9,8 @@
 #import "XHFloatWindowController.h"
 #import "XHDraggableButton.h"
 #import "XHFloatWindowSingleton.h"
-#define floatWindowSize 40
 #import "BaseViewController.h"
+
 
 @interface XHFloatWindowController ()<UIDragButtonDelegate>
 
@@ -41,6 +41,7 @@
 {
     // 1.floating button
     _button = [XHDraggableButton buttonWithType:UIButtonTypeCustom];
+    _button.minDir = xh_FloatWindowLEFT;
     [self resetBackgroundImage:@"float_drag" forState:UIControlStateNormal];
     [self resetBackgroundImage:@"float_drag" forState:UIControlStateSelected];
     _button.imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -51,14 +52,16 @@
     _button.imageView.alpha = 0.8;
     
     // 2.floating window
-    _window = [[UIWindow alloc]init];
-    _window.frame = CGRectMake(0, 100, floatWindowSize, floatWindowSize);
+    _window = [[UIWindow alloc] init];
+    _window.frame = CGRectMake(0, (kScreenHeight - floatWindowSize) / 2, floatWindowSize, floatWindowSize);
     _window.windowLevel = UIWindowLevelAlert+1;
     _window.backgroundColor = [UIColor clearColor];
     _window.layer.cornerRadius = floatWindowSize/2;
     _window.layer.masksToBounds = YES;
     [_window addSubview:_button];
     [_window makeKeyAndVisible];
+    
+    [_button animateHalf];
 }
 
 /**
@@ -82,6 +85,7 @@
     }
     
     // click callback
+    [_button reset];
     [XHFloatWindowSingleton Ins].floatWindowCallBack();
 }
 
@@ -90,7 +94,12 @@
  */
 - (void)setHideWindow:(BOOL)hide {
     _window.hidden = hide;
+    if(!hide){
+        [_button animateHalf];
+    } 
 }
+
+
 
 /**
  * reset floating window size

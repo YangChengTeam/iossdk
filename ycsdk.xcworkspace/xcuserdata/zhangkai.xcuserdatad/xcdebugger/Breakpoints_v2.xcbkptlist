@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/LoginViewController.m"
-            timestampString = "544869309.467293"
+            timestampString = "544869365.421195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "377"
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/LoginViewController.m"
-            timestampString = "544869309.467366"
+            timestampString = "544869365.42127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "381"
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
-            timestampString = "544869309.467422"
+            timestampString = "558609769.706707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-loginWithAccount:password:"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/net/NetUtils.m"
-            timestampString = "544869309.467478"
+            timestampString = "549191304.377635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "+postWithUrl:params:callback:error:encryt:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,27 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "544869309.467531"
+            timestampString = "557217787.013399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "544869309.46758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "-checkOrder:"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/ModifyPasswordViewController.m"
-            timestampString = "544869309.46763"
+            timestampString = "544869365.4215519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
@@ -132,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leqisdk/leqisdk/ui/ModifyPasswordViewController.m"
-            timestampString = "544869309.467678"
+            timestampString = "544869365.421603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -147,13 +131,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "544869309.467723"
+            filePath = "leqisdk/leqisdk/ui/FloatingWindowPlugin/XHFloatWindowController.m"
+            timestampString = "547118053.924719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-setWindowSize:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -163,13 +147,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/SettingViewController.m"
-            timestampString = "544869309.467769"
+            filePath = "leqisdk/leqisdk/ui/IAP/IAPManager.m"
+            timestampString = "554954086.038771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-productsRequest:didReceiveResponse:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -179,29 +163,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "leqisdk-sample/leqisdk-sample/ViewController.m"
-            timestampString = "539232119.008105"
+            filePath = "leqisdk/leqisdk/ui/IAP/IAPManager.m"
+            timestampString = "554954086.0388989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-login"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "leqisdk/leqisdk/ui/BaseViewController.m"
-            timestampString = "544869309.467847"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "-openPhone:"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-paymentQueue:updatedTransactions:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

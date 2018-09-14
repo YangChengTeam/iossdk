@@ -126,6 +126,8 @@
 		4BAE8C41200868630022248C /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE8C3F200868630022248C /* NetUtils.m */; };
 		4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BAE8C4220089B080022248C /* UIAlertView+Block.h */; };
 		4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE8C4320089B080022248C /* UIAlertView+Block.m */; };
+		4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
+		4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,7 +221,6 @@
 		4B71D0072016CC3600F31C0C /* CacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
 		4B71D0082016CC3600F31C0C /* CacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
 		4B71D00B2016D6F100F31C0C /* change_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = change_icon1.png; sourceTree = "<group>"; };
-		4B9D0ADC20045D38001847A8 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = leqisdk.framework; path = "/Users/zhangkai/Desktop/ycsdk/leqisdk/build/Release-iphoneos/leqisdk.framework"; sourceTree = "<absolute>"; };
 		4B9D0AE020045D38001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0AED20045E24001847A8 /* LeqiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeqiSDK.h; sourceTree = "<group>"; };
 		4B9D0AEE20045E24001847A8 /* LeqiSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeqiSDK.m; sourceTree = "<group>"; };
@@ -227,7 +228,6 @@
 		4B9D0AF220045E24001847A8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		4B9D0AF320045E24001847A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4B9D0AF420045E24001847A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		4B9D0B3520046EE8001847A8 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = leqibundle.bundle; path = "/Users/zhangkai/Desktop/ycsdk/leqisdk/build/Debug-iphoneos/leqibundle.bundle"; sourceTree = "<absolute>"; };
 		4B9D0B3720046EE8001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BAE8C1220083C5E0022248C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4BAE8C1320083C5E0022248C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -252,6 +252,9 @@
 		4BAE8C3F200868630022248C /* NetUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 		4BAE8C4220089B080022248C /* UIAlertView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		4BAE8C4320089B080022248C /* UIAlertView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		4BAF972F20C7E8FA0058E295 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BAF973020C7E8FA0058E295 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leqibundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_weixin_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,7 @@
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
+				4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */,
 				4B01C0E22018881900206EF7 /* alipay_normal_icon.png */,
 				4B01C0E12018881900206EF7 /* alipay_selected_icon.png */,
 				4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */,
@@ -387,6 +391,8 @@
 				4B9D0ADE20045D38001847A8 /* leqisdk */,
 				4B9D0B3620046EE8001847A8 /* leqibundle */,
 				4B3395FC2004A22900801E74 /* Frameworks */,
+				4BAF972F20C7E8FA0058E295 /* leqisdk.framework */,
+				4BAF973020C7E8FA0058E295 /* leqibundle.bundle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -606,7 +612,7 @@
 			);
 			name = leqisdk;
 			productName = leqisdk;
-			productReference = 4B9D0ADC20045D38001847A8 /* leqisdk.framework */;
+			productReference = 4BAF972F20C7E8FA0058E295 /* leqisdk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4B9D0B3420046EE8001847A8 /* leqibundle */ = {
@@ -623,7 +629,7 @@
 			);
 			name = leqibundle;
 			productName = leqibundle;
-			productReference = 4B9D0B3520046EE8001847A8 /* leqibundle.bundle */;
+			productReference = 4BAF973020C7E8FA0058E295 /* leqibundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -669,6 +675,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */,
 				4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */,
 				4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */,
 				4B01C0DF2018880C00206EF7 /* wxpay_normal_icon.png in Resources */,

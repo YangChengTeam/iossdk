@@ -26,8 +26,8 @@
    
     LeqiSDKInitConfigure *config = [LeqiSDKInitConfigure new];
     config.agentid = @"default";
-    config.gameid = @"24";
-    config.appid = @"24";
+    config.gameid = @"630";
+    config.appid = @"630";
     int error = [[LeqiSDK shareInstance] initWithConfig:config];
     if(error != 0){
         NSLog(@"不能启动初始化：%d",error);

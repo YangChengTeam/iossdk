@@ -44,8 +44,7 @@
                                                object:nil];
 }
 
-- (void)leqiLoginResult:(NSNotification *)notify {
-    
+- (void)leqiLoginResult:(NSNotification *)notify {    
     NSLog(@"%@", notify.object);
 }
 
@@ -58,14 +57,6 @@
     NSLog(@"%@", notify.object);
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [[LeqiSDK shareInstance] showFloatView];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [[LeqiSDK shareInstance] hideFloatView];
-}
-
 - (void)login {
     if([LeqiSDK shareInstance].user){
         [[LeqiSDK shareInstance] logout];
@@ -76,10 +67,10 @@
 
 - (void)pay {
     LeqiSDKOrderInfo *orderInfo = [LeqiSDKOrderInfo new];
-    orderInfo.goodId = @"sdktest2";
+    orderInfo.goodId = @"com.leqi.bxxyios.rbm30";
     orderInfo.productName = @"阴阳师:640枚勾玉";
     orderInfo.amount = 0.02;
-    orderInfo.count = 2;
+    orderInfo.count = 1;
     orderInfo.roleId = @"111";
     orderInfo.orderId = @"111111111";
     orderInfo.serverId = @"11111122";

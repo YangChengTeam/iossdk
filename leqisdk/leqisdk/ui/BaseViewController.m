@@ -26,7 +26,6 @@
     self.popupController.navigationBar.draggable = NO;
 }
 
-
 - (void)show:(NSString *)message {
     self.hud = [MBProgressHUD showHUDAddedTo:self.popupController.containerView animated:YES];
     self.hud.label.font = [UIFont systemFontOfSize: 14];

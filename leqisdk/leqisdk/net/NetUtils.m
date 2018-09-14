@@ -10,6 +10,9 @@
 #import "AFNetworking.h"
 #import "EncrytUtils.h"
 #import "UIAlertView+Block.h"
+#import <sys/utsname.h>
+#import <AdSupport/AdSupport.h>
+
 
 #define UUID @"leqisdk-uuid"
 
@@ -21,6 +24,19 @@
 
 + (void)postWithUrl:(NSString *)url params:(NSDictionary *)data callback:(void (^)(NSDictionary *))finishcallback error:(void (^)(NSError *))errorcallback {
     [self postWithUrl:url params:data callback:finishcallback error:errorcallback encryt:YES];
+}
+
++ (NSString *)getSysytemInfo {
+    UIDevice *device = [UIDevice currentDevice];
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *model = [NSString stringWithCString:systemInfo.machine
+                                               encoding:NSUTF8StringEncoding];
+    return [NSString stringWithFormat:@"%@-%@-%@",
+                        device.name,
+                        model,
+                        device.systemVersion
+            ];
 }
 
 + (void)postWithUrl:(NSString *)url params:(NSDictionary *)data callback:(void (^)(NSDictionary *))finishcallback error:(void (^)(NSError *))errorcallback encryt:(BOOL)encryt {
@@ -59,14 +75,17 @@
         }
         [defaultParams setValue:uuidString forKey:@"i"];
         
-        //systemVersion
-        NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-        [defaultParams setValue:[NSString stringWithFormat:@"iOS%@", systemVersion] forKey:@"sv"];
+        [defaultParams setValue:[NetUtils getSysytemInfo] forKey:@"sv"];
+        NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        idfa = [[idfa stringByReplacingOccurrencesOfString:@"-"
+                                                      withString:@""] lowercaseString];
+        [defaultParams setValue:idfa forKey:@"idfa"];
         
         //设备类型
         [defaultParams setValue:@"3" forKey:@"d"];
     }
     
+
     if(data){
         [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             [defaultParams setObject:obj forKey:key];
