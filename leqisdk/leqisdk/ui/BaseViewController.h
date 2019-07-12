@@ -28,6 +28,10 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define kScreenSize \
 ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? CGSizeMake([UIScreen mainScreen].nativeBounds.size.width/[UIScreen mainScreen].nativeScale,[UIScreen mainScreen].nativeBounds.size.height/[UIScreen mainScreen].nativeScale) : [UIScreen mainScreen].bounds.size)
 
+
+#define IsPortrait ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait || [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortraitUpsideDown)
+
+
 #define kRefreshUser @"refresh_user"
 #define kRefreshMenu @"refresh_menu"
 

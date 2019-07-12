@@ -22,8 +22,11 @@
     self.view.backgroundColor = kRGBColor(0xf1, 0xf1, 0xf1, 0xf2);
     [STPopupNavigationBar appearance].barTintColor = [UIColor whiteColor];
     [STPopupNavigationBar appearance].tintColor = kRGBColor(0xbf, 0xbf, 0xbf, 0xff);
-    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x333333) };
+    [STPopupNavigationBar appearance].titleTextAttributes = @{ NSFontAttributeName: [UIFont fontWithName:@"Cochin" size:16], NSForegroundColorAttributeName:  kColorWithHex(0x666666) };
     self.popupController.navigationBar.draggable = NO;
+    
+    
+    
 }
 
 - (void)show:(NSString *)message {
@@ -113,6 +116,19 @@
     }
     return result;
 }
+
+NSArray *allSubviews(UIView *aView) {
+    NSArray *results = [aView subviews];
+    for (UIView *eachView in aView.subviews)
+    {
+        NSArray *subviews = allSubviews(eachView);
+        if (subviews)
+            results = [results arrayByAddingObjectsFromArray:subviews];
+    }
+    return results;
+}
+
+
 
 - (void)initWithGCD:(int)timeValue beginState:(void (^)(int seconds))begin endState:(void (^)())end {
     __block NSInteger time = timeValue;

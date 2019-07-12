@@ -13,27 +13,27 @@
 		4B01C0E02018880C00206EF7 /* wxpay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */; };
 		4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E12018881900206EF7 /* alipay_selected_icon.png */; };
 		4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E22018881900206EF7 /* alipay_normal_icon.png */; };
+		4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */; };
+		4B1DED3122D8358200B806C1 /* STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2222D8358200B806C1 /* STPopup.h */; };
+		4B1DED3222D8358200B806C1 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */; };
+		4B1DED3322D8358200B806C1 /* UIResponder+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2422D8358200B806C1 /* UIResponder+STPopup.h */; };
+		4B1DED3422D8358200B806C1 /* STPopupLeftBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2522D8358200B806C1 /* STPopupLeftBarItem.m */; };
+		4B1DED3522D8358200B806C1 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2622D8358200B806C1 /* UIViewController+STPopup.m */; };
+		4B1DED3622D8358200B806C1 /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2722D8358200B806C1 /* STPopupControllerTransitioningFade.m */; };
+		4B1DED3722D8358200B806C1 /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2822D8358200B806C1 /* STPopupController.m */; };
+		4B1DED3822D8358200B806C1 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2922D8358200B806C1 /* UIResponder+STPopup.m */; };
+		4B1DED3922D8358200B806C1 /* STPopupNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2A22D8358200B806C1 /* STPopupNavigationBar.h */; };
+		4B1DED3A22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2B22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h */; };
+		4B1DED3B22D8358200B806C1 /* STPopupControllerTransitioningFade.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2C22D8358200B806C1 /* STPopupControllerTransitioningFade.h */; };
+		4B1DED3C22D8358200B806C1 /* UIViewController+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2D22D8358200B806C1 /* UIViewController+STPopup.h */; };
+		4B1DED3D22D8358200B806C1 /* STPopupLeftBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2E22D8358200B806C1 /* STPopupLeftBarItem.h */; };
+		4B1DED3E22D8358200B806C1 /* STPopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2F22D8358200B806C1 /* STPopupController.h */; };
 		4B3396252004AEBF00801E74 /* user_account_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396232004AEBF00801E74 /* user_account_icon.png */; };
 		4B3396262004AEBF00801E74 /* password_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396242004AEBF00801E74 /* password_icon.png */; };
 		4B3396282004AF2000801E74 /* qq_kefu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396272004AF2000801E74 /* qq_kefu_icon.png */; };
 		4B33962A2004AF3C00801E74 /* call_service_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396292004AF3C00801E74 /* call_service_icon.png */; };
 		4B33962C2004AF5A00801E74 /* quick_title_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962B2004AF5A00801E74 /* quick_title_icon.png */; };
 		4B33962E2004C86800801E74 /* quick_register_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962D2004C86800801E74 /* quick_register_icon.png */; };
-		4B33963F20059C1800801E74 /* STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963020059C1700801E74 /* STPopup.h */; };
-		4B33964020059C1800801E74 /* STPopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963120059C1700801E74 /* STPopupController.h */; };
-		4B33964120059C1800801E74 /* STPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963220059C1700801E74 /* STPopupController.m */; };
-		4B33964220059C1800801E74 /* STPopupControllerTransitioningFade.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963320059C1700801E74 /* STPopupControllerTransitioningFade.h */; };
-		4B33964320059C1800801E74 /* STPopupControllerTransitioningFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963420059C1700801E74 /* STPopupControllerTransitioningFade.m */; };
-		4B33964420059C1800801E74 /* STPopupControllerTransitioningSlideVertical.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963520059C1700801E74 /* STPopupControllerTransitioningSlideVertical.h */; };
-		4B33964520059C1800801E74 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963620059C1700801E74 /* STPopupControllerTransitioningSlideVertical.m */; };
-		4B33964620059C1800801E74 /* STPopupLeftBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963720059C1700801E74 /* STPopupLeftBarItem.h */; };
-		4B33964720059C1800801E74 /* STPopupLeftBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963820059C1700801E74 /* STPopupLeftBarItem.m */; };
-		4B33964820059C1800801E74 /* STPopupNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963920059C1700801E74 /* STPopupNavigationBar.h */; };
-		4B33964920059C1800801E74 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963A20059C1700801E74 /* STPopupNavigationBar.m */; };
-		4B33964A20059C1800801E74 /* UIResponder+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963B20059C1700801E74 /* UIResponder+STPopup.h */; };
-		4B33964B20059C1800801E74 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963C20059C1700801E74 /* UIResponder+STPopup.m */; };
-		4B33964C20059C1800801E74 /* UIViewController+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33963D20059C1700801E74 /* UIViewController+STPopup.h */; };
-		4B33964D20059C1800801E74 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33963E20059C1700801E74 /* UIViewController+STPopup.m */; };
 		4B3396502005B99800801E74 /* more_account_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964E2005B99700801E74 /* more_account_normal_icon.png */; };
 		4B3396512005B99800801E74 /* more_account_select_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964F2005B99800801E74 /* more_account_select_icon.png */; };
 		4B3396542005B9CA00801E74 /* back_icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396522005B9CA00801E74 /* back_icon_select.png */; };
@@ -128,6 +128,9 @@
 		4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE8C4320089B080022248C /* UIAlertView+Block.m */; };
 		4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
 		4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
+		4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC97C8C22D814350004D6C2 /* checkbox.png */; };
+		4BC97C9222D822270004D6C2 /* AgreementViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC97C9022D822270004D6C2 /* AgreementViewController.h */; };
+		4BC97C9322D822270004D6C2 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC97C9122D822270004D6C2 /* AgreementViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,27 +140,27 @@
 		4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wxpay_selected_icon.png; sourceTree = "<group>"; };
 		4B01C0E12018881900206EF7 /* alipay_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay_selected_icon.png; sourceTree = "<group>"; };
 		4B01C0E22018881900206EF7 /* alipay_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay_normal_icon.png; sourceTree = "<group>"; };
+		4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningSlideVertical.m; sourceTree = "<group>"; };
+		4B1DED2222D8358200B806C1 /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
+		4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupNavigationBar.m; sourceTree = "<group>"; };
+		4B1DED2422D8358200B806C1 /* UIResponder+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+STPopup.h"; sourceTree = "<group>"; };
+		4B1DED2522D8358200B806C1 /* STPopupLeftBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupLeftBarItem.m; sourceTree = "<group>"; };
+		4B1DED2622D8358200B806C1 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		4B1DED2722D8358200B806C1 /* STPopupControllerTransitioningFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningFade.m; sourceTree = "<group>"; };
+		4B1DED2822D8358200B806C1 /* STPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupController.m; sourceTree = "<group>"; };
+		4B1DED2922D8358200B806C1 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
+		4B1DED2A22D8358200B806C1 /* STPopupNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupNavigationBar.h; sourceTree = "<group>"; };
+		4B1DED2B22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningSlideVertical.h; sourceTree = "<group>"; };
+		4B1DED2C22D8358200B806C1 /* STPopupControllerTransitioningFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningFade.h; sourceTree = "<group>"; };
+		4B1DED2D22D8358200B806C1 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
+		4B1DED2E22D8358200B806C1 /* STPopupLeftBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupLeftBarItem.h; sourceTree = "<group>"; };
+		4B1DED2F22D8358200B806C1 /* STPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupController.h; sourceTree = "<group>"; };
 		4B3396232004AEBF00801E74 /* user_account_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_account_icon.png; sourceTree = "<group>"; };
 		4B3396242004AEBF00801E74 /* password_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_icon.png; sourceTree = "<group>"; };
 		4B3396272004AF2000801E74 /* qq_kefu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq_kefu_icon.png; sourceTree = "<group>"; };
 		4B3396292004AF3C00801E74 /* call_service_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_service_icon.png; sourceTree = "<group>"; };
 		4B33962B2004AF5A00801E74 /* quick_title_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_title_icon.png; sourceTree = "<group>"; };
 		4B33962D2004C86800801E74 /* quick_register_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_register_icon.png; sourceTree = "<group>"; };
-		4B33963020059C1700801E74 /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
-		4B33963120059C1700801E74 /* STPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupController.h; sourceTree = "<group>"; };
-		4B33963220059C1700801E74 /* STPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupController.m; sourceTree = "<group>"; };
-		4B33963320059C1700801E74 /* STPopupControllerTransitioningFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningFade.h; sourceTree = "<group>"; };
-		4B33963420059C1700801E74 /* STPopupControllerTransitioningFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningFade.m; sourceTree = "<group>"; };
-		4B33963520059C1700801E74 /* STPopupControllerTransitioningSlideVertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupControllerTransitioningSlideVertical.h; sourceTree = "<group>"; };
-		4B33963620059C1700801E74 /* STPopupControllerTransitioningSlideVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningSlideVertical.m; sourceTree = "<group>"; };
-		4B33963720059C1700801E74 /* STPopupLeftBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupLeftBarItem.h; sourceTree = "<group>"; };
-		4B33963820059C1700801E74 /* STPopupLeftBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupLeftBarItem.m; sourceTree = "<group>"; };
-		4B33963920059C1700801E74 /* STPopupNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopupNavigationBar.h; sourceTree = "<group>"; };
-		4B33963A20059C1700801E74 /* STPopupNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupNavigationBar.m; sourceTree = "<group>"; };
-		4B33963B20059C1700801E74 /* UIResponder+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+STPopup.h"; sourceTree = "<group>"; };
-		4B33963C20059C1700801E74 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
-		4B33963D20059C1700801E74 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
-		4B33963E20059C1700801E74 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
 		4B33964E2005B99700801E74 /* more_account_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_account_normal_icon.png; sourceTree = "<group>"; };
 		4B33964F2005B99800801E74 /* more_account_select_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_account_select_icon.png; sourceTree = "<group>"; };
 		4B3396522005B9CA00801E74 /* back_icon_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon_select.png; sourceTree = "<group>"; };
@@ -255,6 +258,9 @@
 		4BAF972F20C7E8FA0058E295 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF973020C7E8FA0058E295 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leqibundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_weixin_icon.png; sourceTree = "<group>"; };
+		4BC97C8C22D814350004D6C2 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		4BC97C9022D822270004D6C2 /* AgreementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
+		4BC97C9122D822270004D6C2 /* AgreementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,34 +281,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1DED2022D8358200B806C1 /* STPopup */ = {
+			isa = PBXGroup;
+			children = (
+				4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */,
+				4B1DED2222D8358200B806C1 /* STPopup.h */,
+				4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */,
+				4B1DED2422D8358200B806C1 /* UIResponder+STPopup.h */,
+				4B1DED2522D8358200B806C1 /* STPopupLeftBarItem.m */,
+				4B1DED2622D8358200B806C1 /* UIViewController+STPopup.m */,
+				4B1DED2722D8358200B806C1 /* STPopupControllerTransitioningFade.m */,
+				4B1DED2822D8358200B806C1 /* STPopupController.m */,
+				4B1DED2922D8358200B806C1 /* UIResponder+STPopup.m */,
+				4B1DED2A22D8358200B806C1 /* STPopupNavigationBar.h */,
+				4B1DED2B22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h */,
+				4B1DED2C22D8358200B806C1 /* STPopupControllerTransitioningFade.h */,
+				4B1DED2D22D8358200B806C1 /* UIViewController+STPopup.h */,
+				4B1DED2E22D8358200B806C1 /* STPopupLeftBarItem.h */,
+				4B1DED2F22D8358200B806C1 /* STPopupController.h */,
+			);
+			path = STPopup;
+			sourceTree = "<group>";
+		};
 		4B3395FC2004A22900801E74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4B33962F20059C1700801E74 /* STPopup */ = {
-			isa = PBXGroup;
-			children = (
-				4B33963020059C1700801E74 /* STPopup.h */,
-				4B33963120059C1700801E74 /* STPopupController.h */,
-				4B33963220059C1700801E74 /* STPopupController.m */,
-				4B33963320059C1700801E74 /* STPopupControllerTransitioningFade.h */,
-				4B33963420059C1700801E74 /* STPopupControllerTransitioningFade.m */,
-				4B33963520059C1700801E74 /* STPopupControllerTransitioningSlideVertical.h */,
-				4B33963620059C1700801E74 /* STPopupControllerTransitioningSlideVertical.m */,
-				4B33963720059C1700801E74 /* STPopupLeftBarItem.h */,
-				4B33963820059C1700801E74 /* STPopupLeftBarItem.m */,
-				4B33963920059C1700801E74 /* STPopupNavigationBar.h */,
-				4B33963A20059C1700801E74 /* STPopupNavigationBar.m */,
-				4B33963B20059C1700801E74 /* UIResponder+STPopup.h */,
-				4B33963C20059C1700801E74 /* UIResponder+STPopup.m */,
-				4B33963D20059C1700801E74 /* UIViewController+STPopup.h */,
-				4B33963E20059C1700801E74 /* UIViewController+STPopup.m */,
-			);
-			name = STPopup;
-			path = ../../../../githubs/STPopup/STPopup;
 			sourceTree = "<group>";
 		};
 		4B33966E200612A700801E74 /* Hub */ = {
@@ -366,6 +371,7 @@
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
+				4BC97C8C22D814350004D6C2 /* checkbox.png */,
 				4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */,
 				4B01C0E22018881900206EF7 /* alipay_normal_icon.png */,
 				4B01C0E12018881900206EF7 /* alipay_selected_icon.png */,
@@ -446,10 +452,10 @@
 		4B9D0AF020045E24001847A8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				4B1DED2022D8358200B806C1 /* STPopup */,
 				4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */,
 				4B33967920073A9A00801E74 /* IAP */,
 				4B33966E200612A700801E74 /* Hub */,
-				4B33962F20059C1700801E74 /* STPopup */,
 				4B9D0AF120045E24001847A8 /* BaseViewController.h */,
 				4B9D0AF220045E24001847A8 /* BaseViewController.m */,
 				4B9D0AF320045E24001847A8 /* LoginViewController.h */,
@@ -484,6 +490,8 @@
 				4B5F4CC8200F2FE200BEB12C /* UserTableViewCell.m */,
 				4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */,
 				4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */,
+				4BC97C9022D822270004D6C2 /* AgreementViewController.h */,
+				4BC97C9122D822270004D6C2 /* AgreementViewController.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -544,35 +552,37 @@
 				4B5F4CBD200F290E00BEB12C /* YYDiskCache.h in Headers */,
 				4B5F4CD1200F422100BEB12C /* LeqiSDKInitConfigure.h in Headers */,
 				4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */,
+				4BC97C9222D822270004D6C2 /* AgreementViewController.h in Headers */,
 				4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */,
+				4B1DED3E22D8358200B806C1 /* STPopupController.h in Headers */,
 				4BAE8C2420083C5E0022248C /* AFSecurityPolicy.h in Headers */,
 				4B5F4D1520107CC500BEB12C /* XHFloatWindow.h in Headers */,
 				4B5F4D1720107CC500BEB12C /* XHFloatWindowController.h in Headers */,
+				4B1DED3322D8358200B806C1 /* UIResponder+STPopup.h in Headers */,
 				4BAE8C1F20083C5E0022248C /* AFHTTPSessionManager.h in Headers */,
 				4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */,
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
 				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
-				4B33964620059C1800801E74 /* STPopupLeftBarItem.h in Headers */,
 				4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */,
 				4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */,
 				4B3396582005C5EC00801E74 /* QQViewController.h in Headers */,
-				4B33963F20059C1800801E74 /* STPopup.h in Headers */,
 				4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */,
 				4B339671200612A800801E74 /* MBProgressHUD.h in Headers */,
+				4B1DED3B22D8358200B806C1 /* STPopupControllerTransitioningFade.h in Headers */,
 				4B4CE46420183911003B9EC8 /* UnBindPhoneViewController.h in Headers */,
+				4B1DED3122D8358200B806C1 /* STPopup.h in Headers */,
 				4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */,
 				4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */,
-				4B33964220059C1800801E74 /* STPopupControllerTransitioningFade.h in Headers */,
+				4B1DED3A22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
+				4B1DED3922D8358200B806C1 /* STPopupNavigationBar.h in Headers */,
 				4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */,
-				4B33964420059C1800801E74 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
 				4B5F4D2D201096EF00BEB12C /* BindPhoneViewController.h in Headers */,
-				4B33964A20059C1800801E74 /* UIResponder+STPopup.h in Headers */,
 				4BAE8C372008456C0022248C /* NSData+GZIP.h in Headers */,
 				4B3396602005C8B400801E74 /* ForgotPasswordViewController.h in Headers */,
 				4B33967C20073A9A00801E74 /* IAPManager.h in Headers */,
+				4B1DED3D22D8358200B806C1 /* STPopupLeftBarItem.h in Headers */,
 				4BAE8C2120083C5E0022248C /* AFNetworking.h in Headers */,
 				4BAE8C40200868630022248C /* NetUtils.h in Headers */,
-				4B33964C20059C1800801E74 /* UIViewController+STPopup.h in Headers */,
 				4B5F4CC9200F2FE200BEB12C /* UserTableViewCell.h in Headers */,
 				4B5F4CC1200F290E00BEB12C /* YYMemoryCache.h in Headers */,
 				4B5F4D2520108E6300BEB12C /* MenuTableViewCell.h in Headers */,
@@ -587,9 +597,8 @@
 				4BAE8C2620083C5E0022248C /* AFURLRequestSerialization.h in Headers */,
 				4BAE8C2A20083C5E0022248C /* AFURLSessionManager.h in Headers */,
 				4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */,
-				4B33964020059C1800801E74 /* STPopupController.h in Headers */,
+				4B1DED3C22D8358200B806C1 /* UIViewController+STPopup.h in Headers */,
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
-				4B33964820059C1800801E74 /* STPopupNavigationBar.h in Headers */,
 				4BAE8C2220083C5E0022248C /* AFNetworkReachabilityManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +684,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */,
 				4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,22 +727,26 @@
 			files = (
 				4BAE8C382008456C0022248C /* NSData+GZIP.m in Sources */,
 				4BAE8C41200868630022248C /* NetUtils.m in Sources */,
+				4B1DED3822D8358200B806C1 /* UIResponder+STPopup.m in Sources */,
 				4B4CE46520183911003B9EC8 /* UnBindPhoneViewController.m in Sources */,
 				4B33967D20073A9A00801E74 /* IAPManager.m in Sources */,
+				4BC97C9322D822270004D6C2 /* AgreementViewController.m in Sources */,
 				4BAE8C2F200844800022248C /* EncrytUtils.m in Sources */,
 				4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */,
 				4BAE8C2020083C5E0022248C /* AFHTTPSessionManager.m in Sources */,
 				4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */,
 				4BAE8C2320083C5E0022248C /* AFNetworkReachabilityManager.m in Sources */,
 				4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */,
-				4B33964320059C1800801E74 /* STPopupControllerTransitioningFade.m in Sources */,
 				4B5F4CC2200F290E00BEB12C /* YYMemoryCache.m in Sources */,
 				4B33965D2005C87A00801E74 /* RegViewController.m in Sources */,
+				4B1DED3222D8358200B806C1 /* STPopupNavigationBar.m in Sources */,
 				4B3396612005C8B400801E74 /* ForgotPasswordViewController.m in Sources */,
 				4BAE8C2720083C5E0022248C /* AFURLRequestSerialization.m in Sources */,
 				4BAE8C2520083C5E0022248C /* AFSecurityPolicy.m in Sources */,
 				4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */,
 				4BAE8C2B20083C5E0022248C /* AFURLSessionManager.m in Sources */,
+				4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
+				4B1DED3522D8358200B806C1 /* UIViewController+STPopup.m in Sources */,
 				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
 				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
@@ -740,27 +754,24 @@
 				4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */,
 				4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */,
 				4B5F4CCA200F2FE200BEB12C /* UserTableViewCell.m in Sources */,
-				4B33964520059C1800801E74 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				4B5F4CC0200F290E00BEB12C /* YYKVStorage.m in Sources */,
+				4B1DED3722D8358200B806C1 /* STPopupController.m in Sources */,
 				4B5F4D1A20107CC500BEB12C /* XHFloatWindowSingleton.m in Sources */,
 				4B339672200612A800801E74 /* MBProgressHUD.m in Sources */,
 				4B5F4CBE200F290E00BEB12C /* YYDiskCache.m in Sources */,
-				4B33964920059C1800801E74 /* STPopupNavigationBar.m in Sources */,
-				4B33964B20059C1800801E74 /* UIResponder+STPopup.m in Sources */,
 				4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */,
 				4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */,
 				4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */,
 				4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */,
-				4B33964D20059C1800801E74 /* UIViewController+STPopup.m in Sources */,
+				4B1DED3422D8358200B806C1 /* STPopupLeftBarItem.m in Sources */,
 				4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */,
 				4B3396592005C5EC00801E74 /* QQViewController.m in Sources */,
 				4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */,
 				4B9D0AFF20045E24001847A8 /* LoginViewController.m in Sources */,
-				4B33964120059C1800801E74 /* STPopupController.m in Sources */,
 				4BAE8C3D200845AB0022248C /* RSA.m in Sources */,
 				4B5F4D1620107CC500BEB12C /* XHFloatWindow.m in Sources */,
+				4B1DED3622D8358200B806C1 /* STPopupControllerTransitioningFade.m in Sources */,
 				4B71D00A2016CC3600F31C0C /* CacheHelper.m in Sources */,
-				4B33964720059C1800801E74 /* STPopupLeftBarItem.m in Sources */,
 				4BAE8C2920083C5E0022248C /* AFURLResponseSerialization.m in Sources */,
 				4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */,
 			);
@@ -896,6 +907,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leqisdk/ui",
+				);
 				INFOPLIST_FILE = leqisdk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -920,6 +935,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leqisdk/ui",
+				);
 				INFOPLIST_FILE = leqisdk/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

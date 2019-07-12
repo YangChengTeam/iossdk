@@ -7,7 +7,7 @@
 //
 
 #import "BindPhoneViewController.h"
-
+#import "AgreementViewController.h"
 @interface BindPhoneViewController ()
 
 @end
@@ -28,13 +28,15 @@
     UIButton *btnCode;
     
     UIButton *btnSubmit;
+    
+    UIButton *agreementCheckbox;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"绑定手机号";
-    [self setViewHieght:170];
+    [self setViewHieght:180];
     //登录框
     loginView = [UIView new];
     loginView.layer.cornerRadius = 3;
@@ -96,6 +98,7 @@
     [btnSubmit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnSubmit setTitle:@"提交" forState:UIControlStateNormal];
     [btnSubmit setBackgroundImage:[self createImageWithColor:kColorWithHex(0x19b1f5)] forState:UIControlStateNormal];
+    
     btnSubmit.titleLabel.font = [UIFont systemFontOfSize: 14];
     btnSubmit.layer.cornerRadius = 3;
     btnSubmit.layer.masksToBounds = YES;
@@ -104,6 +107,35 @@
     //事件
     [btnCode addTarget:self action:@selector(countDown:) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //用户协议
+    agreementCheckbox = [[UIButton alloc] init];
+    [agreementCheckbox setImage:[UIImage imageNamed:@"checkbox" inBundle:leqiBundle compatibleWithTraitCollection:nil]
+                        forState:UIControlStateNormal];
+    [agreementCheckbox setImage:[UIImage imageNamed:@"checkbox" inBundle:leqiBundle compatibleWithTraitCollection:nil]
+                       forState:UIControlStateHighlighted];
+    UIColor *color = kColorWithHex(0x939393);
+    NSString *string = @"已阅读并同意";
+    NSDictionary *attrs = @{ NSForegroundColorAttributeName : color };
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:string attributes:attrs];
+
+    UIColor *color2 = kColorWithHex(0xeba94c);
+    NSString *string2 = @"《乐七用户注册协议》";
+    NSDictionary *attrs2 = @{ NSForegroundColorAttributeName : color2 };
+    NSAttributedString *attrStr2 = [[NSAttributedString alloc] initWithString:string2 attributes:attrs2];
+
+    NSMutableAttributedString *title = [[NSMutableAttributedString alloc] init];
+    [title appendAttributedString:attrStr];
+    [title appendAttributedString:attrStr2];
+    [agreementCheckbox setAttributedTitle:title forState:UIControlStateNormal];
+    agreementCheckbox.titleLabel.font = [UIFont systemFontOfSize: 14];
+    agreementCheckbox.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    agreementCheckbox.titleEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0);
+    [agreementCheckbox setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
+
+    [self.view addSubview:agreementCheckbox];
+    
+    [agreementCheckbox addTarget:self action:@selector(showUserAreement:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -122,6 +154,12 @@
     tfCode.frame = CGRectMake(72,  12 + 42, width - 240, 22);
     
     btnSubmit.frame = CGRectMake(offset, 105 , (width - offset*2), 40);
+    agreementCheckbox.frame = CGRectMake(10, 105 + 50 , 280, 14);
+}
+
+- (void)showUserAreement:(id)sender {
+    AgreementViewController *agreementaViewController = [AgreementViewController new];
+    [self.popupController pushViewController:agreementaViewController animated:YES];
 }
 
 - (void)submit:(id)sender {

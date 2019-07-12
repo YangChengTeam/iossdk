@@ -24,7 +24,6 @@
     // Do any additional setup after loading the view.
     self.title = @"客服QQ";
     [self setViewHieght:180];
-    
     btnQQ = [UIButton new];
     lTitle = [UILabel new];
     btnQQ2 = [UIButton new];

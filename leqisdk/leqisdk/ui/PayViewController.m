@@ -9,7 +9,7 @@
 #import "PayViewController.h"
 #import "UIAlertView+Block.h"
 
-@interface PayViewController ()<PopupControllerDelegate>
+@interface PayViewController ()
 
 @end
 
@@ -103,7 +103,7 @@
     [btnWxPay addTarget:self action:@selector(selectPay:) forControlEvents:UIControlEventTouchUpInside];
     
     [btnPay addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
-    self.popupController.delegate = self;
+    //self.popupController.delegate = self;
     
     
 }

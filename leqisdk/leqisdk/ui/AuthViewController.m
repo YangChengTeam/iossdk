@@ -129,7 +129,7 @@
             [weakSelf alert:@"身份认证成功"];
             [[CacheHelper shareInstance] setRealAuth];
             [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshMenu object:nil];
-            [weakSelf.popupController popToRootViewControllerAnimated:YES];
+            [(UINavigationController *)weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
             [weakSelf alertByfail:res[@"msg"]];
         }

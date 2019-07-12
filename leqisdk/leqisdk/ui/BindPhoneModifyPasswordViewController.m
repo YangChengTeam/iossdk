@@ -143,7 +143,7 @@
             int mainkey = 2;
             [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
             [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshUser object:nil];
-            [weakSelf.popupController popToRootViewControllerAnimated:YES];
+            [(UINavigationController *)weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
             [weakSelf alertByfail:res[@"msg"]];
         }

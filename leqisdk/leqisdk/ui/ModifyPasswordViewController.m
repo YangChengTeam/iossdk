@@ -128,7 +128,7 @@
             [user setObject:newPass forKey:@"pwd"];
             int mainkey = [[user objectForKey:MAIN_KEY] intValue];
             [[CacheHelper shareInstance] setUser:user mainKey:mainkey];
-            [weakSelf.popupController popToRootViewControllerAnimated:YES];
+            [(UINavigationController *)weakSelf.popupController popToRootViewControllerAnimated:YES];
         } else {
             [weakSelf alertByfail:res[@"msg"]];
         }
