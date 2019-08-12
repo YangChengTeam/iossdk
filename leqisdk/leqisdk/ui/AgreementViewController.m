@@ -14,7 +14,7 @@
 @end
 
 @implementation AgreementViewController {
-    QLPreviewController *_previewController;
+    UIWebView *_webView;
     NSString *filePath;
 }
 
@@ -28,32 +28,24 @@
         [self setViewHieght: 240];
     }
     
-    filePath = [leqiBundle pathForResource:@"lqyx" ofType:@"pdf"];
-    _previewController = [[QLPreviewController alloc] init];
-    _previewController.dataSource = self;
-    _previewController.delegate = self;
-    [_previewController setCurrentPreviewItemIndex:0];
-    [self.view addSubview:_previewController.view];
+    filePath = [leqiBundle pathForResource:@"yhxy" ofType:@"html"];
+    NSError *error;
+    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+    if (error)
+        NSLog(@"Error reading file: %@", error.localizedDescription);
+    _webView = [[UIWebView alloc] init];
+    [_webView loadHTMLString:htmlString baseURL:nil];
+
+    [self.view addSubview:_webView];
+    
     
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    _previewController.view.frame = self.view.bounds;
-
+    _webView.frame = self.view.bounds;
 }
 
-#pragma -   QLPreviewControllerDataSource
-- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
-    return 1;
-}
-
-- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
-    if (filePath) {
-        return [NSURL fileURLWithPath:filePath];
-    }
-    return nil;
-}
 
 /*
 #pragma mark - Navigation

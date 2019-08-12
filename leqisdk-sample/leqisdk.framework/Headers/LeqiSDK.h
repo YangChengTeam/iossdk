@@ -30,6 +30,8 @@
 @property (nonatomic, strong) NSMutableDictionary *user;
 @property (nonatomic, strong) LeqiSDKInitConfigure *configInfo;
 @property (nonatomic, strong) UIViewController *currentViewController;
+@property (nonatomic, assign) BOOL hasShowing;
+@property (nonatomic, assign) BOOL isShowingInWindow;
 
 + (instancetype) shareInstance;
 
