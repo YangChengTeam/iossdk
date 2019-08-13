@@ -32,6 +32,7 @@
     if(error != 0){
         NSLog(@"不能启动初始化：%d",error);
     }
+    NSLog(@"SDK版本号：%@", [[LeqiSDK shareInstance] getVersion]);
     return YES;
 }
 
