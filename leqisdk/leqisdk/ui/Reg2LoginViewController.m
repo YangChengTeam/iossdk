@@ -33,11 +33,11 @@
     [self setViewHieght:180];
 
     //导航
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,  0 , 90, 20)];
-    UIImage *image = [UIImage imageNamed:@"quick_title_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil];
-    ivNavTitle = [[UIImageView alloc] initWithImage:image];
-    [titleView addSubview:ivNavTitle];
-    self.navigationItem.titleView = titleView;
+//    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,  0 , 90, 20)];
+//    UIImage *image = [UIImage imageNamed:@"quick_title_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil];
+//    ivNavTitle = [[UIImageView alloc] initWithImage:image];
+//    [titleView addSubview:ivNavTitle];
+//    self.navigationItem.titleView = titleView;
     
     //用户名
     lUserName = [UILabel new];

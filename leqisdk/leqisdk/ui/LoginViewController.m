@@ -57,11 +57,11 @@
     // Do any additional setup after loading the view from its nib.
     [self setViewHieght:190];
     //导航
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,  0 , 90, 20)];
-    UIImage *image = [UIImage imageNamed:@"quick_title_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil];
-    ivNavTitle = [[UIImageView alloc] initWithImage:image];
-    [titleView addSubview:ivNavTitle];
-    self.navigationItem.titleView = titleView;
+//    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,  0 , 90, 20)];
+//    UIImage *image = [UIImage imageNamed:@"quick_title_icon" inBundle:leqiBundle  compatibleWithTraitCollection:nil];
+//    ivNavTitle = [[UIImageView alloc] initWithImage:image];
+//    [titleView addSubview:ivNavTitle];
+//    self.navigationItem.titleView = titleView;
     
     //登录框
     loginView = [UIView new];

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <leqisdk/LeqiSDK.h>
+#import <AdSupport/AdSupport.h>
 
 @interface AppDelegate ()
 
@@ -25,14 +26,22 @@
                                                object:nil];
    
     LeqiSDKInitConfigure *config = [LeqiSDKInitConfigure new];
-    config.agentid = @"default";
-    config.gameid = @"640";
-    config.appid = @"640";
+    config.agentid = @"67";
+    config.gameid = @"680";
+    config.appid = @"680";
     int error = [[LeqiSDK shareInstance] initWithConfig:config];
     if(error != 0){
         NSLog(@"不能启动初始化：%d",error);
     }
+    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     NSLog(@"SDK版本号：%@", [[LeqiSDK shareInstance] getVersion]);
+    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    NSLog(@"%@", idfa);
+    idfa = [[idfa stringByReplacingOccurrencesOfString:@"-"
+                                            withString:@""] lowercaseString];
+    NSLog(@"%@", idfa);
+    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     return YES;
 }
 
