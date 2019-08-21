@@ -45,16 +45,16 @@
 }
 
 - (void)leqiLoginResult:(NSNotification *)notify {    
-    NSLog(@"%@", notify.object);
+    NSLog(@"leqiLoginResult:%@", notify.object);
 }
 
 - (void)leqiPayResult:(NSNotification *)notify {
-    NSLog(@"%@", notify.object);
+    NSLog(@"leqiPayResult:%@", notify.object);
 }
 
 - (void)leqiLogoutResult:(NSNotification *)notify {
     [[LeqiSDK shareInstance] login];
-    NSLog(@"%@", notify.object);
+    NSLog(@"leqiLogoutResult:%@", notify.object);
 }
 
 - (void)login {

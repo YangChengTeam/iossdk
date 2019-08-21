@@ -7,12 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45307B74230B82E200B9A9C9 /* UI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45307B73230B82E200B9A9C9 /* UI.storyboard */; };
+		45307B7F230B873D00B9A9C9 /* HomeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307B7D230B873D00B9A9C9 /* HomeViewController.h */; };
+		45307B80230B873D00B9A9C9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307B7E230B873D00B9A9C9 /* HomeViewController.m */; };
+		45307BC4230B8CCB00B9A9C9 /* ic_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8B230B8CC400B9A9C9 /* ic_account.png */; };
+		45307BC5230B8CCB00B9A9C9 /* ic_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8B230B8CC400B9A9C9 /* ic_account.png */; };
+		45307BC8230B8CCB00B9A9C9 /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8D230B8CC400B9A9C9 /* ic_back.png */; };
+		45307BC9230B8CCB00B9A9C9 /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8D230B8CC400B9A9C9 /* ic_back.png */; };
+		45307BCA230B8CCB00B9A9C9 /* ic_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8E230B8CC400B9A9C9 /* ic_down.png */; };
+		45307BCB230B8CCB00B9A9C9 /* ic_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8E230B8CC400B9A9C9 /* ic_down.png */; };
+		45307BCC230B8CCB00B9A9C9 /* ic_card_num.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8F230B8CC500B9A9C9 /* ic_card_num.png */; };
+		45307BCD230B8CCB00B9A9C9 /* ic_card_num.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B8F230B8CC500B9A9C9 /* ic_card_num.png */; };
+		45307BCE230B8CCB00B9A9C9 /* ic_arr.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B90230B8CC500B9A9C9 /* ic_arr.png */; };
+		45307BCF230B8CCB00B9A9C9 /* ic_arr.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B90230B8CC500B9A9C9 /* ic_arr.png */; };
+		45307BD4230B8CCB00B9A9C9 /* ic_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B93230B8CC600B9A9C9 /* ic_logo.png */; };
+		45307BD5230B8CCB00B9A9C9 /* ic_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B93230B8CC600B9A9C9 /* ic_logo.png */; };
+		45307BDA230B8CCB00B9A9C9 /* ic_repwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B96230B8CC600B9A9C9 /* ic_repwd.png */; };
+		45307BDB230B8CCB00B9A9C9 /* ic_repwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B96230B8CC600B9A9C9 /* ic_repwd.png */; };
+		45307BE0230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B99230B8CC700B9A9C9 /* ic_back_gray.png */; };
+		45307BE1230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B99230B8CC700B9A9C9 /* ic_back_gray.png */; };
+		45307BE4230B8CCB00B9A9C9 /* ic_ref.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9B230B8CC800B9A9C9 /* ic_ref.png */; };
+		45307BE5230B8CCB00B9A9C9 /* ic_ref.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9B230B8CC800B9A9C9 /* ic_ref.png */; };
+		45307BE8230B8CCB00B9A9C9 /* ic_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9D230B8CC800B9A9C9 /* ic_phone.png */; };
+		45307BE9230B8CCB00B9A9C9 /* ic_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9D230B8CC800B9A9C9 /* ic_phone.png */; };
+		45307BEC230B8CCB00B9A9C9 /* ic_auth.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9F230B8CC800B9A9C9 /* ic_auth.png */; };
+		45307BED230B8CCB00B9A9C9 /* ic_auth.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307B9F230B8CC800B9A9C9 /* ic_auth.png */; };
+		45307C2A230B8CCB00B9A9C9 /* ic_back_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BBF230B8CCA00B9A9C9 /* ic_back_red.png */; };
+		45307C2B230B8CCB00B9A9C9 /* ic_back_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BBF230B8CCA00B9A9C9 /* ic_back_red.png */; };
+		45307C2C230B8CCB00B9A9C9 /* ic_pwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BC0230B8CCA00B9A9C9 /* ic_pwd.png */; };
+		45307C2D230B8CCB00B9A9C9 /* ic_pwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BC0230B8CCA00B9A9C9 /* ic_pwd.png */; };
+		45307C32230B8CCB00B9A9C9 /* ic_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BC3230B8CCB00B9A9C9 /* ic_cancel.png */; };
+		45307C33230B8CCB00B9A9C9 /* ic_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307BC3230B8CCB00B9A9C9 /* ic_cancel.png */; };
+		45307C34230B8DCA00B9A9C9 /* UI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45307B73230B82E200B9A9C9 /* UI.storyboard */; };
+		45307C3D230B901800B9A9C9 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC97C8C22D814350004D6C2 /* checkbox.png */; };
+		45307C3E230B901800B9A9C9 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
+		45307C3F230B901800B9A9C9 /* alipay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E22018881900206EF7 /* alipay_normal_icon.png */; };
+		45307C40230B901800B9A9C9 /* alipay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E12018881900206EF7 /* alipay_selected_icon.png */; };
+		45307C41230B901800B9A9C9 /* wxpay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */; };
+		45307C42230B901800B9A9C9 /* wxpay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */; };
+		45307C43230B901800B9A9C9 /* account_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4CE45C20170D6B003B9EC8 /* account_close.png */; };
+		45307C44230B901800B9A9C9 /* change_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B71D00B2016D6F100F31C0C /* change_icon1.png */; };
+		45307C45230B901800B9A9C9 /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D37201193EE00BEB12C /* float_drag.png */; };
+		45307C46230B901800B9A9C9 /* right_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2120108BED00BEB12C /* right_icon.png */; };
+		45307C47230B901800B9A9C9 /* contact_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968020074CD800801E74 /* contact_qq.png */; };
+		45307C48230B901800B9A9C9 /* contact_qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968120074CD800801E74 /* contact_qq1.png */; };
+		45307C49230B901800B9A9C9 /* change_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396672005FA0600801E74 /* change_icon.png */; };
+		45307C4A230B901800B9A9C9 /* back_icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396522005B9CA00801E74 /* back_icon_select.png */; };
+		45307C4B230B901800B9A9C9 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396532005B9CA00801E74 /* back_icon.png */; };
+		45307C4C230B901800B9A9C9 /* more_account_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964E2005B99700801E74 /* more_account_normal_icon.png */; };
+		45307C4D230B901800B9A9C9 /* more_account_select_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964F2005B99800801E74 /* more_account_select_icon.png */; };
+		45307C4E230B901800B9A9C9 /* quick_register_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962D2004C86800801E74 /* quick_register_icon.png */; };
+		45307C4F230B901800B9A9C9 /* quick_title_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962B2004AF5A00801E74 /* quick_title_icon.png */; };
+		45307C50230B901800B9A9C9 /* call_service_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396292004AF3C00801E74 /* call_service_icon.png */; };
+		45307C51230B901800B9A9C9 /* qq_kefu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396272004AF2000801E74 /* qq_kefu_icon.png */; };
+		45307C52230B901800B9A9C9 /* password_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396242004AEBF00801E74 /* password_icon.png */; };
+		45307C53230B901800B9A9C9 /* user_account_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396232004AEBF00801E74 /* user_account_icon.png */; };
+		45307C59230BA3C400B9A9C9 /* UIView+MBIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C57230BA3C400B9A9C9 /* UIView+MBIBnspectable.m */; };
+		45307C5A230BA3C400B9A9C9 /* UIView+MBIBnspectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307C58230BA3C400B9A9C9 /* UIView+MBIBnspectable.h */; };
+		45307C61230BCA7700B9A9C9 /* c_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307C5F230BCA7600B9A9C9 /* c_red.png */; };
+		45307C62230BCA7700B9A9C9 /* c_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307C5F230BCA7600B9A9C9 /* c_red.png */; };
+		45307C63230BCA7700B9A9C9 /* c_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307C60230BCA7600B9A9C9 /* c_gray.png */; };
+		45307C64230BCA7700B9A9C9 /* c_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 45307C60230BCA7600B9A9C9 /* c_gray.png */; };
+		45307C67230BD2CE00B9A9C9 /* MsgLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307C65230BD2CE00B9A9C9 /* MsgLoginViewController.h */; };
+		45307C68230BD2CE00B9A9C9 /* MsgLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C66230BD2CE00B9A9C9 /* MsgLoginViewController.m */; };
+		45307C6B230BD2F500B9A9C9 /* MsgRegistViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307C69230BD2F500B9A9C9 /* MsgRegistViewController.h */; };
+		45307C6C230BD2F500B9A9C9 /* MsgRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */; };
+		45307C6F230BDF5500B9A9C9 /* ModifyPwdViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */; };
+		45307C70230BDF5500B9A9C9 /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C6E230BDF5500B9A9C9 /* ModifyPwdViewController.m */; };
+		45359114230BE89C005B13E4 /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45359113230BE89C005B13E4 /* yhxy.html */; };
+		45359115230BE89C005B13E4 /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45359113230BE89C005B13E4 /* yhxy.html */; };
+		45359118230BF215005B13E4 /* MeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45359116230BF215005B13E4 /* MeTableViewController.h */; };
+		45359119230BF215005B13E4 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45359117230BF215005B13E4 /* MeTableViewController.m */; };
+		45359124230BFB17005B13E4 /* MeModifyPwdViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45359122230BFB17005B13E4 /* MeModifyPwdViewController.h */; };
+		45359125230BFB17005B13E4 /* MeModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45359123230BFB17005B13E4 /* MeModifyPwdViewController.m */; };
+		45359128230BFB54005B13E4 /* MeBindPhoneViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45359126230BFB54005B13E4 /* MeBindPhoneViewController.h */; };
+		45359129230BFB54005B13E4 /* MeBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45359127230BFB54005B13E4 /* MeBindPhoneViewController.m */; };
+		4535912C230BFB65005B13E4 /* MeAuthViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4535912A230BFB65005B13E4 /* MeAuthViewController.h */; };
+		4535912D230BFB65005B13E4 /* MeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912B230BFB65005B13E4 /* MeAuthViewController.m */; };
+		45359130230CCCDF005B13E4 /* MeNavViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4535912E230CCCDF005B13E4 /* MeNavViewController.h */; };
+		45359131230CCCDF005B13E4 /* MeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912F230CCCDF005B13E4 /* MeNavViewController.m */; };
 		4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B01C0D9201886E400206EF7 /* PayViewController.h */; };
 		4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C0DA201886E400206EF7 /* PayViewController.m */; };
-		4B01C0DF2018880C00206EF7 /* wxpay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */; };
-		4B01C0E02018880C00206EF7 /* wxpay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */; };
-		4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E12018881900206EF7 /* alipay_selected_icon.png */; };
-		4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E22018881900206EF7 /* alipay_normal_icon.png */; };
 		4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */; };
 		4B1DED3122D8358200B806C1 /* STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2222D8358200B806C1 /* STPopup.h */; };
 		4B1DED3222D8358200B806C1 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */; };
@@ -28,16 +103,6 @@
 		4B1DED3C22D8358200B806C1 /* UIViewController+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2D22D8358200B806C1 /* UIViewController+STPopup.h */; };
 		4B1DED3D22D8358200B806C1 /* STPopupLeftBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2E22D8358200B806C1 /* STPopupLeftBarItem.h */; };
 		4B1DED3E22D8358200B806C1 /* STPopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2F22D8358200B806C1 /* STPopupController.h */; };
-		4B3396252004AEBF00801E74 /* user_account_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396232004AEBF00801E74 /* user_account_icon.png */; };
-		4B3396262004AEBF00801E74 /* password_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396242004AEBF00801E74 /* password_icon.png */; };
-		4B3396282004AF2000801E74 /* qq_kefu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396272004AF2000801E74 /* qq_kefu_icon.png */; };
-		4B33962A2004AF3C00801E74 /* call_service_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396292004AF3C00801E74 /* call_service_icon.png */; };
-		4B33962C2004AF5A00801E74 /* quick_title_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962B2004AF5A00801E74 /* quick_title_icon.png */; };
-		4B33962E2004C86800801E74 /* quick_register_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33962D2004C86800801E74 /* quick_register_icon.png */; };
-		4B3396502005B99800801E74 /* more_account_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964E2005B99700801E74 /* more_account_normal_icon.png */; };
-		4B3396512005B99800801E74 /* more_account_select_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33964F2005B99800801E74 /* more_account_select_icon.png */; };
-		4B3396542005B9CA00801E74 /* back_icon_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396522005B9CA00801E74 /* back_icon_select.png */; };
-		4B3396552005B9CA00801E74 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396532005B9CA00801E74 /* back_icon.png */; };
 		4B3396582005C5EC00801E74 /* QQViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3396562005C5EC00801E74 /* QQViewController.h */; };
 		4B3396592005C5EC00801E74 /* QQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3396572005C5EC00801E74 /* QQViewController.m */; };
 		4B33965C2005C87A00801E74 /* RegViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33965A2005C87A00801E74 /* RegViewController.h */; };
@@ -46,14 +111,10 @@
 		4B3396612005C8B400801E74 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33965F2005C8B400801E74 /* ForgotPasswordViewController.m */; };
 		4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3396622005CFD900801E74 /* Reg2LoginViewController.h */; };
 		4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3396632005CFD900801E74 /* Reg2LoginViewController.m */; };
-		4B3396692005FA0600801E74 /* change_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3396672005FA0600801E74 /* change_icon.png */; };
 		4B339671200612A800801E74 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33966F200612A700801E74 /* MBProgressHUD.h */; };
 		4B339672200612A800801E74 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B339670200612A700801E74 /* MBProgressHUD.m */; };
 		4B33967C20073A9A00801E74 /* IAPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B33967A20073A9A00801E74 /* IAPManager.h */; };
 		4B33967D20073A9A00801E74 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B33967B20073A9A00801E74 /* IAPManager.m */; };
-		4B33968220074CD800801E74 /* contact_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968020074CD800801E74 /* contact_qq.png */; };
-		4B33968320074CD800801E74 /* contact_qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B33968120074CD800801E74 /* contact_qq1.png */; };
-		4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4CE45C20170D6B003B9EC8 /* account_close.png */; };
 		4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */; };
 		4B4CE46120181981003B9EC8 /* BindPhoneModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */; };
 		4B4CE46420183911003B9EC8 /* UnBindPhoneViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */; };
@@ -82,7 +143,6 @@
 		4B5F4D1A20107CC500BEB12C /* XHFloatWindowSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1220107CC500BEB12C /* XHFloatWindowSingleton.m */; };
 		4B5F4D1F201080D400BEB12C /* SettingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D1D201080D400BEB12C /* SettingViewController.h */; };
 		4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D1E201080D400BEB12C /* SettingViewController.m */; };
-		4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2120108BED00BEB12C /* right_icon.png */; };
 		4B5F4D2520108E6300BEB12C /* MenuTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */; };
 		4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */; };
 		4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */; };
@@ -93,10 +153,8 @@
 		4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D302010997100BEB12C /* AuthViewController.m */; };
 		4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F4D332011795900BEB12C /* AutoLoginViewController.h */; };
 		4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F4D342011795900BEB12C /* AutoLoginViewController.m */; };
-		4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F4D37201193EE00BEB12C /* float_drag.png */; };
 		4B71D0092016CC3600F31C0C /* CacheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B71D0072016CC3600F31C0C /* CacheHelper.h */; };
 		4B71D00A2016CC3600F31C0C /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B71D0082016CC3600F31C0C /* CacheHelper.m */; };
-		4B71D00C2016D6F100F31C0C /* change_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B71D00B2016D6F100F31C0C /* change_icon1.png */; };
 		4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AED20045E24001847A8 /* LeqiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0AEE20045E24001847A8 /* LeqiSDK.m */; };
 		4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9D0AF120045E24001847A8 /* BaseViewController.h */; };
@@ -127,13 +185,52 @@
 		4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BAE8C4220089B080022248C /* UIAlertView+Block.h */; };
 		4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE8C4320089B080022248C /* UIAlertView+Block.m */; };
 		4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
-		4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */; };
 		4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC97C8C22D814350004D6C2 /* checkbox.png */; };
 		4BC97C9222D822270004D6C2 /* AgreementViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC97C9022D822270004D6C2 /* AgreementViewController.h */; };
 		4BC97C9322D822270004D6C2 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC97C9122D822270004D6C2 /* AgreementViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45307B73230B82E200B9A9C9 /* UI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UI.storyboard; sourceTree = "<group>"; };
+		45307B7D230B873D00B9A9C9 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		45307B7E230B873D00B9A9C9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		45307B85230B8C5200B9A9C9 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leqibundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		45307B87230B8C5200B9A9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45307B8B230B8CC400B9A9C9 /* ic_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_account.png; sourceTree = "<group>"; };
+		45307B8D230B8CC400B9A9C9 /* ic_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back.png; sourceTree = "<group>"; };
+		45307B8E230B8CC400B9A9C9 /* ic_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_down.png; sourceTree = "<group>"; };
+		45307B8F230B8CC500B9A9C9 /* ic_card_num.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_card_num.png; sourceTree = "<group>"; };
+		45307B90230B8CC500B9A9C9 /* ic_arr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_arr.png; sourceTree = "<group>"; };
+		45307B93230B8CC600B9A9C9 /* ic_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logo.png; sourceTree = "<group>"; };
+		45307B96230B8CC600B9A9C9 /* ic_repwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_repwd.png; sourceTree = "<group>"; };
+		45307B99230B8CC700B9A9C9 /* ic_back_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_gray.png; sourceTree = "<group>"; };
+		45307B9B230B8CC800B9A9C9 /* ic_ref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_ref.png; sourceTree = "<group>"; };
+		45307B9D230B8CC800B9A9C9 /* ic_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_phone.png; sourceTree = "<group>"; };
+		45307B9F230B8CC800B9A9C9 /* ic_auth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_auth.png; sourceTree = "<group>"; };
+		45307BBF230B8CCA00B9A9C9 /* ic_back_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_red.png; sourceTree = "<group>"; };
+		45307BC0230B8CCA00B9A9C9 /* ic_pwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_pwd.png; sourceTree = "<group>"; };
+		45307BC3230B8CCB00B9A9C9 /* ic_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_cancel.png; sourceTree = "<group>"; };
+		45307C57230BA3C400B9A9C9 /* UIView+MBIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBIBnspectable.m"; sourceTree = "<group>"; };
+		45307C58230BA3C400B9A9C9 /* UIView+MBIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBIBnspectable.h"; sourceTree = "<group>"; };
+		45307C5F230BCA7600B9A9C9 /* c_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c_red.png; sourceTree = "<group>"; };
+		45307C60230BCA7600B9A9C9 /* c_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c_gray.png; sourceTree = "<group>"; };
+		45307C65230BD2CE00B9A9C9 /* MsgLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgLoginViewController.h; sourceTree = "<group>"; };
+		45307C66230BD2CE00B9A9C9 /* MsgLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgLoginViewController.m; sourceTree = "<group>"; };
+		45307C69230BD2F500B9A9C9 /* MsgRegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgRegistViewController.h; sourceTree = "<group>"; };
+		45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgRegistViewController.m; sourceTree = "<group>"; };
+		45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPwdViewController.h; sourceTree = "<group>"; };
+		45307C6E230BDF5500B9A9C9 /* ModifyPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPwdViewController.m; sourceTree = "<group>"; };
+		45359113230BE89C005B13E4 /* yhxy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = yhxy.html; path = "../../../乐七iOS-SDK/lib/leqibundle.bundle/yhxy.html"; sourceTree = "<group>"; };
+		45359116230BF215005B13E4 /* MeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
+		45359117230BF215005B13E4 /* MeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
+		45359122230BFB17005B13E4 /* MeModifyPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeModifyPwdViewController.h; sourceTree = "<group>"; };
+		45359123230BFB17005B13E4 /* MeModifyPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeModifyPwdViewController.m; sourceTree = "<group>"; };
+		45359126230BFB54005B13E4 /* MeBindPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeBindPhoneViewController.h; sourceTree = "<group>"; };
+		45359127230BFB54005B13E4 /* MeBindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeBindPhoneViewController.m; sourceTree = "<group>"; };
+		4535912A230BFB65005B13E4 /* MeAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeAuthViewController.h; sourceTree = "<group>"; };
+		4535912B230BFB65005B13E4 /* MeAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeAuthViewController.m; sourceTree = "<group>"; };
+		4535912E230CCCDF005B13E4 /* MeNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeNavViewController.h; sourceTree = "<group>"; };
+		4535912F230CCCDF005B13E4 /* MeNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNavViewController.m; sourceTree = "<group>"; };
 		4B01C0D9201886E400206EF7 /* PayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
 		4B01C0DA201886E400206EF7 /* PayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
 		4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wxpay_normal_icon.png; sourceTree = "<group>"; };
@@ -256,7 +353,6 @@
 		4BAE8C4220089B080022248C /* UIAlertView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		4BAE8C4320089B080022248C /* UIAlertView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		4BAF972F20C7E8FA0058E295 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BAF973020C7E8FA0058E295 /* leqibundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leqibundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = service_weixin_icon.png; sourceTree = "<group>"; };
 		4BC97C8C22D814350004D6C2 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
 		4BC97C9022D822270004D6C2 /* AgreementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
@@ -264,14 +360,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B9D0AD820045D38001847A8 /* Frameworks */ = {
+		45307B82230B8C5200B9A9C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B9D0B3220046EE8001847A8 /* Frameworks */ = {
+		4B9D0AD820045D38001847A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +377,167 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45307B72230B824600B9A9C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45307B73230B82E200B9A9C9 /* UI.storyboard */,
+				45307C56230B9FBA00B9A9C9 /* new */,
+				45307C3C230B8FC600B9A9C9 /* old */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45307B76230B82FE00B9A9C9 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				45307B78230B834200B9A9C9 /* Extension */,
+				4B1DED2022D8358200B806C1 /* STPopup */,
+				4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */,
+				4B33967920073A9A00801E74 /* IAP */,
+				4B33966E200612A700801E74 /* Hub */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		45307B77230B831700B9A9C9 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				45307B7D230B873D00B9A9C9 /* HomeViewController.h */,
+				45307B7E230B873D00B9A9C9 /* HomeViewController.m */,
+				45307C65230BD2CE00B9A9C9 /* MsgLoginViewController.h */,
+				45307C66230BD2CE00B9A9C9 /* MsgLoginViewController.m */,
+				4B5F4D332011795900BEB12C /* AutoLoginViewController.h */,
+				4B5F4D342011795900BEB12C /* AutoLoginViewController.m */,
+				45307C69230BD2F500B9A9C9 /* MsgRegistViewController.h */,
+				45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */,
+				4B33965E2005C8B400801E74 /* ForgotPasswordViewController.h */,
+				4B33965F2005C8B400801E74 /* ForgotPasswordViewController.m */,
+				45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */,
+				45307C6E230BDF5500B9A9C9 /* ModifyPwdViewController.m */,
+				4535912E230CCCDF005B13E4 /* MeNavViewController.h */,
+				4535912F230CCCDF005B13E4 /* MeNavViewController.m */,
+				45359116230BF215005B13E4 /* MeTableViewController.h */,
+				45359117230BF215005B13E4 /* MeTableViewController.m */,
+				45359122230BFB17005B13E4 /* MeModifyPwdViewController.h */,
+				45359123230BFB17005B13E4 /* MeModifyPwdViewController.m */,
+				45359126230BFB54005B13E4 /* MeBindPhoneViewController.h */,
+				45359127230BFB54005B13E4 /* MeBindPhoneViewController.m */,
+				4535912A230BFB65005B13E4 /* MeAuthViewController.h */,
+				4535912B230BFB65005B13E4 /* MeAuthViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		45307B78230B834200B9A9C9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45307C58230BA3C400B9A9C9 /* UIView+MBIBnspectable.h */,
+				45307C57230BA3C400B9A9C9 /* UIView+MBIBnspectable.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		45307B86230B8C5200B9A9C9 /* leqibundle */ = {
+			isa = PBXGroup;
+			children = (
+				45307B87230B8C5200B9A9C9 /* Info.plist */,
+			);
+			path = leqibundle;
+			sourceTree = "<group>";
+		};
+		45307C3C230B8FC600B9A9C9 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				4BC97C8C22D814350004D6C2 /* checkbox.png */,
+				4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */,
+				4B01C0E22018881900206EF7 /* alipay_normal_icon.png */,
+				4B01C0E12018881900206EF7 /* alipay_selected_icon.png */,
+				4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */,
+				4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */,
+				4B4CE45C20170D6B003B9EC8 /* account_close.png */,
+				4B71D00B2016D6F100F31C0C /* change_icon1.png */,
+				4B5F4D37201193EE00BEB12C /* float_drag.png */,
+				4B5F4D2120108BED00BEB12C /* right_icon.png */,
+				4B33968020074CD800801E74 /* contact_qq.png */,
+				4B33968120074CD800801E74 /* contact_qq1.png */,
+				4B3396672005FA0600801E74 /* change_icon.png */,
+				4B3396522005B9CA00801E74 /* back_icon_select.png */,
+				4B3396532005B9CA00801E74 /* back_icon.png */,
+				4B33964E2005B99700801E74 /* more_account_normal_icon.png */,
+				4B33964F2005B99800801E74 /* more_account_select_icon.png */,
+				4B33962D2004C86800801E74 /* quick_register_icon.png */,
+				4B33962B2004AF5A00801E74 /* quick_title_icon.png */,
+				4B3396292004AF3C00801E74 /* call_service_icon.png */,
+				4B3396272004AF2000801E74 /* qq_kefu_icon.png */,
+				4B3396242004AEBF00801E74 /* password_icon.png */,
+				4B3396232004AEBF00801E74 /* user_account_icon.png */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
+		45307C56230B9FBA00B9A9C9 /* new */ = {
+			isa = PBXGroup;
+			children = (
+				45307C60230BCA7600B9A9C9 /* c_gray.png */,
+				45307C5F230BCA7600B9A9C9 /* c_red.png */,
+				45307BC3230B8CCB00B9A9C9 /* ic_cancel.png */,
+				45307B8D230B8CC400B9A9C9 /* ic_back.png */,
+				45307B99230B8CC700B9A9C9 /* ic_back_gray.png */,
+				45307BBF230B8CCA00B9A9C9 /* ic_back_red.png */,
+				45307B90230B8CC500B9A9C9 /* ic_arr.png */,
+				45307B9F230B8CC800B9A9C9 /* ic_auth.png */,
+				45307B8F230B8CC500B9A9C9 /* ic_card_num.png */,
+				45307B9D230B8CC800B9A9C9 /* ic_phone.png */,
+				45307B9B230B8CC800B9A9C9 /* ic_ref.png */,
+				45307B8E230B8CC400B9A9C9 /* ic_down.png */,
+				45307BC0230B8CCA00B9A9C9 /* ic_pwd.png */,
+				45307B96230B8CC600B9A9C9 /* ic_repwd.png */,
+				45307B8B230B8CC400B9A9C9 /* ic_account.png */,
+				45307B93230B8CC600B9A9C9 /* ic_logo.png */,
+				45359113230BE89C005B13E4 /* yhxy.html */,
+			);
+			path = new;
+			sourceTree = "<group>";
+		};
+		45359139230CE4B4005B13E4 /* OldClass */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D0AF120045E24001847A8 /* BaseViewController.h */,
+				4B9D0AF220045E24001847A8 /* BaseViewController.m */,
+				4B9D0AF320045E24001847A8 /* LoginViewController.h */,
+				4B9D0AF420045E24001847A8 /* LoginViewController.m */,
+				4B3396562005C5EC00801E74 /* QQViewController.h */,
+				4B3396572005C5EC00801E74 /* QQViewController.m */,
+				4B33965A2005C87A00801E74 /* RegViewController.h */,
+				4B33965B2005C87A00801E74 /* RegViewController.m */,
+				4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */,
+				4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */,
+				4B3396622005CFD900801E74 /* Reg2LoginViewController.h */,
+				4B3396632005CFD900801E74 /* Reg2LoginViewController.m */,
+				4B01C0D9201886E400206EF7 /* PayViewController.h */,
+				4B01C0DA201886E400206EF7 /* PayViewController.m */,
+				4BAE8C4220089B080022248C /* UIAlertView+Block.h */,
+				4BAE8C4320089B080022248C /* UIAlertView+Block.m */,
+				4B5F4D1D201080D400BEB12C /* SettingViewController.h */,
+				4B5F4D1E201080D400BEB12C /* SettingViewController.m */,
+				4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */,
+				4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */,
+				4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */,
+				4B4CE46320183911003B9EC8 /* UnBindPhoneViewController.m */,
+				4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */,
+				4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */,
+				4B5F4D2F2010997100BEB12C /* AuthViewController.h */,
+				4B5F4D302010997100BEB12C /* AuthViewController.m */,
+				4B5F4CC7200F2FE200BEB12C /* UserTableViewCell.h */,
+				4B5F4CC8200F2FE200BEB12C /* UserTableViewCell.m */,
+				4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */,
+				4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */,
+				4BC97C9022D822270004D6C2 /* AgreementViewController.h */,
+				4BC97C9122D822270004D6C2 /* AgreementViewController.m */,
+			);
+			path = OldClass;
+			sourceTree = "<group>";
+		};
 		4B1DED2022D8358200B806C1 /* STPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,34 +628,13 @@
 		4B9D0AD220045D38001847A8 = {
 			isa = PBXGroup;
 			children = (
-				4BC97C8C22D814350004D6C2 /* checkbox.png */,
-				4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */,
-				4B01C0E22018881900206EF7 /* alipay_normal_icon.png */,
-				4B01C0E12018881900206EF7 /* alipay_selected_icon.png */,
-				4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */,
-				4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */,
-				4B4CE45C20170D6B003B9EC8 /* account_close.png */,
-				4B71D00B2016D6F100F31C0C /* change_icon1.png */,
-				4B5F4D37201193EE00BEB12C /* float_drag.png */,
-				4B5F4D2120108BED00BEB12C /* right_icon.png */,
-				4B33968020074CD800801E74 /* contact_qq.png */,
-				4B33968120074CD800801E74 /* contact_qq1.png */,
-				4B3396672005FA0600801E74 /* change_icon.png */,
-				4B3396522005B9CA00801E74 /* back_icon_select.png */,
-				4B3396532005B9CA00801E74 /* back_icon.png */,
-				4B33964E2005B99700801E74 /* more_account_normal_icon.png */,
-				4B33964F2005B99800801E74 /* more_account_select_icon.png */,
-				4B33962D2004C86800801E74 /* quick_register_icon.png */,
-				4B33962B2004AF5A00801E74 /* quick_title_icon.png */,
-				4B3396292004AF3C00801E74 /* call_service_icon.png */,
-				4B3396272004AF2000801E74 /* qq_kefu_icon.png */,
-				4B3396242004AEBF00801E74 /* password_icon.png */,
-				4B3396232004AEBF00801E74 /* user_account_icon.png */,
+				45307B72230B824600B9A9C9 /* Resources */,
 				4B9D0ADE20045D38001847A8 /* leqisdk */,
 				4B9D0B3620046EE8001847A8 /* leqibundle */,
+				45307B86230B8C5200B9A9C9 /* leqibundle */,
 				4B3395FC2004A22900801E74 /* Frameworks */,
 				4BAF972F20C7E8FA0058E295 /* leqisdk.framework */,
-				4BAF973020C7E8FA0058E295 /* leqibundle.bundle */,
+				45307B85230B8C5200B9A9C9 /* leqibundle.bundle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -452,46 +688,9 @@
 		4B9D0AF020045E24001847A8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				4B1DED2022D8358200B806C1 /* STPopup */,
-				4B5F4D0A20107CC500BEB12C /* FloatingWindowPlugin */,
-				4B33967920073A9A00801E74 /* IAP */,
-				4B33966E200612A700801E74 /* Hub */,
-				4B9D0AF120045E24001847A8 /* BaseViewController.h */,
-				4B9D0AF220045E24001847A8 /* BaseViewController.m */,
-				4B9D0AF320045E24001847A8 /* LoginViewController.h */,
-				4B9D0AF420045E24001847A8 /* LoginViewController.m */,
-				4B3396562005C5EC00801E74 /* QQViewController.h */,
-				4B3396572005C5EC00801E74 /* QQViewController.m */,
-				4B33965A2005C87A00801E74 /* RegViewController.h */,
-				4B33965B2005C87A00801E74 /* RegViewController.m */,
-				4B33965E2005C8B400801E74 /* ForgotPasswordViewController.h */,
-				4B33965F2005C8B400801E74 /* ForgotPasswordViewController.m */,
-				4B4CE45E20181980003B9EC8 /* BindPhoneModifyPasswordViewController.h */,
-				4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */,
-				4B3396622005CFD900801E74 /* Reg2LoginViewController.h */,
-				4B3396632005CFD900801E74 /* Reg2LoginViewController.m */,
-				4B01C0D9201886E400206EF7 /* PayViewController.h */,
-				4B01C0DA201886E400206EF7 /* PayViewController.m */,
-				4BAE8C4220089B080022248C /* UIAlertView+Block.h */,
-				4BAE8C4320089B080022248C /* UIAlertView+Block.m */,
-				4B5F4D1D201080D400BEB12C /* SettingViewController.h */,
-				4B5F4D1E201080D400BEB12C /* SettingViewController.m */,
-				4B5F4D2B201096EF00BEB12C /* BindPhoneViewController.h */,
-				4B5F4D2C201096EF00BEB12C /* BindPhoneViewController.m */,
-				4B4CE46220183911003B9EC8 /* UnBindPhoneViewController.h */,
-				4B4CE46320183911003B9EC8 /* UnBindPhoneViewController.m */,
-				4B5F4D27201093AB00BEB12C /* ModifyPasswordViewController.h */,
-				4B5F4D28201093AB00BEB12C /* ModifyPasswordViewController.m */,
-				4B5F4D2F2010997100BEB12C /* AuthViewController.h */,
-				4B5F4D302010997100BEB12C /* AuthViewController.m */,
-				4B5F4D332011795900BEB12C /* AutoLoginViewController.h */,
-				4B5F4D342011795900BEB12C /* AutoLoginViewController.m */,
-				4B5F4CC7200F2FE200BEB12C /* UserTableViewCell.h */,
-				4B5F4CC8200F2FE200BEB12C /* UserTableViewCell.m */,
-				4B5F4D2320108E6300BEB12C /* MenuTableViewCell.h */,
-				4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */,
-				4BC97C9022D822270004D6C2 /* AgreementViewController.h */,
-				4BC97C9122D822270004D6C2 /* AgreementViewController.m */,
+				45307B77230B831700B9A9C9 /* Class */,
+				45359139230CE4B4005B13E4 /* OldClass */,
+				45307B76230B82FE00B9A9C9 /* Kit */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -552,8 +751,10 @@
 				4B5F4CBD200F290E00BEB12C /* YYDiskCache.h in Headers */,
 				4B5F4CD1200F422100BEB12C /* LeqiSDKInitConfigure.h in Headers */,
 				4B5F4CD2200F422100BEB12C /* LeqiSDKOrderInfo.h in Headers */,
+				4535912C230BFB65005B13E4 /* MeAuthViewController.h in Headers */,
 				4BC97C9222D822270004D6C2 /* AgreementViewController.h in Headers */,
 				4B9D0AFA20045E24001847A8 /* LeqiSDK.h in Headers */,
+				45307C67230BD2CE00B9A9C9 /* MsgLoginViewController.h in Headers */,
 				4B1DED3E22D8358200B806C1 /* STPopupController.h in Headers */,
 				4BAE8C2420083C5E0022248C /* AFSecurityPolicy.h in Headers */,
 				4B5F4D1520107CC500BEB12C /* XHFloatWindow.h in Headers */,
@@ -561,23 +762,30 @@
 				4B1DED3322D8358200B806C1 /* UIResponder+STPopup.h in Headers */,
 				4BAE8C1F20083C5E0022248C /* AFHTTPSessionManager.h in Headers */,
 				4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */,
+				45359128230BFB54005B13E4 /* MeBindPhoneViewController.h in Headers */,
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
 				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
+				45359130230CCCDF005B13E4 /* MeNavViewController.h in Headers */,
+				45307B7F230B873D00B9A9C9 /* HomeViewController.h in Headers */,
 				4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */,
 				4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */,
 				4B3396582005C5EC00801E74 /* QQViewController.h in Headers */,
 				4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */,
 				4B339671200612A800801E74 /* MBProgressHUD.h in Headers */,
+				45307C5A230BA3C400B9A9C9 /* UIView+MBIBnspectable.h in Headers */,
 				4B1DED3B22D8358200B806C1 /* STPopupControllerTransitioningFade.h in Headers */,
 				4B4CE46420183911003B9EC8 /* UnBindPhoneViewController.h in Headers */,
 				4B1DED3122D8358200B806C1 /* STPopup.h in Headers */,
+				45307C6F230BDF5500B9A9C9 /* ModifyPwdViewController.h in Headers */,
 				4B3396642005CFD900801E74 /* Reg2LoginViewController.h in Headers */,
 				4B5F4D352011795900BEB12C /* AutoLoginViewController.h in Headers */,
 				4B1DED3A22D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
+				45359124230BFB17005B13E4 /* MeModifyPwdViewController.h in Headers */,
 				4B1DED3922D8358200B806C1 /* STPopupNavigationBar.h in Headers */,
 				4B5F4D29201093AB00BEB12C /* ModifyPasswordViewController.h in Headers */,
 				4B5F4D2D201096EF00BEB12C /* BindPhoneViewController.h in Headers */,
 				4BAE8C372008456C0022248C /* NSData+GZIP.h in Headers */,
+				45307C6B230BD2F500B9A9C9 /* MsgRegistViewController.h in Headers */,
 				4B3396602005C8B400801E74 /* ForgotPasswordViewController.h in Headers */,
 				4B33967C20073A9A00801E74 /* IAPManager.h in Headers */,
 				4B1DED3D22D8358200B806C1 /* STPopupLeftBarItem.h in Headers */,
@@ -599,6 +807,7 @@
 				4B9D0AFC20045E24001847A8 /* BaseViewController.h in Headers */,
 				4B1DED3C22D8358200B806C1 /* UIViewController+STPopup.h in Headers */,
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
+				45359118230BF215005B13E4 /* MeTableViewController.h in Headers */,
 				4BAE8C2220083C5E0022248C /* AFNetworkReachabilityManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +815,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		45307B84230B8C5200B9A9C9 /* leqibundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45307B88230B8C5200B9A9C9 /* Build configuration list for PBXNativeTarget "leqibundle" */;
+			buildPhases = (
+				45307B81230B8C5200B9A9C9 /* Sources */,
+				45307B82230B8C5200B9A9C9 /* Frameworks */,
+				45307B83230B8C5200B9A9C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = leqibundle;
+			productName = leqibundle;
+			productReference = 45307B85230B8C5200B9A9C9 /* leqibundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		4B9D0ADB20045D38001847A8 /* leqisdk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B9D0AE420045D38001847A8 /* Build configuration list for PBXNativeTarget "leqisdk" */;
@@ -624,38 +850,22 @@
 			productReference = 4BAF972F20C7E8FA0058E295 /* leqisdk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4B9D0B3420046EE8001847A8 /* leqibundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4B9D0B3A20046EE8001847A8 /* Build configuration list for PBXNativeTarget "leqibundle" */;
-			buildPhases = (
-				4B9D0B3120046EE8001847A8 /* Sources */,
-				4B9D0B3220046EE8001847A8 /* Frameworks */,
-				4B9D0B3320046EE8001847A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = leqibundle;
-			productName = leqibundle;
-			productReference = 4BAF973020C7E8FA0058E295 /* leqibundle.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4B9D0AD320045D38001847A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = zhangkai;
 				TargetAttributes = {
-					4B9D0ADB20045D38001847A8 = {
-						CreatedOnToolsVersion = 9.2;
+					45307B84230B8C5200B9A9C9 = {
+						CreatedOnToolsVersion = 10.3;
 						ProvisioningStyle = Automatic;
 					};
-					4B9D0B3420046EE8001847A8 = {
+					4B9D0ADB20045D38001847A8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -674,53 +884,97 @@
 			projectRoot = "";
 			targets = (
 				4B9D0ADB20045D38001847A8 /* leqisdk */,
-				4B9D0B3420046EE8001847A8 /* leqibundle */,
+				45307B84230B8C5200B9A9C9 /* leqibundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		45307B83230B8C5200B9A9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45307BE1230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */,
+				45359115230BE89C005B13E4 /* yhxy.html in Resources */,
+				45307BCF230B8CCB00B9A9C9 /* ic_arr.png in Resources */,
+				45307C4D230B901800B9A9C9 /* more_account_select_icon.png in Resources */,
+				45307BC5230B8CCB00B9A9C9 /* ic_account.png in Resources */,
+				45307BC9230B8CCB00B9A9C9 /* ic_back.png in Resources */,
+				45307C3E230B901800B9A9C9 /* service_weixin_icon.png in Resources */,
+				45307C40230B901800B9A9C9 /* alipay_selected_icon.png in Resources */,
+				45307C42230B901800B9A9C9 /* wxpay_selected_icon.png in Resources */,
+				45307C51230B901800B9A9C9 /* qq_kefu_icon.png in Resources */,
+				45307BCB230B8CCB00B9A9C9 /* ic_down.png in Resources */,
+				45307BCD230B8CCB00B9A9C9 /* ic_card_num.png in Resources */,
+				45307C43230B901800B9A9C9 /* account_close.png in Resources */,
+				45307C50230B901800B9A9C9 /* call_service_icon.png in Resources */,
+				45307C48230B901800B9A9C9 /* contact_qq1.png in Resources */,
+				45307C47230B901800B9A9C9 /* contact_qq.png in Resources */,
+				45307C49230B901800B9A9C9 /* change_icon.png in Resources */,
+				45307C64230BCA7700B9A9C9 /* c_gray.png in Resources */,
+				45307C4B230B901800B9A9C9 /* back_icon.png in Resources */,
+				45307C44230B901800B9A9C9 /* change_icon1.png in Resources */,
+				45307C34230B8DCA00B9A9C9 /* UI.storyboard in Resources */,
+				45307C4A230B901800B9A9C9 /* back_icon_select.png in Resources */,
+				45307C2D230B8CCB00B9A9C9 /* ic_pwd.png in Resources */,
+				45307C62230BCA7700B9A9C9 /* c_red.png in Resources */,
+				45307C41230B901800B9A9C9 /* wxpay_normal_icon.png in Resources */,
+				45307C53230B901800B9A9C9 /* user_account_icon.png in Resources */,
+				45307C4F230B901800B9A9C9 /* quick_title_icon.png in Resources */,
+				45307BE5230B8CCB00B9A9C9 /* ic_ref.png in Resources */,
+				45307C2B230B8CCB00B9A9C9 /* ic_back_red.png in Resources */,
+				45307C33230B8CCB00B9A9C9 /* ic_cancel.png in Resources */,
+				45307C45230B901800B9A9C9 /* float_drag.png in Resources */,
+				45307C3D230B901800B9A9C9 /* checkbox.png in Resources */,
+				45307BED230B8CCB00B9A9C9 /* ic_auth.png in Resources */,
+				45307C52230B901800B9A9C9 /* password_icon.png in Resources */,
+				45307BDB230B8CCB00B9A9C9 /* ic_repwd.png in Resources */,
+				45307C4E230B901800B9A9C9 /* quick_register_icon.png in Resources */,
+				45307C3F230B901800B9A9C9 /* alipay_normal_icon.png in Resources */,
+				45307BE9230B8CCB00B9A9C9 /* ic_phone.png in Resources */,
+				45307BD5230B8CCB00B9A9C9 /* ic_logo.png in Resources */,
+				45307C46230B901800B9A9C9 /* right_icon.png in Resources */,
+				45307C4C230B901800B9A9C9 /* more_account_normal_icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B9D0ADA20045D38001847A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45307BE8230B8CCB00B9A9C9 /* ic_phone.png in Resources */,
+				45307BCE230B8CCB00B9A9C9 /* ic_arr.png in Resources */,
+				45307BD4230B8CCB00B9A9C9 /* ic_logo.png in Resources */,
+				45307BCA230B8CCB00B9A9C9 /* ic_down.png in Resources */,
 				4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */,
+				45359114230BE89C005B13E4 /* yhxy.html in Resources */,
+				45307BE0230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */,
+				45307BC8230B8CCB00B9A9C9 /* ic_back.png in Resources */,
+				45307C32230B8CCB00B9A9C9 /* ic_cancel.png in Resources */,
 				4BAF973220C8CD900058E295 /* service_weixin_icon.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B9D0B3320046EE8001847A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */,
-				4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */,
-				4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */,
-				4B01C0DF2018880C00206EF7 /* wxpay_normal_icon.png in Resources */,
-				4B01C0E02018880C00206EF7 /* wxpay_selected_icon.png in Resources */,
-				4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */,
-				4B71D00C2016D6F100F31C0C /* change_icon1.png in Resources */,
-				4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */,
-				4B5F4D2220108BED00BEB12C /* right_icon.png in Resources */,
-				4B33968220074CD800801E74 /* contact_qq.png in Resources */,
-				4B33968320074CD800801E74 /* contact_qq1.png in Resources */,
-				4B3396692005FA0600801E74 /* change_icon.png in Resources */,
-				4B3396542005B9CA00801E74 /* back_icon_select.png in Resources */,
-				4B3396552005B9CA00801E74 /* back_icon.png in Resources */,
-				4B3396502005B99800801E74 /* more_account_normal_icon.png in Resources */,
-				4B3396512005B99800801E74 /* more_account_select_icon.png in Resources */,
-				4B33962E2004C86800801E74 /* quick_register_icon.png in Resources */,
-				4B33962C2004AF5A00801E74 /* quick_title_icon.png in Resources */,
-				4B33962A2004AF3C00801E74 /* call_service_icon.png in Resources */,
-				4B3396252004AEBF00801E74 /* user_account_icon.png in Resources */,
-				4B3396282004AF2000801E74 /* qq_kefu_icon.png in Resources */,
-				4B3396262004AEBF00801E74 /* password_icon.png in Resources */,
+				45307C2A230B8CCB00B9A9C9 /* ic_back_red.png in Resources */,
+				45307BE4230B8CCB00B9A9C9 /* ic_ref.png in Resources */,
+				45307BEC230B8CCB00B9A9C9 /* ic_auth.png in Resources */,
+				45307BC4230B8CCB00B9A9C9 /* ic_account.png in Resources */,
+				45307B74230B82E200B9A9C9 /* UI.storyboard in Resources */,
+				45307C63230BCA7700B9A9C9 /* c_gray.png in Resources */,
+				45307C2C230B8CCB00B9A9C9 /* ic_pwd.png in Resources */,
+				45307BDA230B8CCB00B9A9C9 /* ic_repwd.png in Resources */,
+				45307C61230BCA7700B9A9C9 /* c_red.png in Resources */,
+				45307BCC230B8CCB00B9A9C9 /* ic_card_num.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		45307B81230B8C5200B9A9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B9D0AD720045D38001847A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,19 +982,24 @@
 				4BAE8C382008456C0022248C /* NSData+GZIP.m in Sources */,
 				4BAE8C41200868630022248C /* NetUtils.m in Sources */,
 				4B1DED3822D8358200B806C1 /* UIResponder+STPopup.m in Sources */,
+				45307B80230B873D00B9A9C9 /* HomeViewController.m in Sources */,
 				4B4CE46520183911003B9EC8 /* UnBindPhoneViewController.m in Sources */,
 				4B33967D20073A9A00801E74 /* IAPManager.m in Sources */,
 				4BC97C9322D822270004D6C2 /* AgreementViewController.m in Sources */,
 				4BAE8C2F200844800022248C /* EncrytUtils.m in Sources */,
+				45307C59230BA3C400B9A9C9 /* UIView+MBIBnspectable.m in Sources */,
 				4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */,
 				4BAE8C2020083C5E0022248C /* AFHTTPSessionManager.m in Sources */,
 				4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */,
 				4BAE8C2320083C5E0022248C /* AFNetworkReachabilityManager.m in Sources */,
 				4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */,
+				45359129230BFB54005B13E4 /* MeBindPhoneViewController.m in Sources */,
+				45359119230BF215005B13E4 /* MeTableViewController.m in Sources */,
 				4B5F4CC2200F290E00BEB12C /* YYMemoryCache.m in Sources */,
 				4B33965D2005C87A00801E74 /* RegViewController.m in Sources */,
 				4B1DED3222D8358200B806C1 /* STPopupNavigationBar.m in Sources */,
 				4B3396612005C8B400801E74 /* ForgotPasswordViewController.m in Sources */,
+				45307C68230BD2CE00B9A9C9 /* MsgLoginViewController.m in Sources */,
 				4BAE8C2720083C5E0022248C /* AFURLRequestSerialization.m in Sources */,
 				4BAE8C2520083C5E0022248C /* AFSecurityPolicy.m in Sources */,
 				4B5F4D322010997100BEB12C /* AuthViewController.m in Sources */,
@@ -748,6 +1007,7 @@
 				4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				4B1DED3522D8358200B806C1 /* UIViewController+STPopup.m in Sources */,
 				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
+				45307C70230BDF5500B9A9C9 /* ModifyPwdViewController.m in Sources */,
 				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
 				4B4CE46120181981003B9EC8 /* BindPhoneModifyPasswordViewController.m in Sources */,
@@ -766,27 +1026,75 @@
 				4B1DED3422D8358200B806C1 /* STPopupLeftBarItem.m in Sources */,
 				4B5F4D1420107CC500BEB12C /* XHDraggableButton.m in Sources */,
 				4B3396592005C5EC00801E74 /* QQViewController.m in Sources */,
+				45359131230CCCDF005B13E4 /* MeNavViewController.m in Sources */,
 				4B3396652005CFD900801E74 /* Reg2LoginViewController.m in Sources */,
 				4B9D0AFF20045E24001847A8 /* LoginViewController.m in Sources */,
 				4BAE8C3D200845AB0022248C /* RSA.m in Sources */,
+				45307C6C230BD2F500B9A9C9 /* MsgRegistViewController.m in Sources */,
 				4B5F4D1620107CC500BEB12C /* XHFloatWindow.m in Sources */,
+				4535912D230BFB65005B13E4 /* MeAuthViewController.m in Sources */,
 				4B1DED3622D8358200B806C1 /* STPopupControllerTransitioningFade.m in Sources */,
+				45359125230BFB17005B13E4 /* MeModifyPwdViewController.m in Sources */,
 				4B71D00A2016CC3600F31C0C /* CacheHelper.m in Sources */,
 				4BAE8C2920083C5E0022248C /* AFURLResponseSerialization.m in Sources */,
 				4B5F4CD3200F422100BEB12C /* LeqiSDKInitConfigure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B9D0B3120046EE8001847A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		45307B89230B8C5200B9A9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7M4U8H5AKV;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = leqibundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yangcheng.leqibundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		45307B8A230B8C5200B9A9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7M4U8H5AKV;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = leqibundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.yangcheng.leqibundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		4B9D0AE220045D38001847A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -801,6 +1109,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -808,6 +1117,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -859,6 +1169,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -866,6 +1177,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -900,6 +1212,8 @@
 		4B9D0AE520045D38001847A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -921,6 +1235,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqisdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";
 			};
@@ -929,6 +1245,8 @@
 		4B9D0AE620045D38001847A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -950,54 +1268,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqisdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";
-			};
-			name = Release;
-		};
-		4B9D0B3820046EE8001847A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7M4U8H5AKV;
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = leqibundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqibundle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos11.2;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		4B9D0B3920046EE8001847A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7M4U8H5AKV;
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = leqibundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yc.leqibundle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos11.2;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		45307B88230B8C5200B9A9C9 /* Build configuration list for PBXNativeTarget "leqibundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45307B89230B8C5200B9A9C9 /* Debug */,
+				45307B8A230B8C5200B9A9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4B9D0AD620045D38001847A8 /* Build configuration list for PBXProject "leqisdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1012,15 +1300,6 @@
 			buildConfigurations = (
 				4B9D0AE520045D38001847A8 /* Debug */,
 				4B9D0AE620045D38001847A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4B9D0B3A20046EE8001847A8 /* Build configuration list for PBXNativeTarget "leqibundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4B9D0B3820046EE8001847A8 /* Debug */,
-				4B9D0B3920046EE8001847A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

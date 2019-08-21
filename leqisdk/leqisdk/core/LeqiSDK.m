@@ -17,6 +17,8 @@
 #import "AutoLoginViewController.h"
 #import "CacheHelper.h"
 #import "PayViewController.h"
+#import "HomeViewController.h"
+#import "MeNavViewController.h"
 
 #define FIRST_LOGIN @"first_login"
 
@@ -91,8 +93,9 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 自动登录
 - (void)openAutoLogin {
-    AutoLoginViewController *loginViewController = [AutoLoginViewController new];
-    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+
+    HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -116,13 +119,13 @@ static LeqiSDK* instance = nil;
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:res[@"data"]];
             [[CacheHelper shareInstance] setUser:user mainKey:1];
             
-            LoginViewController *loginViewController = [LoginViewController new];
-            STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+            HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
+            STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
             popupController.containerView.layer.cornerRadius = 4;
             [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
            
-            Reg2LoginViewController *reg2LoginViewController = [Reg2LoginViewController new];
-            [popupController pushViewController:reg2LoginViewController animated:YES];
+            AutoLoginViewController *vc2 = [[AutoLoginViewController alloc] initWithStoryboardID:@"AutoLoginViewController"];
+            [popupController pushViewController:vc2 animated:YES];
             
             [[CacheHelper shareInstance] setAutoLogin:YES];
             
@@ -139,8 +142,8 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- 正常登录
 - (void)openNormalLogin {
-    LoginViewController *loginViewController = [LoginViewController new];
-    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:loginViewController];
+    HomeViewController *vc = [[HomeViewController alloc] initWithStoryboardID:@"HomeViewController"];
+    STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:vc];
     popupController.containerView.layer.cornerRadius = 4;
     [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
 }
@@ -156,14 +159,14 @@ static LeqiSDK* instance = nil;
         [self initWithConfig: self.configInfo];
         return LEQI_SDK_ERROR_INIT_FAILED; //初始化失败
     }
-    
+
     BOOL isAutoLogin = [[CacheHelper shareInstance] getAutoLogin];
     if(isAutoLogin){
         NSLog(@"%@:%@", TAG, @"auto login");
         [self openAutoLogin];
         return LEQI_SDK_ERROR_NONE;
     }
-    
+
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     BOOL isNotFirstLogin = [defaults boolForKey:FIRST_LOGIN];
     if(!isNotFirstLogin){
@@ -173,6 +176,7 @@ static LeqiSDK* instance = nil;
         NSLog(@"%@:%@", TAG, @"normal login");
         [self openNormalLogin];
     }
+    
     return LEQI_SDK_ERROR_NONE;
 }
 
@@ -235,10 +239,12 @@ static LeqiSDK* instance = nil;
     if(!isFloatViewAdded){
        [XHFloatWindow xh_addWindowOnTarget:[BaseViewController getCurrentViewController] onClick:^{
            // do something after floating button clicked...
-           SettingViewController *settingController = [SettingViewController new];
-           STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:settingController];
-           popupController.containerView.layer.cornerRadius = 4;
-           [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+//           SettingViewController *settingController = [SettingViewController new];
+//           STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:settingController];
+//           popupController.containerView.layer.cornerRadius = 4;
+//           [popupController presentInViewController:[BaseViewController  getCurrentViewController]];
+           MeNavViewController *nav = [[MeNavViewController alloc] initWithStoryboard];
+           [[BaseViewController getCurrentViewController] presentViewController:nav animated:true completion:nil];
        }];
     } else {
         [XHFloatWindow xh_setHideWindow:NO];

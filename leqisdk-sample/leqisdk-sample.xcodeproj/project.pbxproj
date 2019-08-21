@@ -7,24 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45307C36230B8EDD00B9A9C9 /* leqisdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45307C35230B8EDD00B9A9C9 /* leqisdk.framework */; };
+		45307C37230B8EDD00B9A9C9 /* leqisdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45307C35230B8EDD00B9A9C9 /* leqisdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45359138230CDF1E005B13E4 /* leqibundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45359137230CDF1E005B13E4 /* leqibundle.bundle */; };
 		4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B33967720072DC300801E74 /* StoreKit.framework */; };
 		4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */; };
 		4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */; };
-		4B6D585D201C16ED00A2FD5F /* leqibundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */; };
 		4B9D0B0F2004617B001847A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B0E2004617B001847A8 /* AppDelegate.m */; };
 		4B9D0B122004617B001847A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B112004617B001847A8 /* ViewController.m */; };
 		4B9D0B152004617B001847A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D0B132004617B001847A8 /* Main.storyboard */; };
 		4B9D0B172004617B001847A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D0B162004617B001847A8 /* Assets.xcassets */; };
 		4B9D0B1A2004617B001847A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D0B182004617B001847A8 /* LaunchScreen.storyboard */; };
 		4B9D0B1D2004617B001847A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D0B1C2004617B001847A8 /* main.m */; };
-		4BEAC5452022C36C00D53649 /* leqisdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEAC5442022C36C00D53649 /* leqisdk.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		45307C3A230B8EDD00B9A9C9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45307C37230B8EDD00B9A9C9 /* leqisdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45359136230CDDF2005B13E4 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		45307C35230B8EDD00B9A9C9 /* leqisdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leqisdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45359137230CDF1E005B13E4 /* leqibundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = leqibundle.bundle; path = ../SDK/leqibundle.bundle; sourceTree = "<group>"; };
 		4B33967720072DC300801E74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4B5F4CC3200F2B1C00BEB12C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4B5F4CC5200F2B2300BEB12C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = leqibundle.bundle; sourceTree = "<group>"; };
 		4B9D0B0A2004617B001847A8 /* leqisdk-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leqisdk-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D0B0D2004617B001847A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B9D0B0E2004617B001847A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,7 +62,6 @@
 		4B9D0B1B2004617B001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9D0B1C2004617B001847A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B9D0B2D20046EB1001847A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BEAC5442022C36C00D53649 /* leqisdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = leqisdk.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +71,7 @@
 			files = (
 				4B5F4CC6200F2B2300BEB12C /* libsqlite3.tbd in Frameworks */,
 				4B5F4CC4200F2B1C00BEB12C /* QuartzCore.framework in Frameworks */,
-				4BEAC5452022C36C00D53649 /* leqisdk.framework in Frameworks */,
+				45307C36230B8EDD00B9A9C9 /* leqisdk.framework in Frameworks */,
 				4B33967820072DC300801E74 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,8 +92,8 @@
 		4B9D0B012004617B001847A8 = {
 			isa = PBXGroup;
 			children = (
-				4BEAC5442022C36C00D53649 /* leqisdk.framework */,
-				4B6D585B201C16ED00A2FD5F /* leqibundle.bundle */,
+				45307C35230B8EDD00B9A9C9 /* leqisdk.framework */,
+				45359137230CDF1E005B13E4 /* leqibundle.bundle */,
 				4B9D0B0C2004617B001847A8 /* leqisdk-sample */,
 				4B9D0B2C20046EB1001847A8 /* leqibundle */,
 				4B9D0B0B2004617B001847A8 /* Products */,
@@ -118,6 +143,8 @@
 				4B9D0B062004617B001847A8 /* Sources */,
 				4B9D0B072004617B001847A8 /* Frameworks */,
 				4B9D0B082004617B001847A8 /* Resources */,
+				45307C3A230B8EDD00B9A9C9 /* Embed Frameworks */,
+				45359136230CDDF2005B13E4 /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
@@ -134,7 +161,7 @@
 		4B9D0B022004617B001847A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = zhangkai;
 				TargetAttributes = {
 					4B9D0B092004617B001847A8 = {
@@ -176,7 +203,7 @@
 			files = (
 				4B9D0B1A2004617B001847A8 /* LaunchScreen.storyboard in Resources */,
 				4B9D0B172004617B001847A8 /* Assets.xcassets in Resources */,
-				4B6D585D201C16ED00A2FD5F /* leqibundle.bundle in Resources */,
+				45359138230CDF1E005B13E4 /* leqibundle.bundle in Resources */,
 				4B9D0B152004617B001847A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +257,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -237,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -285,6 +314,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -292,6 +322,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
