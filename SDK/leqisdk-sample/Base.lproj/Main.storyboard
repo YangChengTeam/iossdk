@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJN-ic-JW7">
+                                <rect key="frame" x="104" y="323.5" width="167" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fq4-cl-CZX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="pXv-g6-lYN"/>
+                                </constraints>
+                                <state key="normal" title="模拟登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tac-Qx-8ug">
+                                <rect key="frame" x="104" y="390.5" width="167" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ICy-XT-3St"/>
+                                    <constraint firstAttribute="width" constant="167" id="out-sP-wwf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uZg-7A-qZr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="w5V-sp-BTJ"/>
+                                </constraints>
+                                <state key="normal" title="模拟支付">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tac-Qx-8ug" firstAttribute="top" secondItem="qJN-ic-JW7" secondAttribute="bottom" constant="27" id="Cbf-SZ-5Ze"/>
+                            <constraint firstItem="tac-Qx-8ug" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rw4-kJ-ccO"/>
+                            <constraint firstItem="qJN-ic-JW7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eIp-cc-JpW"/>
+                            <constraint firstItem="qJN-ic-JW7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ybt-Pp-fCS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="qJN-ic-JW7" id="tSy-xJ-V6d"/>
+                        <outlet property="btnPay" destination="tac-Qx-8ug" id="jQx-Ih-61u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>

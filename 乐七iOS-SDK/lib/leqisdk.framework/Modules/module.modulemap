@@ -1,6 +1,0 @@
-framework module leqisdk {
-  umbrella header "leqisdk.h"
-
-  export *
-  module * { export * }
-}

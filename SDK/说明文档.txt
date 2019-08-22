@@ -1,0 +1,20 @@
+关于乐七iOS-SDK说明：
+
+a.目录结构说明：
+1.lib目录为乐七iOS-SDK的 动态库和资源文件
+2.leqisdk-sample为示例代码
+3.iOS SDK文档为接入说明文档
+	*可以结合示例代码进行游戏接入
+
+
+b.登录验证
+1.登录验证有一个简单的本地验证.
+	算法如下：
+	收到通知kLeqiSDKNotiLogin后，取得object用户userId、loginTime和sign
+	sign通过strtolower(md5(userId.loginTime.$app_key))计算而得,其中$app_key由对接时商务提供。
+
+c.支付验证
+	支付验证由服务端对接时由服务端提供
+
+
+	

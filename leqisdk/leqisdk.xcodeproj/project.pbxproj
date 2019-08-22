@@ -86,6 +86,10 @@
 		4535912D230BFB65005B13E4 /* MeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912B230BFB65005B13E4 /* MeAuthViewController.m */; };
 		45359130230CCCDF005B13E4 /* MeNavViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4535912E230CCCDF005B13E4 /* MeNavViewController.h */; };
 		45359131230CCCDF005B13E4 /* MeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912F230CCCDF005B13E4 /* MeNavViewController.m */; };
+		45D86307230E7CD400723AFF /* ic_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86306230E7CD400723AFF /* ic_up.png */; };
+		45D86308230E7CD400723AFF /* ic_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86306230E7CD400723AFF /* ic_up.png */; };
+		45EB3294230E42D100D54067 /* UserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 45EB3292230E42D100D54067 /* UserCell.h */; };
+		45EB3295230E42D100D54067 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EB3293230E42D100D54067 /* UserCell.m */; };
 		4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B01C0D9201886E400206EF7 /* PayViewController.h */; };
 		4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C0DA201886E400206EF7 /* PayViewController.m */; };
 		4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */; };
@@ -231,6 +235,9 @@
 		4535912B230BFB65005B13E4 /* MeAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeAuthViewController.m; sourceTree = "<group>"; };
 		4535912E230CCCDF005B13E4 /* MeNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeNavViewController.h; sourceTree = "<group>"; };
 		4535912F230CCCDF005B13E4 /* MeNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNavViewController.m; sourceTree = "<group>"; };
+		45D86306230E7CD400723AFF /* ic_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_up.png; sourceTree = "<group>"; };
+		45EB3292230E42D100D54067 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		45EB3293230E42D100D54067 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		4B01C0D9201886E400206EF7 /* PayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
 		4B01C0DA201886E400206EF7 /* PayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
 		4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wxpay_normal_icon.png; sourceTree = "<group>"; };
@@ -404,12 +411,14 @@
 			children = (
 				45307B7D230B873D00B9A9C9 /* HomeViewController.h */,
 				45307B7E230B873D00B9A9C9 /* HomeViewController.m */,
+				45EB3292230E42D100D54067 /* UserCell.h */,
+				45EB3293230E42D100D54067 /* UserCell.m */,
 				45307C65230BD2CE00B9A9C9 /* MsgLoginViewController.h */,
 				45307C66230BD2CE00B9A9C9 /* MsgLoginViewController.m */,
-				4B5F4D332011795900BEB12C /* AutoLoginViewController.h */,
-				4B5F4D342011795900BEB12C /* AutoLoginViewController.m */,
 				45307C69230BD2F500B9A9C9 /* MsgRegistViewController.h */,
 				45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */,
+				4B5F4D332011795900BEB12C /* AutoLoginViewController.h */,
+				4B5F4D342011795900BEB12C /* AutoLoginViewController.m */,
 				4B33965E2005C8B400801E74 /* ForgotPasswordViewController.h */,
 				4B33965F2005C8B400801E74 /* ForgotPasswordViewController.m */,
 				45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */,
@@ -490,6 +499,7 @@
 				45307B9D230B8CC800B9A9C9 /* ic_phone.png */,
 				45307B9B230B8CC800B9A9C9 /* ic_ref.png */,
 				45307B8E230B8CC400B9A9C9 /* ic_down.png */,
+				45D86306230E7CD400723AFF /* ic_up.png */,
 				45307BC0230B8CCA00B9A9C9 /* ic_pwd.png */,
 				45307B96230B8CC600B9A9C9 /* ic_repwd.png */,
 				45307B8B230B8CC400B9A9C9 /* ic_account.png */,
@@ -809,6 +819,7 @@
 				4B9D0AFE20045E24001847A8 /* LoginViewController.h in Headers */,
 				45359118230BF215005B13E4 /* MeTableViewController.h in Headers */,
 				4BAE8C2220083C5E0022248C /* AFNetworkReachabilityManager.h in Headers */,
+				45EB3294230E42D100D54067 /* UserCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +931,7 @@
 				45307C62230BCA7700B9A9C9 /* c_red.png in Resources */,
 				45307C41230B901800B9A9C9 /* wxpay_normal_icon.png in Resources */,
 				45307C53230B901800B9A9C9 /* user_account_icon.png in Resources */,
+				45D86308230E7CD400723AFF /* ic_up.png in Resources */,
 				45307C4F230B901800B9A9C9 /* quick_title_icon.png in Resources */,
 				45307BE5230B8CCB00B9A9C9 /* ic_ref.png in Resources */,
 				45307C2B230B8CCB00B9A9C9 /* ic_back_red.png in Resources */,
@@ -947,6 +959,7 @@
 				45307BD4230B8CCB00B9A9C9 /* ic_logo.png in Resources */,
 				45307BCA230B8CCB00B9A9C9 /* ic_down.png in Resources */,
 				4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */,
+				45D86307230E7CD400723AFF /* ic_up.png in Resources */,
 				45359114230BE89C005B13E4 /* yhxy.html in Resources */,
 				45307BE0230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */,
 				45307BC8230B8CCB00B9A9C9 /* ic_back.png in Resources */,
@@ -1007,6 +1020,7 @@
 				4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				4B1DED3522D8358200B806C1 /* UIViewController+STPopup.m in Sources */,
 				4B5F4D2E201096EF00BEB12C /* BindPhoneViewController.m in Sources */,
+				45EB3295230E42D100D54067 /* UserCell.m in Sources */,
 				45307C70230BDF5500B9A9C9 /* ModifyPwdViewController.m in Sources */,
 				4B5F4D2A201093AB00BEB12C /* ModifyPasswordViewController.m in Sources */,
 				4B9D0AFD20045E24001847A8 /* BaseViewController.m in Sources */,
