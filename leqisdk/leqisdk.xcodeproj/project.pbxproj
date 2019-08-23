@@ -74,8 +74,6 @@
 		45307C6C230BD2F500B9A9C9 /* MsgRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */; };
 		45307C6F230BDF5500B9A9C9 /* ModifyPwdViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */; };
 		45307C70230BDF5500B9A9C9 /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45307C6E230BDF5500B9A9C9 /* ModifyPwdViewController.m */; };
-		45359114230BE89C005B13E4 /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45359113230BE89C005B13E4 /* yhxy.html */; };
-		45359115230BE89C005B13E4 /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45359113230BE89C005B13E4 /* yhxy.html */; };
 		45359118230BF215005B13E4 /* MeTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45359116230BF215005B13E4 /* MeTableViewController.h */; };
 		45359119230BF215005B13E4 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45359117230BF215005B13E4 /* MeTableViewController.m */; };
 		45359124230BFB17005B13E4 /* MeModifyPwdViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45359122230BFB17005B13E4 /* MeModifyPwdViewController.h */; };
@@ -86,6 +84,8 @@
 		4535912D230BFB65005B13E4 /* MeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912B230BFB65005B13E4 /* MeAuthViewController.m */; };
 		45359130230CCCDF005B13E4 /* MeNavViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4535912E230CCCDF005B13E4 /* MeNavViewController.h */; };
 		45359131230CCCDF005B13E4 /* MeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535912F230CCCDF005B13E4 /* MeNavViewController.m */; };
+		45D1A974230F75B0005D6C5D /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45D1A973230F75B0005D6C5D /* yhxy.html */; };
+		45D1A975230F75B0005D6C5D /* yhxy.html in Resources */ = {isa = PBXBuildFile; fileRef = 45D1A973230F75B0005D6C5D /* yhxy.html */; };
 		45D86307230E7CD400723AFF /* ic_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86306230E7CD400723AFF /* ic_up.png */; };
 		45D86308230E7CD400723AFF /* ic_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D86306230E7CD400723AFF /* ic_up.png */; };
 		45EB3294230E42D100D54067 /* UserCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 45EB3292230E42D100D54067 /* UserCell.h */; };
@@ -224,7 +224,6 @@
 		45307C6A230BD2F500B9A9C9 /* MsgRegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgRegistViewController.m; sourceTree = "<group>"; };
 		45307C6D230BDF5500B9A9C9 /* ModifyPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPwdViewController.h; sourceTree = "<group>"; };
 		45307C6E230BDF5500B9A9C9 /* ModifyPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPwdViewController.m; sourceTree = "<group>"; };
-		45359113230BE89C005B13E4 /* yhxy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = yhxy.html; path = "../../../乐七iOS-SDK/lib/leqibundle.bundle/yhxy.html"; sourceTree = "<group>"; };
 		45359116230BF215005B13E4 /* MeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
 		45359117230BF215005B13E4 /* MeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
 		45359122230BFB17005B13E4 /* MeModifyPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeModifyPwdViewController.h; sourceTree = "<group>"; };
@@ -235,6 +234,7 @@
 		4535912B230BFB65005B13E4 /* MeAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeAuthViewController.m; sourceTree = "<group>"; };
 		4535912E230CCCDF005B13E4 /* MeNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeNavViewController.h; sourceTree = "<group>"; };
 		4535912F230CCCDF005B13E4 /* MeNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNavViewController.m; sourceTree = "<group>"; };
+		45D1A973230F75B0005D6C5D /* yhxy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = yhxy.html; sourceTree = "<group>"; };
 		45D86306230E7CD400723AFF /* ic_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_up.png; sourceTree = "<group>"; };
 		45EB3292230E42D100D54067 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		45EB3293230E42D100D54067 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
@@ -504,7 +504,7 @@
 				45307B96230B8CC600B9A9C9 /* ic_repwd.png */,
 				45307B8B230B8CC400B9A9C9 /* ic_account.png */,
 				45307B93230B8CC600B9A9C9 /* ic_logo.png */,
-				45359113230BE89C005B13E4 /* yhxy.html */,
+				45D1A973230F75B0005D6C5D /* yhxy.html */,
 			);
 			path = new;
 			sourceTree = "<group>";
@@ -906,7 +906,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45307BE1230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */,
-				45359115230BE89C005B13E4 /* yhxy.html in Resources */,
 				45307BCF230B8CCB00B9A9C9 /* ic_arr.png in Resources */,
 				45307C4D230B901800B9A9C9 /* more_account_select_icon.png in Resources */,
 				45307BC5230B8CCB00B9A9C9 /* ic_account.png in Resources */,
@@ -924,6 +923,7 @@
 				45307C49230B901800B9A9C9 /* change_icon.png in Resources */,
 				45307C64230BCA7700B9A9C9 /* c_gray.png in Resources */,
 				45307C4B230B901800B9A9C9 /* back_icon.png in Resources */,
+				45D1A975230F75B0005D6C5D /* yhxy.html in Resources */,
 				45307C44230B901800B9A9C9 /* change_icon1.png in Resources */,
 				45307C34230B8DCA00B9A9C9 /* UI.storyboard in Resources */,
 				45307C4A230B901800B9A9C9 /* back_icon_select.png in Resources */,
@@ -960,7 +960,6 @@
 				45307BCA230B8CCB00B9A9C9 /* ic_down.png in Resources */,
 				4BC97C8D22D814360004D6C2 /* checkbox.png in Resources */,
 				45D86307230E7CD400723AFF /* ic_up.png in Resources */,
-				45359114230BE89C005B13E4 /* yhxy.html in Resources */,
 				45307BE0230B8CCB00B9A9C9 /* ic_back_gray.png in Resources */,
 				45307BC8230B8CCB00B9A9C9 /* ic_back.png in Resources */,
 				45307C32230B8CCB00B9A9C9 /* ic_cancel.png in Resources */,
@@ -973,6 +972,7 @@
 				45307C63230BCA7700B9A9C9 /* c_gray.png in Resources */,
 				45307C2C230B8CCB00B9A9C9 /* ic_pwd.png in Resources */,
 				45307BDA230B8CCB00B9A9C9 /* ic_repwd.png in Resources */,
+				45D1A974230F75B0005D6C5D /* yhxy.html in Resources */,
 				45307C61230BCA7700B9A9C9 /* c_red.png in Resources */,
 				45307BCC230B8CCB00B9A9C9 /* ic_card_num.png in Resources */,
 			);
