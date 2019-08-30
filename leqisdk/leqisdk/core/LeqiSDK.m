@@ -16,9 +16,11 @@
 #import "SettingViewController.h"
 #import "AutoLoginViewController.h"
 #import "CacheHelper.h"
-#import "PayViewController.h"
+#import "IAPViewController.h"
+#import "Base64.h"
 
 #define FIRST_LOGIN @"first_login"
+#define IC_EE @"WJPFH/vgAho7klpeiK8TPKrN9D7NAS14Zf87PV/KLuKJZfJbNE8BsEvvxttuPDacyK8iQfeC6VoVvUIt1WAFHjJeaESNh5qAQOdvvC3C3P8Fe0J4LA8NVeKj7hVU9xvnykJr8ICV7bSenVQExr5g+OWLNjsYPxfuqUEqEVj36Eg="
 
 @interface LeqiSDK()<IAPManagerDelegate>
 @property (nonatomic, strong) MBProgressHUD *hud;
@@ -190,7 +192,7 @@ static LeqiSDK* instance = nil;
     [NetUtils postWithUrl:url params:params callback:^(NSDictionary *res){
         if(res && res[@"data"]){
             [weakSelf dismiss:nil];
-            if([res[@"data"][@"type"] isEqual:@"h5"]){
+            if([res[@"data"][@"type"] isEqual:IC_EE.keyDecrypt]){
                 [weakSelf iapPayISO:orderInfo];
                 return;
             }
@@ -218,7 +220,7 @@ static LeqiSDK* instance = nil;
 
 
 - (void)iapPayISO:(LeqiSDKOrderInfo *)orderInfo  {
-    PayViewController *payViewController = [PayViewController new];
+    IAPViewController *payViewController = [IAPViewController new];
     payViewController.orderInfo = orderInfo;
     STPopupController *popupController = [[STPopupController alloc] initWithRootViewController:payViewController];
     popupController.containerView.layer.cornerRadius = 4;
@@ -252,7 +254,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0.97";
+    return @"1.0.98";
 }
 
 #pragma mark -- 退出

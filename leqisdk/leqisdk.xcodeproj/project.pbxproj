@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B01C0D9201886E400206EF7 /* PayViewController.h */; };
-		4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C0DA201886E400206EF7 /* PayViewController.m */; };
-		4B01C0DF2018880C00206EF7 /* wxpay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */; };
-		4B01C0E02018880C00206EF7 /* wxpay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */; };
-		4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E12018881900206EF7 /* alipay_selected_icon.png */; };
-		4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E22018881900206EF7 /* alipay_normal_icon.png */; };
+		45615DE32318CD270036508B /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 45615DE12318CD270036508B /* Base64.h */; };
+		45615DE42318CD270036508B /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 45615DE22318CD270036508B /* Base64.m */; };
+		4B01C0DB201886E400206EF7 /* IAPViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B01C0D9201886E400206EF7 /* IAPViewController.h */; };
+		4B01C0DC201886E400206EF7 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C0DA201886E400206EF7 /* IAPViewController.m */; };
+		4B01C0DF2018880C00206EF7 /* py2_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DD2018880B00206EF7 /* py2_normal_icon.png */; };
+		4B01C0E02018880C00206EF7 /* py2_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DE2018880C00206EF7 /* py2_selected_icon.png */; };
+		4B01C0E32018881900206EF7 /* py1_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E12018881900206EF7 /* py1_selected_icon.png */; };
+		4B01C0E42018881900206EF7 /* py1_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0E22018881900206EF7 /* py1_normal_icon.png */; };
 		4B1DED3022D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */; };
 		4B1DED3122D8358200B806C1 /* STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B1DED2222D8358200B806C1 /* STPopup.h */; };
 		4B1DED3222D8358200B806C1 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */; };
@@ -134,12 +136,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B01C0D9201886E400206EF7 /* PayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
-		4B01C0DA201886E400206EF7 /* PayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
-		4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wxpay_normal_icon.png; sourceTree = "<group>"; };
-		4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wxpay_selected_icon.png; sourceTree = "<group>"; };
-		4B01C0E12018881900206EF7 /* alipay_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay_selected_icon.png; sourceTree = "<group>"; };
-		4B01C0E22018881900206EF7 /* alipay_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay_normal_icon.png; sourceTree = "<group>"; };
+		45615DE12318CD270036508B /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		45615DE22318CD270036508B /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		4B01C0D9201886E400206EF7 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
+		4B01C0DA201886E400206EF7 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		4B01C0DD2018880B00206EF7 /* py2_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = py2_normal_icon.png; sourceTree = "<group>"; };
+		4B01C0DE2018880C00206EF7 /* py2_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = py2_selected_icon.png; sourceTree = "<group>"; };
+		4B01C0E12018881900206EF7 /* py1_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = py1_selected_icon.png; sourceTree = "<group>"; };
+		4B01C0E22018881900206EF7 /* py1_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = py1_normal_icon.png; sourceTree = "<group>"; };
 		4B1DED2122D8358200B806C1 /* STPopupControllerTransitioningSlideVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupControllerTransitioningSlideVertical.m; sourceTree = "<group>"; };
 		4B1DED2222D8358200B806C1 /* STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPopup.h; sourceTree = "<group>"; };
 		4B1DED2322D8358200B806C1 /* STPopupNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPopupNavigationBar.m; sourceTree = "<group>"; };
@@ -373,10 +377,10 @@
 			children = (
 				4BC97C8C22D814350004D6C2 /* checkbox.png */,
 				4BAF973120C8CD8F0058E295 /* service_weixin_icon.png */,
-				4B01C0E22018881900206EF7 /* alipay_normal_icon.png */,
-				4B01C0E12018881900206EF7 /* alipay_selected_icon.png */,
-				4B01C0DD2018880B00206EF7 /* wxpay_normal_icon.png */,
-				4B01C0DE2018880C00206EF7 /* wxpay_selected_icon.png */,
+				4B01C0E22018881900206EF7 /* py1_normal_icon.png */,
+				4B01C0E12018881900206EF7 /* py1_selected_icon.png */,
+				4B01C0DD2018880B00206EF7 /* py2_normal_icon.png */,
+				4B01C0DE2018880C00206EF7 /* py2_selected_icon.png */,
 				4B4CE45C20170D6B003B9EC8 /* account_close.png */,
 				4B71D00B2016D6F100F31C0C /* change_icon1.png */,
 				4B5F4D37201193EE00BEB12C /* float_drag.png */,
@@ -445,6 +449,8 @@
 				4BAE8C2D200844800022248C /* EncrytUtils.m */,
 				4BAE8C3E200868630022248C /* NetUtils.h */,
 				4BAE8C3F200868630022248C /* NetUtils.m */,
+				45615DE12318CD270036508B /* Base64.h */,
+				45615DE22318CD270036508B /* Base64.m */,
 			);
 			path = net;
 			sourceTree = "<group>";
@@ -470,8 +476,8 @@
 				4B4CE45F20181980003B9EC8 /* BindPhoneModifyPasswordViewController.m */,
 				4B3396622005CFD900801E74 /* Reg2LoginViewController.h */,
 				4B3396632005CFD900801E74 /* Reg2LoginViewController.m */,
-				4B01C0D9201886E400206EF7 /* PayViewController.h */,
-				4B01C0DA201886E400206EF7 /* PayViewController.m */,
+				4B01C0D9201886E400206EF7 /* IAPViewController.h */,
+				4B01C0DA201886E400206EF7 /* IAPViewController.m */,
 				4BAE8C4220089B080022248C /* UIAlertView+Block.h */,
 				4BAE8C4320089B080022248C /* UIAlertView+Block.m */,
 				4B5F4D1D201080D400BEB12C /* SettingViewController.h */,
@@ -563,7 +569,8 @@
 				4B5F4CBB200F290E00BEB12C /* YYCache.h in Headers */,
 				4BAE8C2820083C5E0022248C /* AFURLResponseSerialization.h in Headers */,
 				4B5F4D1920107CC500BEB12C /* XHFloatWindowSingleton.h in Headers */,
-				4B01C0DB201886E400206EF7 /* PayViewController.h in Headers */,
+				4B01C0DB201886E400206EF7 /* IAPViewController.h in Headers */,
+				45615DE32318CD270036508B /* Base64.h in Headers */,
 				4B4CE46020181981003B9EC8 /* BindPhoneModifyPasswordViewController.h in Headers */,
 				4B3396582005C5EC00801E74 /* QQViewController.h in Headers */,
 				4BAE8C4420089B080022248C /* UIAlertView+Block.h in Headers */,
@@ -694,10 +701,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BAF973320C8CE350058E295 /* service_weixin_icon.png in Resources */,
-				4B01C0E32018881900206EF7 /* alipay_selected_icon.png in Resources */,
-				4B01C0E42018881900206EF7 /* alipay_normal_icon.png in Resources */,
-				4B01C0DF2018880C00206EF7 /* wxpay_normal_icon.png in Resources */,
-				4B01C0E02018880C00206EF7 /* wxpay_selected_icon.png in Resources */,
+				4B01C0E32018881900206EF7 /* py1_selected_icon.png in Resources */,
+				4B01C0E42018881900206EF7 /* py1_normal_icon.png in Resources */,
+				4B01C0DF2018880C00206EF7 /* py2_normal_icon.png in Resources */,
+				4B01C0E02018880C00206EF7 /* py2_selected_icon.png in Resources */,
 				4B4CE45D20170D6B003B9EC8 /* account_close.png in Resources */,
 				4B71D00C2016D6F100F31C0C /* change_icon1.png in Resources */,
 				4B5F4D38201193EE00BEB12C /* float_drag.png in Resources */,
@@ -734,7 +741,7 @@
 				4BAE8C2F200844800022248C /* EncrytUtils.m in Sources */,
 				4B5F4D2620108E6300BEB12C /* MenuTableViewCell.m in Sources */,
 				4BAE8C2020083C5E0022248C /* AFHTTPSessionManager.m in Sources */,
-				4B01C0DC201886E400206EF7 /* PayViewController.m in Sources */,
+				4B01C0DC201886E400206EF7 /* IAPViewController.m in Sources */,
 				4BAE8C2320083C5E0022248C /* AFNetworkReachabilityManager.m in Sources */,
 				4B5F4D1820107CC500BEB12C /* XHFloatWindowController.m in Sources */,
 				4B5F4CC2200F290E00BEB12C /* YYMemoryCache.m in Sources */,
@@ -761,6 +768,7 @@
 				4B5F4CBE200F290E00BEB12C /* YYDiskCache.m in Sources */,
 				4B5F4CD4200F422100BEB12C /* LeqiSDKOrderInfo.m in Sources */,
 				4B9D0AFB20045E24001847A8 /* LeqiSDK.m in Sources */,
+				45615DE42318CD270036508B /* Base64.m in Sources */,
 				4BAE8C4520089B080022248C /* UIAlertView+Block.m in Sources */,
 				4B5F4D362011795900BEB12C /* AutoLoginViewController.m in Sources */,
 				4B1DED3422D8358200B806C1 /* STPopupLeftBarItem.m in Sources */,

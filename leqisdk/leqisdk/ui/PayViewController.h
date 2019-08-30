@@ -1,5 +1,5 @@
 //
-//  PayViewController.h
+//  IAPViewController.h
 //  leqisdk
 //
 //  Created by zhangkai on 2018/1/24.
@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 #import "LeqiSDKOrderInfo.h"
-@interface PayViewController : BaseViewController
+@interface IAPViewController : BaseViewController
 @property (nonatomic, strong) LeqiSDKOrderInfo *orderInfo;
 
 @end

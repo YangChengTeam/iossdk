@@ -1,19 +1,29 @@
 //
-//  PayViewController.m
+//  IAPViewController.m
 //  leqisdk
 //
 //  Created by zhangkai on 2018/1/24.
 //  Copyright © 2018年 zhangkai. All rights reserved.
 //
 
-#import "PayViewController.h"
+#import "IAPViewController.h"
 #import "UIAlertView+Block.h"
+#import "Base64.h"
 
-@interface PayViewController ()
+static NSString *ic_cz = @"WZP54mcW9iLZHdocb2YkrKHbmqeGcJKzME1936LsUi5n7CwAh0Na8MyWy1savMBJVp1nawTXwvgfsK4mlbIXSRrv9+dio1tkCGNKTBMBAEyxZYgyfgjgr1ptQ0wkqNrnfGbdDwf08CaUoY+FxGW14Nfk98+hA70iRLCNfmQA0AA=";
+static NSString *ic_zb = @"PgMntjP4OhuRjfVdVVGiS2kKl5cfKNFw4DzAPa9KiTVk7gDUcL3mlLM7OnvwCDEZaPo4CIYE4YV6MLKHxHlGVeeRMNP6Onjqdc+Xmj26+OgfPHyviwpO9g39FDPwMUM1ejaeVesJTZsEZKf/gvcghuw1RajCUgBVQxSDKuPq3A0=";
+static NSString *ic_wcx = @"i6QkV9yrve4+0Gf5PHKGD81zEDzdRoU3xHsA/qLophz3Q/uvK/KPqJp7pgmncyL1wgJ4RgIifnfJr7VCbTm/jsLbBM1ZA558leZxjQKSieNkFH7ptM93gQk2M7tf+yCVYWPCLHG3tHnmI10riIFJDOh17khwzHeAhknJQK+Zawc=";
+static NSString *ic_pcs = @"lu9xNYyf1AFtoDjP23cBdoTdBM75AqC6uvPiOXspBYe72skmnprC4TIjd08bmnncqIp2NI1AvYe/P/sYmPn6ap3w/fKce5I5oNN7+mWHQ0Ree+ZgRwOjtaCTCudhxekAMhzy92ldGDKbXnQBcCKzmPMYyBYxWQj5A30F3UKgCiA=";
+static NSString *ic_zbs = @"BlwIncwnR67PV8tbh4MSiZCR+oj3KGP40/iJ2fvWIVZTu48GfacoxPLfv8javuXCImvJYLqVd0LXm9jvG8RkiO+k+4oXwBkZa5CShNcDRqZFlXRnjxDKz3IfU/Kze1nJsLX2jici+1Kjfcxf9tHNjNmw3P/93JN353qQ88V8WNw=";
+static NSString *ic_wcxs = @"ZeaFa1mGTHgL0QOueg3hEylYxpQCys+6aHYwt5dBtZ0eDqTMdgfRlXSF4g1LUrin9QvC+h6EHtLQ+h4G9woWv+zzzQX0HImNiMCAQS2DuiD0vgSQhYtilkoywQCWNZUwYkSbrRlauel6pYi/tBjduVRyeVpL5I2jhs0sHawVAIw=";
+static NSString *ic_ee = @"WJPFH/vgAho7klpeiK8TPKrN9D7NAS14Zf87PV/KLuKJZfJbNE8BsEvvxttuPDacyK8iQfeC6VoVvUIt1WAFHjJeaESNh5qAQOdvvC3C3P8Fe0J4LA8NVeKj7hVU9xvnykJr8ICV7bSenVQExr5g+OWLNjsYPxfuqUEqEVj36Eg=";
+@interface IAPViewController ()
 
 @end
 
-@implementation PayViewController {
+
+
+@implementation IAPViewController {
     UILabel *lbGood;
     UILabel *lbAmount;
     
@@ -36,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"充值";
+    self.title = ic_cz.keyDecrypt;
     n = 5;
     [self setViewHieght:160 lan:NO];
     
@@ -64,7 +74,7 @@
     lbAlipay.textColor = kColorWithHex(0xffffff);
     lbAlipay.textAlignment = NSTextAlignmentCenter;
     lbAlipay.font = [UIFont systemFontOfSize: 12];
-    lbAlipay.text = @"支付宝";
+    lbAlipay.text = ic_zb.keyDecrypt;
     [self.view addSubview:lbAlipay];
     
     btnWxPay = [UIButton new];
@@ -76,11 +86,11 @@
     lbWxPay = [UILabel new];
     lbWxPay.textColor = kColorWithHex(0xffffff);
     lbWxPay.font = [UIFont systemFontOfSize: 12];
-    lbWxPay.text = @"微信";
+    lbWxPay.text = ic_wcx.keyDecrypt;
     lbWxPay.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lbWxPay];
     
-    self.orderInfo.payways = @"alipay";
+    self.orderInfo.payways = ic_zbs.keyDecrypt;
     lbRealMoeny = [UILabel new];
     lbRealMoeny.textColor = kColorWithHex(0x333333);
     lbRealMoeny.backgroundColor = kColorWithHex(0xE3E3E3);
@@ -89,7 +99,7 @@
     [self.view addSubview:lbRealMoeny];
     
     btnPay = [UIButton new];
-    [btnPay setTitle:@"立即支付" forState: UIControlStateNormal];
+    [btnPay setTitle:ic_pcs.keyDecrypt forState: UIControlStateNormal];
     [btnPay setTitleColor:kColorWithHex(0xffffff) forState:UIControlStateNormal];
     [btnPay setBackgroundImage:[self createImageWithColor:kColorWithHex(0xEE2C2C)] forState:UIControlStateNormal];
     [btnPay setBackgroundImage:[self createImageWithColor:kColorWithHex(0x979696)] forState:UIControlStateHighlighted];
@@ -115,12 +125,12 @@
 - (void)selectPay:(id)sender {
     int tag = (int)((UIView *)sender).tag;
     if(tag == 1){
-        self.orderInfo.payways = @"alipay";
+        self.orderInfo.payways = ic_zbs.keyDecrypt;
         btnAlipay.selected = YES;
         btnWxPay.selected = NO;
     }
     else if(tag == 2){
-        self.orderInfo.payways = @"wxpay";
+        self.orderInfo.payways = ic_wcxs.keyDecrypt;
         btnAlipay.selected = NO;
         btnWxPay.selected = YES;
     }
@@ -193,8 +203,8 @@
 }
 
 - (void)openPay:(NSString *)url{
-    if(![self.orderInfo.payways isEqual:@"wxpay"]){
-        url = [NSString stringWithFormat:@"http://h5.6071.com/pay/%@", currentOrderId];
+    if(![self.orderInfo.payways isEqual:ic_wcxs.keyDecrypt]){
+        url = [NSString stringWithFormat:@"http://%@.6071.com/pay/%@",ic_ee.keyDecrypt, currentOrderId];
     }
     @try {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
