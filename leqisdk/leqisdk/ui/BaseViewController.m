@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "QQViewController.h"
 #import "Reg2LoginViewController.h"
+#import "NoticeViewController.h"
 
 @interface BaseViewController ()
 
@@ -253,6 +254,8 @@ NSArray *allSubviews(UIView *aView) {
             [LeqiSDK shareInstance].user = user;
             [weakSelf.popupController dismiss];
             [[LeqiSDK shareInstance] showFloatView];
+            NSString *notice = user[@"game_notice"][@"body"];
+            [BaseViewController showNotice:notice];
         } else {
             [weakSelf alertByfail:res[@"msg"]];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLeqiSDKNotiLogin object:nil];
@@ -285,6 +288,8 @@ NSArray *allSubviews(UIView *aView) {
             if(callback){
                 callback();
             }
+            NSString *notice = user[@"game_notice"][@"body"];
+            [BaseViewController showNotice:notice];
         } else {
             [weakSelf alertByfail:res[@"msg"]];
         }
@@ -339,6 +344,18 @@ NSArray *allSubviews(UIView *aView) {
         message = msg;
     }
     [self alert:msg];
+}
+
++ (void)showNotice:(NSString *)notice {
+
+    if (notice.length <= 0) {
+        return;
+    }
+    NoticeViewController *vc = [NoticeViewController new];
+    vc.notice = notice;
+    STPopupController *pop = [[STPopupController alloc] initWithRootViewController:vc];
+    pop.containerView.layer.cornerRadius = 4;
+    [pop presentInViewController:[BaseViewController  getCurrentViewController]];
 }
 
 

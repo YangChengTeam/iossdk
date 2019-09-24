@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		45615DE32318CD270036508B /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 45615DE12318CD270036508B /* Base64.h */; };
 		45615DE42318CD270036508B /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 45615DE22318CD270036508B /* Base64.m */; };
+		45C1588123399BA50073AF90 /* NoticeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C1587F23399BA50073AF90 /* NoticeViewController.h */; };
+		45C1588223399BA50073AF90 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C1588023399BA50073AF90 /* NoticeViewController.m */; };
 		4B01C0DB201886E400206EF7 /* IAPViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B01C0D9201886E400206EF7 /* IAPViewController.h */; };
 		4B01C0DC201886E400206EF7 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C0DA201886E400206EF7 /* IAPViewController.m */; };
 		4B01C0DF2018880C00206EF7 /* py2_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B01C0DD2018880B00206EF7 /* py2_normal_icon.png */; };
@@ -138,6 +140,8 @@
 /* Begin PBXFileReference section */
 		45615DE12318CD270036508B /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		45615DE22318CD270036508B /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		45C1587F23399BA50073AF90 /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		45C1588023399BA50073AF90 /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		4B01C0D9201886E400206EF7 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		4B01C0DA201886E400206EF7 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
 		4B01C0DD2018880B00206EF7 /* py2_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = py2_normal_icon.png; sourceTree = "<group>"; };
@@ -498,6 +502,8 @@
 				4B5F4D2420108E6300BEB12C /* MenuTableViewCell.m */,
 				4BC97C9022D822270004D6C2 /* AgreementViewController.h */,
 				4BC97C9122D822270004D6C2 /* AgreementViewController.m */,
+				45C1587F23399BA50073AF90 /* NoticeViewController.h */,
+				45C1588023399BA50073AF90 /* NoticeViewController.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -593,6 +599,7 @@
 				4B5F4CC9200F2FE200BEB12C /* UserTableViewCell.h in Headers */,
 				4B5F4CC1200F290E00BEB12C /* YYMemoryCache.h in Headers */,
 				4B5F4D2520108E6300BEB12C /* MenuTableViewCell.h in Headers */,
+				45C1588123399BA50073AF90 /* NoticeViewController.h in Headers */,
 				4B5F4D1F201080D400BEB12C /* SettingViewController.h in Headers */,
 				4B5F4CBF200F290E00BEB12C /* YYKVStorage.h in Headers */,
 				4B5F4D1320107CC500BEB12C /* XHDraggableButton.h in Headers */,
@@ -760,6 +767,7 @@
 				4B4CE46120181981003B9EC8 /* BindPhoneModifyPasswordViewController.m in Sources */,
 				4B5F4CBC200F290E00BEB12C /* YYCache.m in Sources */,
 				4B5F4D20201080D400BEB12C /* SettingViewController.m in Sources */,
+				45C1588223399BA50073AF90 /* NoticeViewController.m in Sources */,
 				4B5F4CCA200F2FE200BEB12C /* UserTableViewCell.m in Sources */,
 				4B5F4CC0200F290E00BEB12C /* YYKVStorage.m in Sources */,
 				4B1DED3722D8358200B806C1 /* STPopupController.m in Sources */,

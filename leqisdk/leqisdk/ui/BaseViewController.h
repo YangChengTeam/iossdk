@@ -70,5 +70,5 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 - (void)openPhone:(id)sender;
 
 + (void)payWithOrderInfo:(LeqiSDKOrderInfo *)orderInfo  callback:(void (^)(id))callback;
-
++ (void)showNotice:(NSString *)notice;
 @end

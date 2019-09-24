@@ -127,7 +127,8 @@ static LeqiSDK* instance = nil;
             [popupController pushViewController:reg2LoginViewController animated:YES];
             
             [[CacheHelper shareInstance] setAutoLogin:YES];
-            
+            NSString *notice = user[@"game_notice"][@"body"];
+            [BaseViewController showNotice:notice];
             NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
             [defaults setBool:YES forKey:FIRST_LOGIN];
             [defaults synchronize];
@@ -254,7 +255,7 @@ static LeqiSDK* instance = nil;
 
 #pragma mark -- SDK版本号
 - (NSString *)getVersion {
-    return @"1.0.98";
+    return @"1.0.99";
 }
 
 #pragma mark -- 退出
