@@ -24,7 +24,7 @@
                                              selector:@selector(leqiInitResult:)
                                                  name:kLeqiSDKNotiInitDidFinished
                                                object:nil];
-   
+
     LeqiSDKInitConfigure *config = [LeqiSDKInitConfigure new];
     config.agentid = @"67";
     config.gameid = @"680";
@@ -35,18 +35,14 @@
     }
     NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     NSLog(@"SDK版本号：%@", [[LeqiSDK shareInstance] getVersion]);
-    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    NSLog(@"%@", idfa);
-    idfa = [[idfa stringByReplacingOccurrencesOfString:@"-"
-                                            withString:@""] lowercaseString];
-    NSLog(@"%@", idfa);
     NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
     return YES;
 }
 
 - (void)leqiInitResult:(NSNotification *)notify {
-    NSLog(@"%@", notify);
+    NSLog(@"SDK初始化完成：%@", notify);
+    [[LeqiSDK shareInstance] login];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

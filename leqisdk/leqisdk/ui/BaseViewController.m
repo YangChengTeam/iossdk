@@ -351,11 +351,15 @@ NSArray *allSubviews(UIView *aView) {
     if (notice.length <= 0) {
         return;
     }
-    NoticeViewController *vc = [NoticeViewController new];
-    vc.notice = notice;
-    STPopupController *pop = [[STPopupController alloc] initWithRootViewController:vc];
-    pop.containerView.layer.cornerRadius = 4;
-    [pop presentInViewController:[BaseViewController  getCurrentViewController]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NoticeViewController *vc = [NoticeViewController new];
+            vc.notice = notice;
+            STPopupController *pop = [[STPopupController alloc] initWithRootViewController:vc];
+            pop.containerView.layer.cornerRadius = 4;
+            [pop presentInViewController:[BaseViewController  getCurrentViewController]];
+        });
+    });
 }
 
 

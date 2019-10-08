@@ -27,6 +27,8 @@
     
     _webView = [[UIWebView alloc] init];
     [_webView loadHTMLString:self.notice baseURL:nil];
+    [_webView setBackgroundColor:[UIColor clearColor]];
+    [_webView setOpaque:NO];
     
     [self.view addSubview:_webView];
     
