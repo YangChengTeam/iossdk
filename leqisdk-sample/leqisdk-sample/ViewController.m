@@ -67,9 +67,9 @@
 
 - (void)pay {
     LeqiSDKOrderInfo *orderInfo = [LeqiSDKOrderInfo new];
-    orderInfo.goodId = @"com.leqi.msls.648.pay";
-    orderInfo.productName = @"阴阳师:640枚勾玉";
-    orderInfo.amount = 0.02;
+    orderInfo.goodId = @"com.leqi.tjlb.rmb6";
+    orderInfo.productName = @"6元推荐礼包";
+    orderInfo.amount = 6.0;
     orderInfo.count = 1;
     orderInfo.roleId = @"角色名";
     orderInfo.orderId = @"111111111";

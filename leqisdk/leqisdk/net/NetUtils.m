@@ -53,7 +53,8 @@
     NSMutableURLRequest *req = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
     [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [req setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
+    [req setValue:@"" forHTTPHeaderField:@"Cookie"];
+
     NSMutableDictionary *defaultParams = [NSMutableDictionary new];
     if(encryt){
         //timestamp
