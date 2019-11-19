@@ -7,9 +7,8 @@
 //
 
 #import "AgreementViewController.h"
-#import <QuickLook/QuickLook.h>
 
-@interface AgreementViewController ()<QLPreviewControllerDataSource, QLPreviewControllerDelegate>
+@interface AgreementViewController ()
 
 @end
 
